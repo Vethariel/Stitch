@@ -1,5 +1,0 @@
-npm warn Unknown env config "devdir". This will stop working in the next major version of npm.
-Dev server running at http://localhost:4321 (pid 14273)
-  Stop:   astro dev stop
-  Status: astro dev status
-  Logs:   astro dev logs
