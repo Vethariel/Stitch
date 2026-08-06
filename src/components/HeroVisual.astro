@@ -1,0 +1,26 @@
+---
+/**
+ * Full-bleed hero: threads → weave → graph.
+ * Fireflies pulse and relocate at fade-out to suggest new connections.
+ */
+import HeroFireflies from "./HeroFireflies";
+---
+
+<div class="absolute inset-0" aria-hidden="true">
+  <img
+    src="/images/hero.png"
+    alt=""
+    class="h-full w-full object-cover object-center"
+    width="1672"
+    height="941"
+    decoding="async"
+    fetchpriority="high"
+  />
+
+  <HeroFireflies client:load />
+
+  <div class="absolute inset-0 bg-linear-to-r from-paper/75 via-paper/35 to-transparent">
+  </div>
+  <div class="absolute inset-0 bg-linear-to-t from-paper/50 via-transparent to-paper/20">
+  </div>
+</div>

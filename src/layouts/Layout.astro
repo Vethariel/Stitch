@@ -1,0 +1,65 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  active?: "inicio" | "cronograma";
+}
+
+const {
+  title = "Proyecto Stitch",
+  description = "Marco para el diseño de sistemas de aprendizaje autónomo asistidos por inteligencia artificial.",
+  active = "inicio",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen antialiased">
+    <header class="relative z-20 border-b border-line/70 bg-paper/80 backdrop-blur-sm">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
+        <a href="/" class="font-display text-lg font-semibold tracking-tight text-ink">
+          Stitch
+        </a>
+        <nav class="flex items-center gap-6 text-sm text-ink-soft" aria-label="Principal">
+          <a
+            href="/"
+            class:list={[
+              "transition-colors hover:text-thread",
+              active === "inicio" && "text-ink font-medium",
+            ]}
+          >
+            Proyecto
+          </a>
+          <a
+            href="/cronograma"
+            class:list={[
+              "transition-colors hover:text-thread",
+              active === "cronograma" && "text-ink font-medium",
+            ]}
+          >
+            Cronograma
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <slot />
+
+    <footer class="border-t border-ink/20 bg-ink px-5 py-8 text-sm text-mist sm:px-8">
+      <div class="mx-auto flex max-w-6xl flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <p class="font-display font-semibold text-paper">Proyecto Stitch</p>
+        <p>Plan de trabajo · Agosto – diciembre 2026</p>
+      </div>
+    </footer>
+  </body>
+</html>

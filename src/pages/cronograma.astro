@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Timeline from "../components/Timeline";
+---
+
+<Layout
+  title="Cronograma — Proyecto Stitch"
+  description="Plan de trabajo semanal del Proyecto Stitch: agosto a mitad de diciembre 2026."
+  active="cronograma"
+>
+  <main class="min-h-[calc(100svh-8rem)] bg-paper">
+    <section class="border-b border-line">
+      <div class="mx-auto max-w-6xl px-5 pt-28 pb-24 sm:px-8 sm:pt-36 sm:pb-28 md:pt-40">
+        <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread uppercase">
+          Plan de trabajo
+        </p>
+        <h1 class="mt-5 max-w-3xl font-display text-3xl font-semibold text-ink sm:text-4xl md:text-5xl">
+          Cronograma semanal — agosto a diciembre 2026
+        </h1>
+        <p class="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
+          Cada miércoles el laboratorio evoluciona: un objetivo claro y un entregable vivo en la web. Filtra por mes o recorre el semestre completo.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="mx-auto max-w-6xl px-5 pt-20 pb-32 sm:px-8 sm:pt-28 sm:pb-40 md:pb-48">
+        <Timeline client:load />
+      </div>
+    </section>
+  </main>
+</Layout>

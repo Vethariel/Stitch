@@ -1,0 +1,132 @@
+@import "tailwindcss";
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/source-sans-3";
+
+/* Sol + Narrativa: Fraunces (display) + Source Sans 3 (cuerpo) */
+@theme {
+  --font-display: "Fraunces Variable", Fraunces, serif;
+  --font-sans: "Source Sans 3 Variable", "Source Sans 3", sans-serif;
+
+  --color-ink: var(--stitch-ink);
+  --color-ink-soft: var(--stitch-ink-soft);
+  --color-paper: var(--stitch-paper);
+  --color-paper-deep: var(--stitch-paper-deep);
+  --color-mist: var(--stitch-mist);
+  --color-thread: var(--stitch-thread);
+  --color-thread-bright: var(--stitch-thread-bright);
+  --color-thread-dim: var(--stitch-thread-dim);
+  --color-signal: var(--stitch-signal);
+  --color-bloom: var(--stitch-bloom);
+  --color-line: var(--stitch-line);
+  --color-hero-a: var(--stitch-hero-a);
+  --color-hero-b: var(--stitch-hero-b);
+  --color-hero-c: var(--stitch-hero-c);
+}
+
+:root {
+  --stitch-ink: #22141a;
+  --stitch-ink-soft: #5a3e48;
+  --stitch-paper: #f7ebe6;
+  --stitch-paper-deep: #efd8cc;
+  --stitch-mist: #e0b8a8;
+  --stitch-thread: #7a3588;
+  --stitch-thread-bright: #9a48a8;
+  --stitch-thread-dim: #552060;
+  --stitch-signal: #ff5c00;
+  --stitch-bloom: #ff8f40;
+  --stitch-line: #e4c4b4;
+  --stitch-hero-a: #e8b0d0;
+  --stitch-hero-b: #ffc090;
+  --stitch-hero-c: #ff7030;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--stitch-ink);
+    background-color: var(--stitch-paper);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--stitch-thread) 28%, transparent);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*
+  Sinusoidal opacity on the whole firefly group.
+  Ends near 0 so a position change on animationiteration stays invisible.
+*/
+@keyframes firefly-pulse {
+  0% {
+    opacity: 0;
+  }
+  12.5% {
+    opacity: 0.12;
+  }
+  25% {
+    opacity: 0.32;
+  }
+  37.5% {
+    opacity: 0.52;
+  }
+  50% {
+    opacity: 0.62;
+  }
+  62.5% {
+    opacity: 0.52;
+  }
+  75% {
+    opacity: 0.32;
+  }
+  87.5% {
+    opacity: 0.12;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.24s both;
+}
+
+.animate-fade-up-delay-3 {
+  animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.36s both;
+}
+
+.hero-firefly {
+  transform: none;
+  opacity: 0;
+  animation: firefly-pulse var(--node-dur, 3s) linear var(--node-delay, 0s) infinite both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-firefly {
+    animation: none;
+    opacity: 0.4;
+  }
+}
