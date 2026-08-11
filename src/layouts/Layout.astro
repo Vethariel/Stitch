@@ -4,7 +4,7 @@ import "../styles/global.css";
 interface Props {
   title?: string;
   description?: string;
-  active?: "inicio" | "cronograma";
+  active?: "inicio" | "cronograma" | "problema";
 }
 
 const {
@@ -30,7 +30,7 @@ const {
         <a href="/" class="font-display text-lg font-semibold tracking-tight text-ink">
           Stitch
         </a>
-        <nav class="flex items-center gap-6 text-sm text-ink-soft" aria-label="Principal">
+        <nav class="flex items-center gap-5 text-sm text-ink-soft sm:gap-6" aria-label="Principal">
           <a
             href="/"
             class:list={[
@@ -39,6 +39,15 @@ const {
             ]}
           >
             Proyecto
+          </a>
+          <a
+            href="/problema"
+            class:list={[
+              "transition-colors hover:text-thread",
+              active === "problema" && "text-ink font-medium",
+            ]}
+          >
+            Problema
           </a>
           <a
             href="/cronograma"
