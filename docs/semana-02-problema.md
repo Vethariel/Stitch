@@ -8,13 +8,13 @@
 
 ## Pregunta de la semana
 
-¿Cómo delimitar el problema y la visión a partir de una experiencia personal —sin asumir que el usuario “ideal” es alguien curioso—, de modo que el sistema sirva a distintas motivaciones y ponga el foco en **sostener la constancia**?
+¿Cómo delimitar el problema y la visión a partir de una experiencia personal de aprendizaje, de modo que el proyecto ponga el foco en **sostener la constancia** —y no solo en “entregar contenido”?
 
 ---
 
 ## 1. Motivación
 
-Parte de mi historia es la curiosidad: me tomo el tiempo de investigar lo que me interesa. Pero **eso no define al usuario de Stitch**. El choque que viví al pasar al lado técnico —demasiadas fuentes, muy poco acompañamiento, y al final desistir— me sirve de punto de partida, no de perfil único. Le pasa a mucha gente, **con o sin** una chispa inicial fuerte.
+Parte de mi historia es la curiosidad: me tomo el tiempo de investigar lo que me interesa. El choque llegó al pasar al lado técnico —demasiadas fuentes, muy poco acompañamiento, y al final desistir—. Esa experiencia es el origen de este proyecto: no una anécdota aislada, sino el momento en que entendí que **querer aprender no alcanza** si no hay forma de sostener el proceso.
 
 **Un ejemplo concreto:** cuando quise aprender a programar, empecé un curso de Java y al final **no terminé asociando los conceptos**. No fue hasta que probé una app que enseñaba Python **asociándolo a un juego** que verdaderamente pude avanzar. Misma intención de aprender; distinta forma de vincular el conocimiento con algo mío — y el resultado cambió.
 
@@ -29,9 +29,7 @@ Uniendo estas tres cosas nace la necesidad de crear algo que ayude a aprender **
 - **espacio para interiorizar** lo aprendido (no solo “pasar” el tema);
 - y otros mecanismos afines (acompañamiento, feedback, presencia, etc.).
 
-No se trata de inventar psicología desde cero ni de filtrar por un perfil “curioso”: se trata de **aplicar y combinar** lo que ya se sabe —cuando la literatura lo respalde— en el diseño del agente y del entorno.
-
-Por eso la plataforma debe servir a **cualquier persona**: desde quien tiene una motivación fuerte de dominar la técnica, hasta quien está **obligada** a aprender (curso, trabajo, requisito). El sistema no filtra por “perfil curioso”; acompaña distintos puntos de partida.
+No se trata de inventar psicología desde cero: se trata de **aplicar y combinar** lo que ya se sabe —cuando la literatura lo respalde— en el diseño del agente y del entorno.
 
 Eso se vuelve más urgente frente a dos fenómenos que se alimentan entre sí. Por un lado, los **certificados**: al final muchas veces no se aprende nada y sí se pierde el tiempo; se acumulan credenciales como prueba de haber pasado por un recorrido, no de haber transformado la capacidad de hacer. Por otro, una crisis más amplia: un mundo donde se **trabaja solo por trabajar**, sin crecer de verdad en el campo en el que uno se desempeña. Y crecer, para mí, no significa necesariamente un escalón administrativo. Significa tener la capacidad de **lograr más cosas en lo que a uno le interesa** y, con eso, **impactar de buena manera al mundo**.
 
@@ -196,7 +194,7 @@ Lo vital: lo **conversacional** frente a la trampa — espacio **seguro**, sin v
 
 | Antes | Ahora |
 |-------|--------|
-| Motivación abstracta | Motivación personal como origen; usuario = cualquiera (motivado u obligado); eje = constancia |
+| Motivación abstracta | Motivación personal como origen; eje = constancia (quiénes se benefician se delimita en el problema) |
 | Diseño como verdad implícita | Hipótesis de diseño explícitamente preliminares |
 | Personalización = riesgo de desalinear el grafo | Personalización = capa adicional; temáticas siguen espejo |
 | Adaptación = “subir temperatura” | Adaptación = varios mecanismos posibles |
@@ -209,7 +207,7 @@ Lo vital: lo **conversacional** frente a la trampa — espacio **seguro**, sin v
 | | |
 |---|---|
 | **¿Qué quería entender?** | Cómo convertir historia personal en problema/visión sin vender el diseño como resultado. |
-| **¿Qué descubrí?** | Que la curiosidad es *mi* puerta de entrada, no el perfil del producto; el eje es constancia para motivaciones diversas. |
+| **¿Qué descubrí?** | Que la curiosidad es *mi* puerta de entrada; el eje del proyecto es sostener la constancia. |
 | **¿Cómo cambió mi forma de pensar?** | Disciplinar el alcance no mata la ambición: la ordena. |
 | **¿Qué haré después?** | Semana 3 — Cómo aprende una persona / por qué se abandona; dejar que la lectura roce estas hipótesis. |
 
@@ -221,7 +219,9 @@ Lo vital: lo **conversacional** frente a la trampa — espacio **seguro**, sin v
 - [x] Ejemplo concreto de abandono / desbloqueo técnico: curso de Java sin asociación de conceptos → app de Python ligada a un juego, donde sí pude avanzar.
 - [x] Publicar como página `/problema` cuando este borrador esté estable.
 - [x] Enlazar desde inicio y cronograma (nav + CTAs).
-- [ ] **Encontrar fuentes** que apoyen (o matizen) afirmaciones y fenómenos que hoy están solo bajo intuición / experiencia personal. Lista:
+- [ ] **Encontrar fuentes** que apoyen (o matizen) afirmaciones y fenómenos que hoy están solo bajo intuición / experiencia personal.  
+  → Guía de búsqueda (motores + queries): [`docs/guia-busqueda-fuentes.md`](guia-busqueda-fuentes.md)  
+  Lista:
 
 ### Afirmaciones / fenómenos a respaldar con literatura
 
