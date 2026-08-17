@@ -220,7 +220,7 @@ Lo vital: lo **conversacional** frente a la trampa — espacio **seguro**, sin v
 - [x] Publicar como página `/problema` cuando este borrador esté estable.
 - [x] Enlazar desde inicio y cronograma (nav + CTAs).
 - [ ] **Encontrar fuentes** que apoyen (o matizen) afirmaciones y fenómenos que hoy están solo bajo intuición / experiencia personal.  
-  → Guía de búsqueda (motores + queries): [`docs/guia-busqueda-fuentes.md`](guia-busqueda-fuentes.md)  
+  → Guía de búsqueda (motores + queries): [`guia-busqueda-fuentes.md`](guia-busqueda-fuentes.md)  
   Lista:
 
 ### Afirmaciones / fenómenos a respaldar con literatura

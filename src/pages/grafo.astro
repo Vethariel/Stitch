@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ConceptGraph from "../components/ConceptGraph";
+---
+
+<Layout
+  title="Grafo de conceptos — Proyecto Stitch"
+  description="Vocabulario de trabajo del Proyecto Stitch: instrucción, retroalimentación, metas y conceptos afines."
+  active="grafo"
+>
+  <main class="bg-paper">
+    <section class="border-b border-line">
+      <div class="mx-auto max-w-6xl px-5 pt-28 pb-16 sm:px-8 sm:pt-36 sm:pb-20 md:pt-40">
+        <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread uppercase">
+          Vocabulario
+        </p>
+        <h1 class="mt-5 max-w-3xl font-display text-3xl font-semibold text-ink sm:text-4xl md:text-5xl">
+          Grafo de conceptos
+        </h1>
+        <p class="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
+          Semilla para manejar un lenguaje común. Las definiciones y los vínculos
+          son de trabajo: se corrigen con lectura, no se dan por cerrados.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="mx-auto max-w-6xl px-5 pt-12 pb-28 sm:px-8 sm:pt-16 sm:pb-40">
+        <ConceptGraph client:load />
+      </div>
+    </section>
+  </main>
+</Layout>

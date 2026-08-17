@@ -1,0 +1,92 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { papers } from "../data/papers";
+---
+
+<Layout
+  title="Papers revisados — Proyecto Stitch"
+  description="Inventario de lecturas del Proyecto Stitch: elementos relevantes y aplicación en el diseño."
+  active="lecturas"
+>
+  <main class="bg-paper">
+    <section class="border-b border-line">
+      <div class="mx-auto max-w-6xl px-5 pt-28 pb-20 sm:px-8 sm:pt-36 sm:pb-28 md:pt-40">
+        <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread uppercase">
+          Inventario
+        </p>
+        <h1 class="mt-5 max-w-3xl font-display text-3xl font-semibold text-ink sm:text-4xl md:text-5xl">
+          Papers revisados
+        </h1>
+        <p class="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
+          Lecturas que entran al laboratorio: qué deja cada paper y cómo se aplica en Stitch.
+          Crece a lo largo del semestre, independiente de las bitácoras semanales.
+        </p>
+        <p class="mt-8 font-display text-sm text-ink-soft">
+          {papers.length}
+          {papers.length === 1 ? " lectura" : " lecturas"}
+        </p>
+      </div>
+    </section>
+
+    {
+      papers.map((paper, i) => (
+        <article
+          id={paper.id}
+          class:list={[
+            "border-b border-line",
+            i % 2 === 1 && "bg-paper-deep/50",
+          ]}
+        >
+          <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+            <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread uppercase">
+              {String(i + 1).padStart(2, "0")} · {paper.year}
+            </p>
+            <h2 class="mt-4 max-w-3xl font-display text-2xl font-semibold text-ink sm:text-3xl">
+              {paper.title}
+            </h2>
+            <p class="mt-3 text-base text-ink-soft">{paper.authors}</p>
+            <p class="mt-1 text-sm text-ink-soft">
+              {paper.venue}
+              <span class="mx-2 text-line">·</span>
+              {paper.type}
+            </p>
+            <p class="mt-4 font-display text-sm">
+              <a
+                href={`https://doi.org/${paper.doi}`}
+                class="text-thread hover:text-thread-dim"
+              >
+                doi:{paper.doi}
+              </a>
+            </p>
+            <p class="mt-6 max-w-3xl text-sm leading-relaxed text-ink-soft italic">
+              {paper.citation}
+            </p>
+
+            <div class="mt-12 grid gap-10 lg:grid-cols-2">
+              <div>
+                <h3 class="font-display text-sm font-semibold tracking-wide text-ink uppercase">
+                  Elementos relevantes
+                </h3>
+                <ul class="mt-4 space-y-3 text-base leading-relaxed text-ink-soft">
+                  {paper.relevant.map((item) => (
+                    <li class="border-l-2 border-signal pl-4">{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-display text-sm font-semibold tracking-wide text-ink uppercase">
+                  Reflexión / aplicación en Stitch
+                </h3>
+                <div class="mt-4 space-y-4 text-base leading-relaxed text-ink-soft">
+                  {paper.reflection.map((para) => (
+                    <p>{para}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      ))
+    }
+  </main>
+</Layout>

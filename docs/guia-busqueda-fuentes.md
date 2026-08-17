@@ -30,7 +30,7 @@
 2. **Correr la query ancha** → mirar títulos/abstracts de los primeros 20–30.
 3. **Apretar** con filtros: Education / Computer Science / Psychology; años recientes *más* clásicos citados.
 4. **Elegir 1 semilla** (review o paper muy citado) → **Cited by** + referencias hacia atrás (snowball).
-5. Anotar en una fila: afirmación #, DOI/cita, *apoya / matiza / contradice*, 1 frase útil.
+5. Si la lectura entra al laboratorio, sumarla al inventario (`src/data/papers.ts` → página `/lecturas`): elementos relevantes + reflexión / aplicación en Stitch.
 6. Si el ruido es alto: quitar términos vagos (`learning` solo) y forzar pares (`dropout AND "computer science"`).
 
 ### Sintaxis rápida Scopus
@@ -497,4 +497,4 @@ Limitaciones (población, dominio, año):
 
 ## 8. Enlace al doc de problema
 
-Lista de afirmaciones y enfoques: `docs/semana-02-problema.md` → sección **Notas / pendientes**.
+Lista de afirmaciones y enfoques: [`semana-02-problema.md`](semana-02-problema.md) → sección **Notas / pendientes**.
