@@ -1,41 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
+const pregunta =
+  "¿Cómo diseñar un agente de acompañamiento que sostenga la constancia y la interiorización del aprendizaje autónomo ante motivaciones diversas, sin depender de notas ni de credenciales vacías?";
+
 const fallas = [
   {
     title: "Información sin red",
-    text: "Querer aprender —o tener que aprender— no basta: demasiada información sin acompañamiento quiebra la constancia, venga la persona con fuego interno o por obligación.",
-  },
-  {
-    title: "Herramientas sin presencia",
-    text: "Muchas plataformas informan o evalúan, pero no ofrecen a alguien con quien hablar y sostener el ritmo cuando la motivación baja.",
-  },
-  {
-    title: "Espacios que no se habitan",
-    text: "Interfaces estáticas, sin personalización: el aprendizaje se siente como trámite, no como lugar.",
-  },
-  {
-    title: "Credenciales vacías y trabajo sin crecimiento",
-    text: "Certificados que no construyen competencia; rutina laboral donde crecer se confunde con un escalón administrativo en lugar de poder lograr más.",
-  },
-  {
-    title: "Progreso opaco",
-    text: "No se ve con claridad qué ya se sabe, qué falta y dónde se puede atajar sin empezar siempre de cero.",
+    text: "Cursos masivos, LMS y chatbots entregan contenido o respuestas. Casi ninguno acompaña cuando la motivación baja. Demasiada información y demasiado poco con quien sostener el ritmo: se abandona, venga la persona con fuego interno o por obligación.",
   },
   {
     title: "Constancia tratada como rasgo",
-    text: "Se asume que “el que quiere, puede”; poco se diseña para sostenerla con enfoques conocidos (asociación, entorno seguro, interiorización, acompañamiento).",
+    text: "Se asume que «el que quiere, puede». Poco se diseña para sostenerla —andamiaje, entorno seguro, espacio para interiorizar— cuando la motivación no es alta o no es intrínseca.",
   },
-];
-
-const visionItems = [
-  "Sirva a cualquiera: desde quien quiere dominar la técnica hasta quien está obligado a aprender.",
-  "Trabaje la constancia con enfoques citables (asociación, entorno seguro, interiorización, presencia), no solo entregue contenido.",
-  "Acompañe, interactúe y guíe — presencia tipo compañero, no solo chatbot.",
-  "Gestione lo aprendido con árbol y grafo espejo en temáticas; personalización como capa adicional; atajos por pruebas de desempeño (no notas).",
-  "Mantenga un núcleo certero y adapte el lenguaje al aprendiz.",
-  "Interiorice conocimiento mediante secuencias y el ejemplo; el estándar de buen uso se limita a ese dominio.",
-  "Apoye en un espacio seguro; el logro lo evalúa el agente según lo acordado con el usuario.",
+  {
+    title: "Credenciales en lugar de uso",
+    text: "Certificados y rutina laboral premian haber pasado, no poder hacer. Lo aprendido queda enunciable y no se usa: conocimiento inerte con otro nombre.",
+  },
+  {
+    title: "Cómo se manifiesta",
+    text: "El aprendizaje se siente trámite —interfaces que no se habitan— y el progreso es opaco: no se ve qué ya se sabe, qué falta ni dónde atajar sin empezar de cero.",
+  },
 ];
 
 const roots = [
@@ -53,26 +38,26 @@ const roots = [
   },
   {
     from: "Certificados vacíos + trabajo sin crecimiento",
-    to: "Efectividad, criterio de dominio, capacidad de hacer más",
+    to: "Interiorización, criterio de dominio, capacidad de hacer",
   },
 ];
 
 const semesterQs = [
   {
     when: "Agosto",
-    q: "¿Cómo se sostiene (o se quiebra) el aprendizaje —constancia, motivación intrínseca u obligada— cuando hay información de sobra y compañía de menos?",
+    q: "¿Cómo se sostiene —o se quiebra— el aprendizaje cuando hay información de sobra y compañía de menos?",
   },
   {
     when: "Septiembre",
-    q: "¿Qué puede hacer un agente (presencia, interacción, memoria del aprendiz) para sostener ese proceso?",
+    q: "¿Qué puede hacer un agente —presencia, interacción, memoria mínima— para sostener constancia e interiorización?",
   },
   {
     when: "Octubre",
-    q: "¿Cómo debe diseñarse ese tutor/agente: modelo del estudiante, flujo, adaptación del lenguaje, visualización del progreso?",
+    q: "¿Cómo se diseña ese acompañamiento para sostener ambas, sin volver a la lógica de la nota?",
   },
   {
     when: "Nov – Dic",
-    q: "¿Cómo demostrar, aunque sea en pequeño, que ese acompañamiento aumenta efectividad y criterio?",
+    q: "¿Cómo demostrar, aunque sea en pequeño, que ese acompañamiento sostiene la constancia y la interiorización?",
   },
 ];
 
@@ -87,50 +72,79 @@ const hypotheses = [
   },
   {
     title: "Adaptación del lenguaje",
-    body: "Personalidad + preferencias + asociaciones adaptan la forma de explicar sin tocar el núcleo. Varios mecanismos posibles; no un solo parámetro.",
+    body: "Personalidad, preferencias y asociaciones adaptan la forma de explicar sin tocar el núcleo. Varios mecanismos posibles; no un solo parámetro.",
   },
   {
     title: "Interiorización y buen uso",
-    body: "Propósito de la semilla: interiorizar la técnica. El estándar de buen uso se limita a ese dominio (qué se necesita y en qué casos). La transformación vital es horizonte, no feature de ahora.",
+    body: "Propósito de la semilla: interiorizar la técnica. El estándar de buen uso se limita a ese dominio —qué se necesita y en qué casos—. La transformación vital es horizonte, no feature de ahora.",
   },
   {
     title: "Espacio seguro y logro",
-    body: "Prueba de desempeño acordada con el usuario. Lo conversacional construye un espacio sin prisa donde errar está permitido — confianza que desincentiva la trampa, no vigilancia.",
+    body: "Prueba de desempeño acordada con el usuario. Lo conversacional construye un espacio sin prisa donde errar está permitido: confianza que desincentiva la trampa, no vigilancia.",
   },
+];
+
+const recorteSi = [
+  "Aprendizaje autónomo en dominios técnicos; primer laboratorio: programación (Stitch Code).",
+  "Quien quiere dominar la técnica y quien está obligado a aprenderla.",
+  "Acompañamiento que sostiene constancia e interiorización —no sustituye al docente.",
+  "Criterio sin nota ni credencial vacía.",
+];
+
+const recorteNo = [
+  "Plataforma de certificados / LMS completo.",
+  "Evaluación masiva.",
+  "Agente asistente general de vida.",
+  "Macro de carrera / narrativa multi-curso como producto (queda como horizonte).",
+  "Producto comercial de Stitch Code sin marco de investigación.",
+];
+
+const semestreSi = [
+  "Fundamentar el problema con lectura (abandono, constancia, tutoría, motivación diversa).",
+  "Explorar grafo y árbol; pruebas de desempeño → avance, no nota.",
+  "Memoria selectiva y personalidades, con privacidad primero.",
+  "Arquitectura conceptual y prototipo pequeño (Stitch Code como vehículo).",
+  "Sitio vivo que documenta la evolución.",
 ];
 ---
 
 <Layout
-  title="¿Qué problema quiero resolver? — Proyecto Stitch"
-  description="Motivación, problema, visión y preguntas de investigación del Proyecto Stitch. Semana 2 del laboratorio vivo."
+  title="El problema — Proyecto Stitch"
+  description="Abandono, constancia e interiorización: el problema que investiga el Proyecto Stitch y su pregunta de investigación."
   active="problema"
 >
   <main class="bg-paper">
-    <!-- Intro -->
     <section class="border-b border-line">
       <div class="mx-auto max-w-6xl px-5 pt-28 pb-20 sm:px-8 sm:pt-36 sm:pb-28 md:pt-40">
         <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread uppercase">
-          Semana 2 · Bitácora
+          El problema
         </p>
         <h1 class="mt-5 max-w-3xl font-display text-3xl font-semibold text-ink sm:text-4xl md:text-5xl">
-          ¿Qué problema quiero resolver?
+          Querer aprender no alcanza
         </h1>
         <p class="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
-          Delimitar el problema y la visión a partir de una experiencia personal de aprendizaje,
-          con el foco en sostener la constancia —no solo en entregar contenido.
+          Las personas abandonan el aprendizaje técnico —vengan con motivación fuerte o por obligación—
+          porque enfrentan demasiada información y demasiado poco acompañamiento para sostener la constancia,
+          bajo sistemas que premian certificados en lugar de interiorización real.
         </p>
+        <div class="mt-10 max-w-2xl">
+          <h2 class="font-display text-sm font-semibold tracking-wide text-ink uppercase">
+            Pregunta de investigación
+          </h2>
+          <p class="mt-3 text-base leading-relaxed text-ink italic sm:text-lg">
+            {pregunta}
+          </p>
+        </div>
         <nav class="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-soft" aria-label="En esta página">
           <a href="#motivacion" class="hover:text-thread">Motivación</a>
-          <a href="#problema" class="hover:text-thread">Problema</a>
+          <a href="#problema" class="hover:text-thread">Qué falla</a>
           <a href="#vision" class="hover:text-thread">Visión</a>
           <a href="#preguntas" class="hover:text-thread">Preguntas</a>
           <a href="#alcance" class="hover:text-thread">Alcance</a>
-          <a href="#bitacora" class="hover:text-thread">Cierre</a>
         </nav>
       </div>
     </section>
 
-    <!-- Motivación -->
     <section id="motivacion" class="border-b border-line">
       <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
         <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread uppercase">
@@ -144,8 +158,9 @@ const hypotheses = [
           <p>
             Parte de mi historia es la curiosidad: me tomo el tiempo de investigar lo que me interesa.
             El choque llegó al pasar al lado técnico —demasiadas fuentes, muy poco acompañamiento, y al final desistir—.
-            Esa experiencia es el origen de este proyecto: el momento en que entendí que
-            <strong class="font-semibold text-ink">querer aprender no alcanza</strong> si no hay forma de sostener el proceso.
+            Ahí entendí que{" "}
+            <strong class="font-semibold text-ink">querer aprender no alcanza</strong>
+            {" "}si no hay forma de sostener el proceso.
           </p>
           <p class="border-l-2 border-signal pl-5 text-ink">
             Cuando quise aprender a programar, empecé un curso de Java y no terminé asociando los conceptos.
@@ -154,33 +169,49 @@ const hypotheses = [
           </p>
           <p>
             También cargo la idea de un agente tipo mascota —alguien con quien hablar, no un menú frío—
-            y la búsqueda de un espacio habitable: animación, interactividad, personalización, procesos de transformación.
+            y la búsqueda de un espacio habitable: animación, interactividad, personalización.
           </p>
           <p>
-            De ahí nace la necesidad de crear algo que ayude a aprender
-            <strong class="font-semibold text-ink">como a mí me hubiera gustado aprender</strong>:
-            con alguien al lado, en un entorno habitable, y —sobre todo— explorando
-            <strong class="font-semibold text-ink">cómo sostener la constancia</strong>
-            con enfoques conocidos en la literatura (a citar) — asociación, entorno seguro, espacio para interiorizar,
-            acompañamiento — aplicados al diseño del agente.
-          </p>
-          <p>
-            Eso choca con certificados vacíos y con un mundo donde se trabaja solo por trabajar.
-            Crecer no es necesariamente un escalón administrativo: es poder lograr más en lo que importa e impactar mejor.
+            Eso me pasó a mí. El problema que investigo no es la anécdota: es lo que enseña cuando le ocurre a
+            cualquiera —quien quiere dominar la técnica y quien está obligado a aprenderla—.
           </p>
         </div>
+
+        <h3 class="mt-16 font-display text-xl font-semibold text-ink">De dónde sale Stitch</h3>
+        <ul class="mt-8 divide-y divide-line border-y border-line">
+          {
+            roots.map((row) => (
+              <li class="grid gap-2 py-5 sm:grid-cols-2 sm:gap-8">
+                <p class="text-sm text-ink-soft">{row.from}</p>
+                <p class="font-medium text-ink">{row.to}</p>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="mt-8 max-w-2xl text-base leading-relaxed text-ink-soft">
+          <strong class="font-semibold text-ink">Stitch Code</strong> es el primer laboratorio (programación).{" "}
+          <strong class="font-semibold text-ink">Stitch</strong> es el marco: cómo diseñar ese acompañamiento más allá de un dominio.
+          El vocabulario de trabajo está en el{" "}
+          <a href="/grafo" class="text-ink underline decoration-thread/50 underline-offset-4 hover:text-thread">grafo</a>;
+          las lecturas que lo van anclando, en{" "}
+          <a href="/lecturas" class="text-ink underline decoration-thread/50 underline-offset-4 hover:text-thread">lecturas</a>.
+        </p>
       </div>
     </section>
 
-    <!-- Problema -->
     <section id="problema" class="border-b border-line bg-paper-deep/50">
       <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
         <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread uppercase">
-          02 · El problema
+          02 · Qué falla hoy
         </p>
         <h2 class="mt-4 max-w-2xl font-display text-3xl font-semibold text-ink sm:text-4xl">
-          Qué falla hoy
+          No es falta de contenido
         </h2>
+        <p class="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
+          El curso masivo entrega material. El LMS registra actividad. El chatbot responde.
+          El certificado acredita el paso. Casi ninguno sostiene el proceso cuando la motivación baja,
+          ni comprueba que lo aprendido se pueda usar.
+        </p>
 
         <ol class="mt-14 grid gap-10 sm:grid-cols-2">
           {
@@ -195,29 +226,9 @@ const hypotheses = [
             ))
           }
         </ol>
-
-        <blockquote class="mt-16 max-w-3xl border-l-2 border-thread pl-6 font-display text-xl font-medium leading-snug text-ink sm:text-2xl">
-          Las personas abandonan el aprendizaje técnico —vengan con motivación fuerte o por obligación—
-          porque enfrentan demasiada información y demasiado poco acompañamiento para sostener la constancia,
-          en espacios que no se sienten vivos y bajo sistemas que premian certificados y rutina laboral
-          —en lugar de criterio, capacidad de hacer e interiorización real.
-        </blockquote>
-
-        <div class="mt-12 max-w-2xl">
-          <h3 class="font-display text-sm font-semibold tracking-wide text-ink uppercase">
-            Pregunta de investigación
-          </h3>
-          <p class="mt-3 text-base leading-relaxed text-ink-soft italic sm:text-lg">
-            ¿Cómo diseñar un sistema —con un agente cercano, interactivo y guiador— que sirva a perfiles de motivación diversos,
-            sostenga la constancia apoyándose en enfoques respaldados por literatura, aumente la efectividad de lo aprendido,
-            haga visible el progreso, adapte el lenguaje sin perder el núcleo certero, y favorezca criterio de buen uso
-            —sin depender de notas ni de credenciales vacías?
-          </p>
-        </div>
       </div>
     </section>
 
-    <!-- Visión -->
     <section id="vision" class="border-b border-line">
       <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
         <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread uppercase">
@@ -234,7 +245,8 @@ const hypotheses = [
             </h3>
             <p class="mt-3 text-base leading-relaxed text-ink-soft sm:text-lg">
               Transformación personal; más adelante, narrativa entre cursos y un macro del proceso
-              que pueda orientar una carrera. Orienta el porqué; <strong class="font-semibold text-ink">no es el entregable ahora</strong>.
+              que pueda orientar una carrera. Orienta el porqué;{" "}
+              <strong class="font-semibold text-ink">no es el entregable ahora</strong>.
             </p>
           </div>
           <div>
@@ -242,58 +254,27 @@ const hypotheses = [
               Semilla
             </h3>
             <p class="mt-3 text-base leading-relaxed text-ink-soft sm:text-lg">
-              Interiorizar conocimiento con acompañamiento; sostener constancia ante motivaciones distintas;
-              progreso visible; criterio de buen uso del dominio que se está aprendiendo.
+              Interiorizar conocimiento con acompañamiento; sostener constancia ante motivaciones distintas.
+              El progreso visible y el criterio de buen uso del dominio son vías, no un segundo problema.
             </p>
           </div>
         </div>
-
-        <h3 class="mt-16 font-display text-xl font-semibold text-ink sm:text-2xl">
-          Un agente que…
-        </h3>
-        <ul class="mt-8 max-w-2xl space-y-4 text-base leading-relaxed text-ink-soft sm:text-lg">
-          {
-            visionItems.map((item) => (
-              <li class="flex gap-3">
-                <span class="mt-2 size-1.5 shrink-0 bg-signal" aria-hidden="true" />
-                <span>{item}</span>
-              </li>
-            ))
-          }
-        </ul>
 
         <div class="mt-16 max-w-3xl border-t border-line pt-10">
           <h3 class="font-display text-sm font-semibold tracking-wide text-ink uppercase">
             Hipótesis central
           </h3>
           <p class="mt-4 text-base leading-relaxed text-ink-soft sm:text-lg">
-            Si el aprendizaje se sostiene con un acompañante inteligente —cercano, capaz de trabajar la constancia
-            ante motivaciones diversas, con personalización del lenguaje y un mapa del progreso ligado a conocimiento veraz—,
-            la persona puede pasar de “empezar” a interiorizar y sostener el dominio que estudia, sin depender de certificados
-            vacíos ni de trabajar-por-trabajar. El crecimiento inmediato se mide en constancia, interiorización y criterio de uso;
-            la transformación vital y el macro de carrera quedan como intención a futuro.
+            Si el aprendizaje se sostiene con un agente de acompañamiento —cercano, capaz de trabajar la constancia
+            ante motivaciones diversas—, <strong class="font-semibold text-ink">mediante</strong> un mapa del progreso
+            ligado a conocimiento veraz y una personalización del lenguaje que no toca el núcleo, la persona puede
+            pasar de empezar a interiorizar y sostener el dominio que estudia, sin depender de certificados vacíos.
+            El crecimiento inmediato se mide en constancia e interiorización; la transformación vital queda como horizonte.
           </p>
         </div>
-
-        <h3 class="mt-16 font-display text-xl font-semibold text-ink">De dónde sale Stitch</h3>
-        <ul class="mt-8 divide-y divide-line border-y border-line">
-          {
-            roots.map((row) => (
-              <li class="grid gap-2 py-5 sm:grid-cols-2 sm:gap-8">
-                <p class="text-sm text-ink-soft">{row.from}</p>
-                <p class="font-medium text-ink">{row.to}</p>
-              </li>
-            ))
-          }
-        </ul>
-        <p class="mt-8 max-w-2xl text-base leading-relaxed text-ink-soft">
-          <strong class="font-semibold text-ink">Stitch Code</strong> es el primer laboratorio (programación).
-          <strong class="font-semibold text-ink">Stitch</strong> es el marco de investigación: cómo diseñar esos sistemas más allá de un dominio.
-        </p>
       </div>
     </section>
 
-    <!-- Preguntas -->
     <section id="preguntas" class="border-b border-line bg-paper-deep/50">
       <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
         <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread uppercase">
@@ -302,10 +283,10 @@ const hypotheses = [
         <h2 class="mt-4 max-w-3xl font-display text-3xl font-semibold text-ink sm:text-4xl">
           Qué investigamos este semestre
         </h2>
-        <p class="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg italic">
-          ¿Cómo puede diseñarse un agente de acompañamiento que facilite el aprendizaje de alta efectividad
-          para motivaciones diversas —sostener constancia, progreso visible, explicación adaptada, criterio de buen uso—
-          sin notas ni credenciales vacías?
+        <p class="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
+          La pregunta general ya está arriba. Estas cuatro la descomponen. Contaría como respuesta,
+          este semestre, un prototipo pequeño en Stitch Code y evidencia acotada de que el acompañamiento
+          ayuda a seguir y a usar lo aprendido —no a acumular notas.
         </p>
 
         <ol class="mt-14 grid gap-10 sm:grid-cols-2">
@@ -329,7 +310,7 @@ const hypotheses = [
             Hipótesis de diseño (preliminares)
           </h3>
           <p class="mt-3 max-w-2xl text-base leading-relaxed text-ink-soft">
-            No están validadas. Son semilla de diseño, no conclusión. Se afinan con lectura, experimentos y prototipo.
+            El «mediante» de la hipótesis central. No están validadas: son semilla, no conclusión.
           </p>
           <ul class="mt-10 space-y-8 max-w-3xl">
             {
@@ -351,77 +332,55 @@ const hypotheses = [
       </div>
     </section>
 
-    <!-- Alcance -->
     <section id="alcance" class="border-b border-line">
       <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
         <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread uppercase">
           05 · Alcance
         </p>
         <h2 class="mt-4 font-display text-3xl font-semibold text-ink sm:text-4xl">
-          Qué entra este semestre — y qué no
+          Qué cubre la pregunta — y qué se hace ahora
         </h2>
+
         <div class="mt-12 grid gap-12 lg:grid-cols-2">
           <div>
-            <h3 class="font-display text-sm font-semibold tracking-wide text-thread uppercase">Sí entra</h3>
+            <h3 class="font-display text-sm font-semibold tracking-wide text-thread uppercase">
+              Recorte de la pregunta
+            </h3>
             <ul class="mt-5 space-y-3 text-base leading-relaxed text-ink-soft">
-              <li>Fundamentar el problema (aprendizaje, abandono, constancia, tutoría).</li>
-              <li>Explorar grafo/árbol; pruebas → avance (no nota).</li>
-              <li>Memoria selectiva / personalidades (privacidad primero).</li>
-              <li>Experimentos acotados según tiempo.</li>
-              <li>Arquitectura conceptual y prototipo pequeño (Stitch Code como vehículo).</li>
-              <li>Sitio / bitácora viva.</li>
+              {recorteSi.map((item) => <li>{item}</li>)}
+            </ul>
+            <h4 class="mt-10 font-display text-sm font-semibold tracking-wide text-ink-soft uppercase">
+              No cubre
+            </h4>
+            <ul class="mt-5 space-y-3 text-base leading-relaxed text-ink-soft">
+              {recorteNo.map((item) => <li>{item}</li>)}
             </ul>
           </div>
           <div>
-            <h3 class="font-display text-sm font-semibold tracking-wide text-ink-soft uppercase">No entra (por ahora)</h3>
+            <h3 class="font-display text-sm font-semibold tracking-wide text-ink uppercase">
+              Este semestre
+            </h3>
             <ul class="mt-5 space-y-3 text-base leading-relaxed text-ink-soft">
-              <li>Plataforma de certificados / LMS completo.</li>
-              <li>Sustituir docentes.</li>
-              <li>Evaluación masiva.</li>
-              <li>Agente asistente general de vida.</li>
-              <li>Macro de carrera / narrativa multi-curso como producto.</li>
-              <li>Producto comercial de Stitch Code sin marco de investigación.</li>
+              {semestreSi.map((item) => <li>{item}</li>)}
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Bitácora -->
-    <section id="bitacora" class="bg-ink text-paper">
-      <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
+    <section class="bg-ink text-paper">
+      <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread-bright uppercase">
-          Cierre de bitácora · Semana 2
+          Delimitación · Agosto 2026
         </p>
-        <dl class="mt-10 grid gap-10 sm:grid-cols-2">
-          <div>
-            <dt class="font-display text-sm font-semibold text-bloom">¿Qué quería entender?</dt>
-            <dd class="mt-2 text-mist">
-              Cómo convertir historia personal en problema/visión sin vender el diseño como resultado.
-            </dd>
-          </div>
-          <div>
-            <dt class="font-display text-sm font-semibold text-bloom">¿Qué descubrí?</dt>
-            <dd class="mt-2 text-mist">
-              La curiosidad es mi puerta de entrada; el eje del proyecto es sostener la constancia.
-            </dd>
-          </div>
-          <div>
-            <dt class="font-display text-sm font-semibold text-bloom">¿Cómo cambió mi forma de pensar?</dt>
-            <dd class="mt-2 text-mist">
-              Disciplinar el alcance no mata la ambición: la ordena.
-            </dd>
-          </div>
-          <div>
-            <dt class="font-display text-sm font-semibold text-bloom">¿Qué haré después?</dt>
-            <dd class="mt-2 text-mist">
-              Semana 3 — Cómo se sostiene o se quiebra el aprendizaje; dejar que la lectura roce estas hipótesis.
-            </dd>
-          </div>
-        </dl>
-        <p class="mt-12 text-sm text-mist/80">
-          Borrador vivo · Agosto 2026 · Fuentes y enfoques a citar: ver
-          <code class="text-bloom">docs/semana-02-problema.md</code>
+        <p class="mt-6 max-w-2xl text-base leading-relaxed text-mist">
+          Esta página es el problema vigente, no el diario de una semana.
+          Lo que sigue es dejar que la lectura roce estas hipótesis.
+        </p>
+        <p class="mt-8 text-sm text-mist/80">
+          <a href="/lecturas" class="text-bloom underline decoration-bloom/40 underline-offset-4 hover:text-paper">Lecturas</a>
+          <span class="mx-2 text-mist/50">·</span>
+          <a href="/grafo" class="text-bloom underline decoration-bloom/40 underline-offset-4 hover:text-paper">Grafo</a>
         </p>
       </div>
     </section>

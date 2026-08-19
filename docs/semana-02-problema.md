@@ -2,7 +2,7 @@
 
 > Bitácora de investigación · Proyecto Stitch  
 > Periodo: 06–12 agosto 2026  
-> Estado: borrador (revisión personal)
+> Estado: cierre de semana 2 (la página viva del problema es `/problema`)
 
 ---
 
@@ -33,28 +33,43 @@ No se trata de inventar psicología desde cero: se trata de **aplicar y combinar
 
 Eso se vuelve más urgente frente a dos fenómenos que se alimentan entre sí. Por un lado, los **certificados**: al final muchas veces no se aprende nada y sí se pierde el tiempo; se acumulan credenciales como prueba de haber pasado por un recorrido, no de haber transformado la capacidad de hacer. Por otro, una crisis más amplia: un mundo donde se **trabaja solo por trabajar**, sin crecer de verdad en el campo en el que uno se desempeña. Y crecer, para mí, no significa necesariamente un escalón administrativo. Significa tener la capacidad de **lograr más cosas en lo que a uno le interesa** y, con eso, **impactar de buena manera al mundo**.
 
-No quiero otra fábrica de credenciales ni otra rutina vacía. Quiero un agente que acompañe, interactúe y guíe el proceso —también cuando la motivación flaquea— para aumentar la efectividad de lo aprendido, hacer visible el recorrido y sostener la constancia hasta interiorizar el conocimiento.
+Eso me pasó a mí. El problema que investigo no es la anécdota: es lo que enseña cuando le ocurre a cualquiera —quien quiere dominar la técnica y quien está obligado a aprenderla.
+
+### De dónde sale Stitch
+
+| Raíz personal | En el sistema |
+|---------------|---------------|
+| Soledad técnica / abandono | Acompañamiento cuando la constancia falla |
+| Mascota / agente con quien hablar | Presencia interactiva que sostiene el ritmo |
+| Animación, personalización, asociación | Entorno habitable; vínculos que hacen “clic” |
+| Certificados vacíos + trabajo sin crecimiento | Interiorización, criterio de dominio, capacidad de hacer |
+
+Stitch Code es el primer laboratorio (programación). Stitch es el marco: cómo diseñar ese acompañamiento más allá de un dominio. Vocabulario: grafo del sitio. Lecturas que lo anclan: `/lecturas`.
 
 ---
 
 ## 2. El problema
 
-### Qué falla hoy (desde la experiencia)
+### Contraste
 
-1. **Información sin red (y motivación desigual).** Querer aprender —o *tener* que aprender— no basta: el exceso de información sin acompañamiento empuja a abandonar. Da igual si la persona llega con fuego interno o por obligación; sin constancia sostenida, el proceso se quiebra.
-2. **Herramientas sin presencia.** Muchas plataformas informan o evalúan, pero no ofrecen a alguien con quien hablar, interactuar y sostener el ritmo cuando la motivación baja.
-3. **Espacios que no se habitan.** Interfaces estáticas, sin personalización ni sensación de transformación; el aprendizaje se siente como trámite, no como lugar.
-4. **Credenciales vacías y trabajo sin crecimiento.** Certificados y recorridos que consumen tiempo sin construir criterio ni competencia real; en paralelo, una cultura laboral donde se trabaja por inercia, sin ampliar la capacidad de hacer en el propio campo. El “crecimiento” se confunde con subir un escalón administrativo, cuando lo que falta es poder lograr más en lo que a uno le interesa e impactar mejor al mundo.
-5. **Progreso opaco.** La persona no ve con claridad qué ya sabe, qué le falta y dónde puede tomar atajos sin empezar siempre desde cero.
-6. **Constancia tratada como rasgo, no como diseño.** Se asume que “el que quiere, puede”; poco se diseña para **sostener la constancia** con enfoques ya conocidos (asociación, entorno seguro, interiorización, acompañamiento, etc.), cuando la motivación no es alta o no es intrínseca.
+El curso masivo entrega material. El LMS registra actividad. El chatbot responde. El certificado acredita el paso. Casi ninguno sostiene el proceso cuando la motivación baja, ni comprueba que lo aprendido se pueda usar.
+
+### Qué falla hoy
+
+1. **Información sin red.** Cursos, LMS y chatbots entregan contenido o respuestas. Casi ninguno acompaña cuando la motivación baja. Demasiada información y demasiado poco con quien sostener el ritmo: se abandona, venga la persona con fuego interno o por obligación.
+2. **Constancia tratada como rasgo, no como diseño.** Se asume que “el que quiere, puede”; poco se diseña para sostenerla (andamiaje, entorno seguro, espacio para interiorizar) cuando la motivación no es alta o no es intrínseca.
+3. **Credenciales en lugar de uso.** Certificados y rutina laboral premian haber pasado, no poder hacer. Lo aprendido queda enunciable y no se usa: conocimiento inerte.
+4. **Cómo se manifiesta.** El aprendizaje se siente trámite (interfaces que no se habitan) y el progreso es opaco: no se ve qué ya se sabe, qué falta ni dónde atajar.
 
 ### El problema en una frase
 
-> Las personas abandonan el aprendizaje técnico —vengan con motivación fuerte o por obligación— porque enfrentan demasiada información y demasiado poco acompañamiento para sostener la constancia, en espacios que no se sienten vivos y bajo sistemas que premian certificados y rutina laboral —en lugar de criterio, capacidad de hacer e interiorización real.
+> Las personas abandonan el aprendizaje técnico —vengan con motivación fuerte o por obligación— porque enfrentan demasiada información y demasiado poco acompañamiento para sostener la constancia, bajo sistemas que premian certificados en lugar de interiorización real.
 
 ### El problema de investigación (formulado)
 
-¿Cómo diseñar un sistema —con un agente cercano, interactivo y guiador— que sirva a perfiles de motivación diversos, sostenga la **constancia** apoyándose en enfoques respaldados por literatura (asociación, entorno seguro, interiorización, acompañamiento…), aumente la efectividad de lo aprendido, haga visible el progreso, adapte el lenguaje sin perder el núcleo certero, y favorezca criterio de buen uso del conocimiento —sin depender de notas ni de credenciales vacías?
+¿Cómo diseñar un agente de acompañamiento que sostenga la **constancia** y la **interiorización** del aprendizaje autónomo ante motivaciones diversas, sin depender de notas ni de credenciales vacías?
+
+*(En `/problema` esta pregunta va al inicio, una sola vez.)*
 
 ---
 
@@ -63,53 +78,28 @@ No quiero otra fábrica de credenciales ni otra rutina vacía. Quiero un agente 
 ### Horizonte vs. semilla (aclaración)
 
 - **Horizonte (intención):** la transformación personal y, más adelante, poder vincular cursos/temas en una **narrativa**, e incluso imaginar un **macro** del proceso que ayude a construir carrera. Eso orienta el porqué, pero **no es el entregable ahora**.
-- **Semilla (este semestre / objeto de estudio):** interiorizar conocimiento o técnica con acompañamiento cercano; **sostener constancia** ante motivaciones distintas; hacer visible el progreso; cultivar criterio de buen uso **del dominio que se está aprendiendo**.
-
-### Qué quiero lograr (semilla + piezas de diseño)
-
-Un agente que:
-
-- **Sirva a cualquiera:** desde quien quiere dominar la técnica hasta quien está obligado a aprender.
-- **Trabaje la constancia** con enfoques **citables** (asociación, entorno seguro, espacio para interiorizar, presencia/feedback, etc.), no solo “entregue contenido”.
-- **Acompañe, interactúe y guíe** (presencia tipo mascota / compañero, no solo chatbot de respuestas).
-- **Aumente la efectividad** de lo aprendido: menos tiempo perdido, más interiorización real.
-- **Gestione la información aprendida** con árbol y grafo como **espejos en las temáticas**; nodos de personalización como **capa adicional**; atajos por **pruebas de desempeño** → avance en el grafo (no notas).
-- **Mantenga un núcleo certero**, pero adapte el lenguaje según personalidad, preferencias y asociaciones.
-- **Se sienta compañía**: memoria de intereses (sin guardar toda la conversación), plantillas de personalidad, privacidad.
-- **Interiorice conocimiento/técnica** mediante secuencias y el ejemplo; el estándar de buen uso se limita a ese dominio.
-- **Apoye** en un espacio seguro (equivocarse está permitido); el logro lo evalúa el agente vs. lo acordado con el usuario.
+- **Semilla (este semestre / objeto de estudio):** interiorizar conocimiento o técnica con acompañamiento cercano; **sostener constancia** ante motivaciones distintas. El progreso visible y el criterio de buen uso del dominio son **vías**, no un segundo problema.
 
 ### Hipótesis central
 
-Si el aprendizaje se sostiene con un acompañante inteligente —cercano, capaz de trabajar la **constancia** ante motivaciones diversas, con personalización del lenguaje y un mapa del progreso ligado a conocimiento veraz—, la persona puede pasar de “empezar” a **interiorizar y sostener** el dominio que estudia, sin depender de certificados vacíos ni de trabajar-por-trabajar; el crecimiento inmediato se mide en constancia, interiorización y criterio de uso, con la transformación vital y el “macro de carrera” como **intención a futuro**.
+Si el aprendizaje se sostiene con un agente de acompañamiento —cercano, capaz de trabajar la **constancia** ante motivaciones diversas—, **mediante** un mapa del progreso ligado a conocimiento veraz y una personalización del lenguaje que no toca el núcleo, la persona puede pasar de empezar a **interiorizar y sostener** el dominio que estudia, sin depender de certificados vacíos. El crecimiento inmediato se mide en constancia e interiorización; la transformación vital queda como horizonte.
 
-### De dónde sale Stitch
-
-| Raíz personal | En el sistema |
-|---------------|---------------|
-| Mi experiencia de soledad técnica / abandono | Acompañamiento cuando la constancia falla (no solo “si eres curioso”) |
-| Mascota / agente con quien hablar | Presencia interactiva que sostiene el ritmo |
-| Animación, personalización, asociación | Entorno habitable; vínculos que hacen “clic” (programar ↔ juego) |
-| Rechazo a certificados vacíos + trabajo sin crecimiento | Efectividad, criterio de dominio, capacidad de hacer más |
-
-Stitch Code es el primer laboratorio para probar estas ideas en programación. El marco Stitch es la investigación: cómo diseñar ese tipo de sistemas más allá de un solo dominio.
+Las piezas de diseño (grafo/árbol, memoria mínima, lenguaje, espacio seguro, pruebas de desempeño) no son visión: son el «mediante». Están en las hipótesis preliminares de la sección 4.
 
 ---
 
 ## 4. Preguntas de investigación
 
-### Pregunta general
-
-¿Cómo puede diseñarse un agente de acompañamiento que facilite el aprendizaje de alta efectividad para motivaciones diversas —sostener **constancia**, hacer visible el progreso, adaptar la explicación sin perder rigurosidad, y cultivar criterio de buen uso— sin depender de notas ni de credenciales vacías?
-
 ### Preguntas que guían el semestre
+
+La pregunta general está formulada en la sección 2. Estas cuatro la descomponen. Contaría como respuesta, este semestre, un prototipo pequeño en Stitch Code y evidencia acotada de que el acompañamiento ayuda a seguir y a usar lo aprendido —no a acumular notas.
 
 | Mes | Pregunta |
 |-----|----------|
-| Agosto | ¿Cómo se sostiene (o se quiebra) el aprendizaje —constancia, motivación intrínseca u obligada— cuando hay información de sobra y compañía de menos? |
-| Septiembre | ¿Qué puede hacer un agente (presencia, interacción, memoria del aprendiz) para sostener ese proceso? |
-| Octubre | ¿Cómo debe diseñarse ese tutor/agente: modelo del estudiante, flujo, adaptación del lenguaje, visualización del progreso? |
-| Nov–Dic | ¿Cómo demostrar, aunque sea en pequeño, que ese acompañamiento aumenta efectividad y criterio? |
+| Agosto | ¿Cómo se sostiene —o se quiebra— el aprendizaje cuando hay información de sobra y compañía de menos? |
+| Septiembre | ¿Qué puede hacer un agente —presencia, interacción, memoria mínima— para sostener constancia e interiorización? |
+| Octubre | ¿Cómo se diseña ese acompañamiento para sostener ambas, sin volver a la lógica de la nota? |
+| Nov–Dic | ¿Cómo demostrar, aunque sea en pequeño, que ese acompañamiento sostiene la constancia y la interiorización? |
 
 ### Hipótesis de diseño (preliminares — no son resultados)
 
@@ -168,25 +158,30 @@ Lo vital: lo **conversacional** frente a la trampa — espacio **seguro**, sin v
 
 ---
 
-## 5. Alcance de este semestre
+## 5. Alcance
 
-### Sí entra
+### Recorte de la pregunta (sí cubre)
 
-- Fundamentar el problema (aprendizaje, abandono, constancia, tutoría, motivación diversa).
-- Explorar grafo/árbol (temáticas espejo + personalización adicional); pruebas → avance (no nota).
-- Memoria selectiva / personalidades (privacidad primero).
-- Experimentos acotados según tiempo: explicación adaptada, interiorización, espacio seguro.
-- Arquitectura conceptual y prototipo pequeño (Stitch Code como vehículo).
-- Sitio / bitácora viva.
+- Aprendizaje autónomo en dominios técnicos; primer laboratorio: programación (Stitch Code).
+- Quien quiere dominar la técnica y quien está obligado a aprenderla.
+- Acompañamiento que sostiene constancia e interiorización —no sustituye al docente.
+- Criterio sin nota ni credencial vacía.
 
-### No entra (por ahora)
+### Recorte (no cubre)
 
 - Plataforma de certificados / LMS completo.
-- Sustituir docentes.
 - Evaluación masiva.
 - Agente asistente general de vida.
 - Macro de carrera / narrativa multi-curso como producto (queda como horizonte).
 - Producto comercial de Stitch Code sin marco de investigación.
+
+### Este semestre (trabajo, no recorte)
+
+- Fundamentar el problema con lectura (abandono, constancia, tutoría, motivación diversa).
+- Explorar grafo/árbol; pruebas de desempeño → avance, no nota.
+- Memoria selectiva / personalidades (privacidad primero).
+- Arquitectura conceptual y prototipo pequeño (Stitch Code como vehículo).
+- Sitio vivo que documenta la evolución.
 
 ---
 
