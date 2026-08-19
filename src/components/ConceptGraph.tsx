@@ -11,10 +11,14 @@ import {
   conceptById,
   conceptEdges,
   concepts,
+  inNarrative,
+  narratives,
+  narrativesOf,
   neighborsOf,
   relationLabels,
   type ClusterId,
   type Concept,
+  type NarrativeId,
 } from "../data/concepts";
 
 type SimNode = Concept & {
@@ -31,16 +35,36 @@ const CLUSTER_COLOR: Record<ClusterId, string> = {
   self: "#ff8f40",
 };
 
-function seedLayout(width: number, height: number): SimNode[] {
+function seedLayout(
+  width: number,
+  height: number,
+  ids?: readonly string[],
+): SimNode[] {
+  const pool = ids ? concepts.filter((c) => ids.includes(c.id)) : concepts;
   const cx = width / 2;
   const cy = height / 2;
+
+  if (ids) {
+    return pool.map((c, i) => {
+      const angle = (i / Math.max(pool.length, 1)) * Math.PI * 2 - Math.PI / 2;
+      const r = 70 + pool.length * 9;
+      return {
+        ...c,
+        x: cx + Math.cos(angle) * r,
+        y: cy + Math.sin(angle) * r,
+        vx: 0,
+        vy: 0,
+      };
+    });
+  }
+
   const byCluster: Record<ClusterId, Concept[]> = {
     acto: [],
     desempeno: [],
     cognitivo: [],
     self: [],
   };
-  for (const c of concepts) byCluster[c.cluster].push(c);
+  for (const c of pool) byCluster[c.cluster].push(c);
 
   const slots: { id: ClusterId; ox: number; oy: number }[] = [
     { id: "acto", ox: -0.28, oy: -0.22 },
@@ -54,7 +78,7 @@ function seedLayout(width: number, height: number): SimNode[] {
     const group = byCluster[slot.id];
     group.forEach((c, i) => {
       const angle = (i / Math.max(group.length, 1)) * Math.PI * 2 - Math.PI / 2;
-      const r = 48 + group.length * 8;
+      const r = 56 + group.length * 10;
       nodes.push({
         ...c,
         x: cx + slot.ox * width + Math.cos(angle) * r,
@@ -74,26 +98,35 @@ export default function ConceptGraph() {
   const [size, setSize] = useState({ w: 800, h: 560 });
   const [tick, setTick] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
-  const [filter, setFilter] = useState<ClusterId | "todos">("todos");
+  const [filter, setFilter] = useState<NarrativeId | "todos">("todos");
+
+  const activeIds = useMemo(() => {
+    if (filter === "todos") return undefined;
+    return narratives.find((n) => n.id === filter)?.concepts;
+  }, [filter]);
 
   useEffect(() => {
     const el = wrapRef.current;
     if (!el) return;
-    let lastW = 0;
     const apply = () => {
       const w = el.clientWidth;
-      if (Math.abs(w - lastW) < 2) return;
-      lastW = w;
-      const h = Math.max(420, Math.min(640, Math.round(w * 0.62)));
-      setSize({ w, h });
-      nodesRef.current = seedLayout(w, h);
-      setTick((n) => n + 1);
+      const h = Math.max(560, Math.min(820, Math.round(w * 0.78)));
+      setSize((prev) => (prev.w === w && prev.h === h ? prev : { w, h }));
     };
     apply();
     const ro = new ResizeObserver(apply);
     ro.observe(el);
     return () => ro.disconnect();
   }, []);
+
+  useEffect(() => {
+    nodesRef.current = seedLayout(size.w, size.h, activeIds);
+    setTick((n) => n + 1);
+  }, [size, activeIds]);
+
+  useEffect(() => {
+    if (selected && !inNarrative(selected, filter)) setSelected(null);
+  }, [filter, selected]);
 
   useEffect(() => {
     let frame = 0;
@@ -110,9 +143,9 @@ export default function ConceptGraph() {
 
       const cx = w / 2;
       const cy = h / 2;
-      const charge = 2800;
-      const spring = 0.012;
-      const rest = 118;
+      const charge = 4200;
+      const spring = 0.01;
+      const rest = 132;
       const damp = 0.82;
       const pad = 36;
 
@@ -195,7 +228,12 @@ export default function ConceptGraph() {
   }, [selected]);
 
   const selectedConcept = selected ? conceptById(selected) : null;
-  const selectedEdges = selected ? neighborsOf(selected) : [];
+  const selectedEdges = selected
+    ? neighborsOf(selected).filter((edge) => {
+        const other = edge.from === selected ? edge.to : edge.from;
+        return inNarrative(other, filter);
+      })
+    : [];
 
   const onPointerDown = useCallback(
     (id: string, event: ReactPointerEvent<SVGGElement>) => {
@@ -224,17 +262,15 @@ export default function ConceptGraph() {
     dragId.current = null;
   }, []);
 
-  const visible = (_id: string, cluster: ClusterId) => {
-    if (filter !== "todos" && cluster !== filter) return false;
-    return true;
-  };
+  const activeNarrative =
+    filter === "todos" ? null : narratives.find((n) => n.id === filter);
 
   return (
     <div className="space-y-10">
       <div
         className="flex flex-wrap gap-2"
         role="tablist"
-        aria-label="Filtrar conceptos por grupo"
+        aria-label="Filtrar el grafo por narrativa"
       >
         <button
           type="button"
@@ -248,17 +284,17 @@ export default function ConceptGraph() {
               : "border-line bg-transparent text-ink-soft hover:border-thread hover:text-thread",
           ].join(" ")}
         >
-          Todos
+          Todas
         </button>
-        {clusters.map((cluster) => {
-          const active = filter === cluster.id;
+        {narratives.map((narrative) => {
+          const active = filter === narrative.id;
           return (
             <button
-              key={cluster.id}
+              key={narrative.id}
               type="button"
               role="tab"
               aria-selected={active}
-              onClick={() => setFilter(cluster.id)}
+              onClick={() => setFilter(narrative.id)}
               className={[
                 "border px-4 py-2 text-sm font-medium transition-colors duration-200",
                 active
@@ -266,11 +302,22 @@ export default function ConceptGraph() {
                   : "border-line bg-transparent text-ink-soft hover:border-thread hover:text-thread",
               ].join(" ")}
             >
-              {cluster.label}
+              {narrative.label}
             </button>
           );
         })}
       </div>
+      {activeNarrative ? (
+        <p className="-mt-6 max-w-2xl text-sm leading-relaxed text-ink-soft">
+          {activeNarrative.blurb}
+        </p>
+      ) : (
+        <p className="-mt-6 max-w-2xl text-sm leading-relaxed text-ink-soft">
+          El mapa completo es denso a propósito. Cada narrativa recorta un
+          subgrafo: un aspecto del aprendizaje, o el modo en que Stitch lo
+          acompaña.
+        </p>
+      )}
 
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(16rem,0.8fr)]">
         <div
@@ -296,11 +343,8 @@ export default function ConceptGraph() {
               const a = nodes.find((n) => n.id === edge.from);
               const b = nodes.find((n) => n.id === edge.to);
               if (!a || !b) return null;
-              if (!visible(a.id, a.cluster) || !visible(b.id, b.cluster)) {
-                return null;
-              }
               const hot =
-                !relatedIds || relatedIds.has(a.id) && relatedIds.has(b.id);
+                !relatedIds || (relatedIds.has(a.id) && relatedIds.has(b.id));
               return (
                 <line
                   key={`${edge.from}-${edge.to}-${edge.kind}`}
@@ -308,14 +352,13 @@ export default function ConceptGraph() {
                   y1={a.y}
                   x2={b.x}
                   y2={b.y}
-                  stroke={hot ? "#7a3588" : "#e4c4b4"}
+                  stroke={hot ? "#7a3588" : "#c9897a"}
                   strokeWidth={hot && selected ? 2 : 1}
-                  strokeOpacity={hot ? 0.7 : 0.18}
+                  strokeOpacity={hot ? 0.78 : selected ? 0.12 : 0.42}
                 />
               );
             })}
             {nodes.map((node) => {
-              if (!visible(node.id, node.cluster)) return null;
               const hot = !relatedIds || relatedIds.has(node.id);
               const isSel = selected === node.id;
               const color = CLUSTER_COLOR[node.cluster];
@@ -362,6 +405,26 @@ export default function ConceptGraph() {
               <p className="mt-4 text-base leading-relaxed text-ink-soft">
                 {selectedConcept.definition}
               </p>
+              {narrativesOf(selectedConcept.id).length > 0 && (
+                <ul className="mt-5 flex flex-wrap gap-2">
+                  {narrativesOf(selectedConcept.id).map((n) => (
+                    <li key={n.id}>
+                      <button
+                        type="button"
+                        onClick={() => setFilter(n.id)}
+                        className={[
+                          "border px-2.5 py-1 text-xs transition-colors duration-200",
+                          filter === n.id
+                            ? "border-thread bg-thread text-paper"
+                            : "border-line text-ink-soft hover:border-thread hover:text-thread",
+                        ].join(" ")}
+                      >
+                        {n.label}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
               <h3 className="mt-8 font-display text-sm font-semibold tracking-wide text-ink uppercase">
                 Vínculos
               </h3>
@@ -407,26 +470,45 @@ export default function ConceptGraph() {
           ) : (
             <div>
               <p className="font-display text-xs font-semibold tracking-[0.18em] text-thread uppercase">
-                Vocabulario
+                Narrativas
               </p>
               <h2 className="mt-2 font-display text-2xl font-semibold text-ink">
                 Elige un concepto
               </h2>
               <p className="mt-4 text-base leading-relaxed text-ink-soft">
-                Semilla para manejar un lenguaje común. Los grupos y las flechas
-                son hipótesis de relación, no un mapa cerrado.
+                Cada narrativa es un subgrafo: un conjunto de conceptos que
+                hablan de un mismo aspecto. El color del nodo sigue siendo el
+                tipo (acto, desempeño, cognitivo, persona).
               </p>
               <ul className="mt-8 space-y-4">
+                {narratives.map((narrative) => (
+                  <li key={narrative.id}>
+                    <button
+                      type="button"
+                      onClick={() => setFilter(narrative.id)}
+                      className="text-left hover:text-thread"
+                    >
+                      <p className="font-display text-sm font-semibold text-ink">
+                        {narrative.label}
+                      </p>
+                      <p className="mt-1 text-sm text-ink-soft">
+                        {narrative.blurb}
+                      </p>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+              <ul className="mt-8 flex flex-wrap gap-x-4 gap-y-2">
                 {clusters.map((cluster) => (
-                  <li key={cluster.id}>
-                    <p className="font-display text-sm font-semibold text-ink">
-                      <span
-                        className="mr-2 inline-block h-2 w-2 rounded-full"
-                        style={{ background: CLUSTER_COLOR[cluster.id] }}
-                      />
-                      {cluster.label}
-                    </p>
-                    <p className="mt-1 text-sm text-ink-soft">{cluster.blurb}</p>
+                  <li
+                    key={cluster.id}
+                    className="flex items-center gap-2 text-xs text-ink-soft"
+                  >
+                    <span
+                      className="inline-block h-2 w-2 rounded-full"
+                      style={{ background: CLUSTER_COLOR[cluster.id] }}
+                    />
+                    {cluster.label}
                   </li>
                 ))}
               </ul>
@@ -441,7 +523,8 @@ export default function ConceptGraph() {
         </h2>
         <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {concepts
-            .filter((c) => filter === "todos" || c.cluster === filter)
+            .filter((c) => inNarrative(c.id, filter))
+            .sort((a, b) => a.label.localeCompare(b.label, "es"))
             .map((c) => (
               <li key={c.id}>
                 <button
