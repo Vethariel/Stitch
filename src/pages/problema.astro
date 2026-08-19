@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { phases } from "../data/schedule";
 
 const pregunta =
   "¿Cómo diseñar un agente de acompañamiento que sostenga la constancia y la interiorización del aprendizaje autónomo ante motivaciones diversas, sin depender de notas ni de credenciales vacías?";
@@ -39,25 +40,6 @@ const roots = [
   {
     from: "Certificados vacíos + trabajo sin crecimiento",
     to: "Interiorización, criterio de dominio, capacidad de hacer",
-  },
-];
-
-const semesterQs = [
-  {
-    when: "Agosto",
-    q: "¿Cómo se sostiene —o se quiebra— el aprendizaje cuando hay información de sobra y compañía de menos?",
-  },
-  {
-    when: "Septiembre",
-    q: "¿Qué puede hacer un agente —presencia, interacción, memoria mínima— para sostener constancia e interiorización?",
-  },
-  {
-    when: "Octubre",
-    q: "¿Cómo se diseña ese acompañamiento para sostener ambas, sin volver a la lógica de la nota?",
-  },
-  {
-    when: "Nov – Dic",
-    q: "¿Cómo demostrar, aunque sea en pequeño, que ese acompañamiento sostiene la constancia y la interiorización?",
   },
 ];
 
@@ -291,13 +273,13 @@ const semestreSi = [
 
         <ol class="mt-14 grid gap-10 sm:grid-cols-2">
           {
-            semesterQs.map((item, i) => (
+            phases.map((phase, i) => (
               <li>
                 <span class="font-display text-xs font-semibold tracking-wide text-thread uppercase">
-                  {item.when}
+                  {phase.short}
                 </span>
                 <p class="mt-2 font-display text-lg font-semibold leading-snug text-ink">
-                  {item.q}
+                  {phase.question}
                 </p>
                 <span class="mt-2 block font-display text-sm text-mist">{String(i + 1).padStart(2, "0")}</span>
               </li>

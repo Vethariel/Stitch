@@ -96,10 +96,10 @@ La pregunta general está formulada en la sección 2. Estas cuatro la descompone
 
 | Mes | Pregunta |
 |-----|----------|
-| Agosto | ¿Cómo se sostiene —o se quiebra— el aprendizaje cuando hay información de sobra y compañía de menos? |
-| Septiembre | ¿Qué puede hacer un agente —presencia, interacción, memoria mínima— para sostener constancia e interiorización? |
-| Octubre | ¿Cómo se diseña ese acompañamiento para sostener ambas, sin volver a la lógica de la nota? |
-| Nov–Dic | ¿Cómo demostrar, aunque sea en pequeño, que ese acompañamiento sostiene la constancia y la interiorización? |
+| Agosto | ¿Cómo se sostiene —o se quiebra— el aprendizaje autónomo? |
+| Septiembre | ¿Qué puede hacer un agente de acompañamiento en ese proceso? |
+| Octubre | ¿Cómo se diseña ese acompañamiento sin volver a la lógica de la nota? |
+| Nov–Dic | ¿Cómo demostrar que sostiene constancia e interiorización? |
 
 ### Hipótesis de diseño (preliminares — no son resultados)
 
