@@ -43,52 +43,23 @@ function seedLayout(
   const pool = ids ? concepts.filter((c) => ids.includes(c.id)) : concepts;
   const cx = width / 2;
   const cy = height / 2;
+  const n = Math.max(pool.length, 1);
 
-  if (ids) {
-    return pool.map((c, i) => {
-      const angle = (i / Math.max(pool.length, 1)) * Math.PI * 2 - Math.PI / 2;
-      const r = 70 + pool.length * 9;
-      return {
-        ...c,
-        x: cx + Math.cos(angle) * r,
-        y: cy + Math.sin(angle) * r,
-        vx: 0,
-        vy: 0,
-      };
-    });
-  }
+  // Un solo anillo (con jitter leve): evita el sesgo a las 4 esquinas del seed por cluster.
+  const maxR = Math.min(width, height) * 0.36;
+  const r = Math.min(maxR, 48 + n * 5.5);
 
-  const byCluster: Record<ClusterId, Concept[]> = {
-    acto: [],
-    desempeno: [],
-    cognitivo: [],
-    self: [],
-  };
-  for (const c of pool) byCluster[c.cluster].push(c);
-
-  const slots: { id: ClusterId; ox: number; oy: number }[] = [
-    { id: "acto", ox: -0.28, oy: -0.22 },
-    { id: "desempeno", ox: 0.28, oy: -0.22 },
-    { id: "cognitivo", ox: -0.22, oy: 0.28 },
-    { id: "self", ox: 0.28, oy: 0.28 },
-  ];
-
-  const nodes: SimNode[] = [];
-  for (const slot of slots) {
-    const group = byCluster[slot.id];
-    group.forEach((c, i) => {
-      const angle = (i / Math.max(group.length, 1)) * Math.PI * 2 - Math.PI / 2;
-      const r = 56 + group.length * 10;
-      nodes.push({
-        ...c,
-        x: cx + slot.ox * width + Math.cos(angle) * r,
-        y: cy + slot.oy * height + Math.sin(angle) * r,
-        vx: 0,
-        vy: 0,
-      });
-    });
-  }
-  return nodes;
+  return pool.map((c, i) => {
+    const angle = (i / n) * Math.PI * 2 - Math.PI / 2;
+    const jitter = ((i * 17) % 7) - 3;
+    return {
+      ...c,
+      x: cx + Math.cos(angle) * (r + jitter),
+      y: cy + Math.sin(angle) * (r + jitter * 0.6),
+      vx: 0,
+      vy: 0,
+    };
+  });
 }
 
 export default function ConceptGraph() {
@@ -143,11 +114,16 @@ export default function ConceptGraph() {
 
       const cx = w / 2;
       const cy = h / 2;
-      const charge = 4200;
-      const spring = 0.01;
-      const rest = 132;
-      const damp = 0.82;
-      const pad = 36;
+      // Escala con n: con ~60 nodos, 4200 fijo empujaba todo a las esquinas.
+      const charge = Math.min(3200, 140000 / Math.max(n, 1));
+      const spring = n > 40 ? 0.006 : 0.01;
+      const rest = n > 40 ? 108 : 132;
+      const damp = 0.86;
+      const pad = 44;
+      const centerPull = n > 40 ? 0.012 : 0.005;
+      const wall = 0.08;
+      const maxV = 8;
+      const maxForce = 14;
 
       for (let i = 0; i < n; i++) {
         for (let j = i + 1; j < n; j++) {
@@ -156,7 +132,10 @@ export default function ConceptGraph() {
           let dx = a.x - b.x;
           let dy = a.y - b.y;
           let dist = Math.hypot(dx, dy) || 0.01;
-          const force = charge / (dist * dist);
+          // Suelo de distancia evita explosiones cuando se solapan.
+          const effective = Math.max(dist, 28);
+          let force = charge / (effective * effective);
+          if (force > maxForce) force = maxForce;
           dx = (dx / dist) * force;
           dy = (dy / dist) * force;
           if (dragId.current !== a.id) {
@@ -197,12 +176,40 @@ export default function ConceptGraph() {
           node.vy = 0;
           continue;
         }
-        node.vx += (cx - node.x) * 0.004;
-        node.vy += (cy - node.y) * 0.004;
+        node.vx += (cx - node.x) * centerPull;
+        node.vy += (cy - node.y) * centerPull;
+
+        // Paredes blandas: empujan hacia adentro en vez de apilar en el borde.
+        if (node.x < pad * 2) node.vx += (pad * 2 - node.x) * wall;
+        if (node.x > w - pad * 2) node.vx -= (node.x - (w - pad * 2)) * wall;
+        if (node.y < pad * 2) node.vy += (pad * 2 - node.y) * wall;
+        if (node.y > h - pad * 2) node.vy -= (node.y - (h - pad * 2)) * wall;
+
         node.vx *= damp;
         node.vy *= damp;
-        node.x = Math.min(w - pad, Math.max(pad, node.x + node.vx));
-        node.y = Math.min(h - pad, Math.max(pad, node.y + node.vy));
+        const speed = Math.hypot(node.vx, node.vy);
+        if (speed > maxV) {
+          node.vx = (node.vx / speed) * maxV;
+          node.vy = (node.vy / speed) * maxV;
+        }
+
+        node.x += node.vx;
+        node.y += node.vy;
+        if (node.x < pad) {
+          node.x = pad;
+          node.vx = Math.abs(node.vx) * 0.3;
+        } else if (node.x > w - pad) {
+          node.x = w - pad;
+          node.vx = -Math.abs(node.vx) * 0.3;
+        }
+        if (node.y < pad) {
+          node.y = pad;
+          node.vy = Math.abs(node.vy) * 0.3;
+        } else if (node.y > h - pad) {
+          node.y = h - pad;
+          node.vy = -Math.abs(node.vy) * 0.3;
+        }
+
         energy += node.vx * node.vx + node.vy * node.vy;
       }
 
@@ -217,6 +224,22 @@ export default function ConceptGraph() {
   }, [size]);
 
   const nodes = nodesRef.current;
+  const nodeIdSet = useMemo(
+    () => new Set(nodes.map((n) => n.id)),
+    // tick updates when layout/filter changes positions or membership
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [tick, filter],
+  );
+  const visibleEdges = useMemo(() => {
+    const seen = new Set<string>();
+    return conceptEdges.filter((edge) => {
+      if (!nodeIdSet.has(edge.from) || !nodeIdSet.has(edge.to)) return false;
+      const key = `${edge.from}>${edge.to}:${edge.kind}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }, [nodeIdSet]);
   const relatedIds = useMemo(() => {
     if (!selected) return null;
     const ids = new Set<string>([selected]);
@@ -313,9 +336,8 @@ export default function ConceptGraph() {
         </p>
       ) : (
         <p className="-mt-6 max-w-2xl text-sm leading-relaxed text-ink-soft">
-          El mapa completo es denso a propósito. Cada narrativa recorta un
-          subgrafo: un aspecto del aprendizaje, o el modo en que Stitch lo
-          acompaña.
+          Vista de todas las relaciones. Elige una narrativa arriba para ver solo
+          los conceptos de ese aspecto.
         </p>
       )}
 
@@ -339,7 +361,7 @@ export default function ConceptGraph() {
               if (e.target === e.currentTarget) setSelected(null);
             }}
           >
-            {conceptEdges.map((edge) => {
+            {visibleEdges.map((edge) => {
               const a = nodes.find((n) => n.id === edge.from);
               const b = nodes.find((n) => n.id === edge.to);
               if (!a || !b) return null;
