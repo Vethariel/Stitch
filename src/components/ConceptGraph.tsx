@@ -424,6 +424,9 @@ export default function ConceptGraph() {
               <h2 className="mt-2 font-display text-2xl font-semibold text-ink">
                 {selectedConcept.label}
               </h2>
+              <p className="mt-1 font-display text-sm italic text-ink-soft">
+                {selectedConcept.en}
+              </p>
               <p className="mt-4 text-base leading-relaxed text-ink-soft">
                 {selectedConcept.definition}
               </p>
@@ -495,12 +498,12 @@ export default function ConceptGraph() {
                 Narrativas
               </p>
               <h2 className="mt-2 font-display text-2xl font-semibold text-ink">
-                Elige un concepto
+                Conceptos y narrativas
               </h2>
               <p className="mt-4 text-base leading-relaxed text-ink-soft">
-                Cada narrativa es un subgrafo: un conjunto de conceptos que
-                hablan de un mismo aspecto. El color del nodo sigue siendo el
-                tipo (acto, desempeño, cognitivo, persona).
+                Las narrativas agrupan conceptos de un mismo aspecto del
+                aprendizaje. El color de cada nodo indica su tipo: acto,
+                desempeño, cognitivo o persona.
               </p>
               <ul className="mt-8 space-y-4">
                 {narratives.map((narrative) => (
@@ -557,7 +560,10 @@ export default function ConceptGraph() {
                   <span className="font-display text-lg font-semibold text-ink hover:text-thread">
                     {c.label}
                   </span>
-                  <span className="mt-1 block text-sm leading-relaxed text-ink-soft">
+                  <span className="mt-0.5 block font-display text-sm italic text-ink-soft">
+                    {c.en}
+                  </span>
+                  <span className="mt-2 block text-sm leading-relaxed text-ink-soft">
                     {c.definition}
                   </span>
                 </button>
