@@ -39,6 +39,34 @@
 
 ---
 
+## Agosto 2026 — ¿Cómo se sostiene —o se quiebra— el aprendizaje autónomo?
+
+Cinco lecturas ya en esta lista, leídas como **perspectivas distintas** de la pregunta del mes (complementan lo fichado en `/lecturas`: Hattie, Carless, Dunlosky). Mínimo viable: 10 + 11 + 9.
+
+| Perspectiva | Ítem | Cómo responde |
+|-------------|------|----------------|
+| Motivación | **10** Ryan & Deci (2000) | Se sostiene con autonomía, competencia y vínculo; se quiebra cuando el control externo sustituye al interés. |
+| Proceso del aprendiz | **11** Zimmerman (2002) | Se sostiene con planificar–monitorear–ajustar; se quiebra sin ese ciclo. |
+| Carga / soledad con material difícil | **9** Kirschner, Sweller & Clark (2006) | Se quiebra cuando el novato queda solo con guía mínima o exceso de información. |
+| Metacognición / ilusiones | **16** Bjork, Dunlosky & Kornell (2013) | Se quiebra porque la fluidez engaña: se elige lo fácil y se evita lo que sostiene a largo plazo. |
+| Acompañamiento que falta | **5** Wood, Bruner & Ross (1976) | Se sostiene con andamiaje temporal de lo que aún excede; se quiebra sin ese apoyo (*fading*). |
+
+---
+
+## 26 Ago 2026 — Dónde se quiebra el proceso en las herramientas de hoy
+
+Objetivo del hito: comparar **cursos, LMS y chatbots** — qué entregan y qué no acompañan. Lecturas **fuera** de la numeración de impacto (capa edtech / presencia); mínimo viable: Jordan + Coates + Wollny.
+
+| Perspectiva | Paper | Cómo alimenta la comparación |
+|-------------|-------|------------------------------|
+| Cursos masivos / abandono | Jordan, K. (2015). Massive open online course completion rates revisited: Assessment, length and attrition. *International Review of Research in Open and Distributed Learning, 16*(3), 341–358. https://doi.org/10.19173/irrodl.v16i3.2112 | El curso entrega contenido y evaluación a escala; la retención se quiebra pronto (mediana de completion ~12%). Fallo de “material + quiz” sin sostén del proceso. |
+| LMS como gestión | Coates, H., James, R., & Baldwin, G. (2005). A critical examination of the effects of learning management systems on university teaching and learning. *Tertiary Education and Management, 11*(1), 19–36. https://doi.org/10.1080/13583883.2005.9967137 | El LMS organiza entrega, registro y administración; no equivale por sí solo a acompañamiento pedagógico. |
+| Chatbots (límites) | Wollny, S., Schneider, J., Di Mitri, D., Weidlich, J., Rittberger, M., & Drachsler, H. (2021). Are We There Yet? — A Systematic Literature Review on Chatbots in Education. *Frontiers in Artificial Intelligence, 4*, 654924. https://doi.org/10.3389/frai.2021.654924 | Qué hacen (FAQ, apoyo puntual, feedback corto) y qué rara vez cubren (proceso largo, motivación, memoria de recorrido). |
+| Presencia que falta | Garrison, D. R., Anderson, T., & Archer, W. (2000). Critical inquiry in a text-based environment: Computer conferencing in higher education. *The Internet and Higher Education, 2*(2–3), 87–105. https://doi.org/10.1016/S1096-7516(00)00016-6 | *Teaching / social / cognitive presence*: vocabulario para nombrar lo que no aportan un LMS solo-contenido ni un chatbot solo-respuesta. |
+| Contraste: tutoría que sí acompaña | VanLehn, K. (2011). The relative effectiveness of human tutoring, intelligent tutoring systems, and other tutoring systems. *Educational Psychologist, 46*(4), 197–221. https://doi.org/10.1080/00461520.2011.603676 | Qué hace un tutor/ITS efectivo (diagnóstico, paso a paso, andamiaje) frente a curso/LMS/chatbot genérico — polo positivo de la tabla. |
+
+---
+
 ## Mapa del campo
 
 ### 1. National Research Council. (2000). *How people learn: Brain, mind, experience, and school* (ed. ampliada). National Academy Press.
@@ -234,9 +262,14 @@ Compañero de diseño (integrar ideas entre sí, no acumularlas): Linn, M. C., C
 
 | En el inventario | En esta lista |
 |------------------|---------------|
+| NRC, *How people learn* (2000) | Ítem 1 — mapa del campo; fichado caps. 1–2 en `/lecturas` |
 | Hattie y Timperley (2007) | Ítem 6 — núcleo de citación en feedback |
 | Carless y Boud (2018) | Fuera: específico de *feedback literacy* en educación superior; cuelga de Sadler más que de esta lista de entrada |
 | Dunlosky et al. (2013) | Ítem 2 — técnicas de estudio; fichado con matiz (marco tradicional vs. modelo Stitch) |
+
+**Agosto (pregunta del mes):** ítems **5, 9, 10, 11, 16** — ver sección *Agosto 2026* arriba.
+
+**26 Ago (herramientas de hoy):** Jordan (2015), Coates et al. (2005), Wollny et al. (2021), Garrison et al. (2000), VanLehn (2011) — ver sección *26 Ago 2026* arriba.
 
 Esta lista cubre **aprendizaje en general** con umbral de impacto. Analogía: ítem 15. Pasivo vs. activo: ítem 16. Saber vs. aplicar: ítem 17. Spacing / interleaving / integración: ítems 18–20. Siguiente capa, más cerca del prototipo: agentes pedagógicos, modelos abiertos del aprendiz, ITS.
 
