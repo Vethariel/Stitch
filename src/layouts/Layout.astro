@@ -4,7 +4,7 @@ import "../styles/global.css";
 interface Props {
   title?: string;
   description?: string;
-  active?: "inicio" | "cronograma" | "problema" | "lecturas" | "grafo";
+  active?: "inicio" | "cronograma" | "problema" | "lecturas" | "grafo" | "marco";
 }
 
 const {
@@ -48,6 +48,15 @@ const {
             ]}
           >
             Problema
+          </a>
+          <a
+            href="/marco"
+            class:list={[
+              "transition-colors hover:text-thread",
+              active === "marco" && "text-ink font-medium",
+            ]}
+          >
+            Marco
           </a>
           <a
             href="/cronograma"

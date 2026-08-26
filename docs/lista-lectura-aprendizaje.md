@@ -262,7 +262,7 @@ Compañero de diseño (integrar ideas entre sí, no acumularlas): Linn, M. C., C
 
 | En el inventario | En esta lista |
 |------------------|---------------|
-| NRC, *How people learn* (2000) | Ítem 1 — mapa del campo; fichado caps. 1–2 en `/lecturas` |
+| NRC, *How people learn* (2000) | Ítem 1 — mapa del campo; fichado caps. 1–3 en `/lecturas` |
 | Hattie y Timperley (2007) | Ítem 6 — núcleo de citación en feedback |
 | Carless y Boud (2018) | Fuera: específico de *feedback literacy* en educación superior; cuelga de Sadler más que de esta lista de entrada |
 | Dunlosky et al. (2013) | Ítem 2 — técnicas de estudio; fichado con matiz (marco tradicional vs. modelo Stitch) |

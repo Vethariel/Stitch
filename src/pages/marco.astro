@@ -1,0 +1,220 @@
+---
+import Layout from "../layouts/Layout.astro";
+import {
+  frameworkMeta,
+  frameworkQuestion,
+  frameworkRules,
+  frameworkScope,
+  frameworkStance,
+  frameworkVersions,
+  sourceLabels,
+} from "../data/framework";
+---
+
+<Layout
+  title="Marco — Proyecto Stitch"
+  description="Marco de diseño Stitch y modelo asociado: criterios, mecanismos y versiones (borrador)."
+  active="marco"
+>
+  <main class="bg-paper">
+    <section class="border-b border-line">
+      <div class="mx-auto max-w-6xl px-5 pt-28 pb-20 sm:px-8 sm:pt-36 sm:pb-28 md:pt-40">
+        <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread uppercase">
+          Diseño · {frameworkMeta.label}
+        </p>
+        <h1 class="mt-5 max-w-3xl font-display text-3xl font-semibold text-ink sm:text-4xl md:text-5xl">
+          Marco y modelo
+        </h1>
+        <p class="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
+          {frameworkMeta.note}
+        </p>
+        <p class="mt-4 font-display text-sm text-ink-soft">
+          Versión {frameworkMeta.version} · {frameworkMeta.date}
+          <span class="mx-2 text-line">·</span>
+          Snapshot: <code class="text-thread">{frameworkMeta.snapshotPath}</code>
+        </p>
+        <nav class="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-soft" aria-label="En esta página">
+          <a href="#distincion" class="hover:text-thread">Distinción</a>
+          <a href="#pregunta" class="hover:text-thread">Pregunta</a>
+          <a href="#alcance" class="hover:text-thread">Alcance</a>
+          <a href="#reglas" class="hover:text-thread">Reglas y modelo</a>
+          <a href="#versiones" class="hover:text-thread">Versiones</a>
+        </nav>
+      </div>
+    </section>
+
+    <section id="distincion" class="border-b border-line">
+      <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+        <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread uppercase">
+          01 · Distinción
+        </p>
+        <h2 class="mt-4 max-w-2xl font-display text-3xl font-semibold text-ink sm:text-4xl">
+          Qué vale y cómo se concreta
+        </h2>
+        <div class="mt-12 grid gap-10 lg:grid-cols-3">
+          <div>
+            <h3 class="font-display text-sm font-semibold tracking-wide text-ink uppercase">
+              Marco
+            </h3>
+            <p class="mt-3 text-base leading-relaxed text-ink-soft">
+              {frameworkStance.marco}
+            </p>
+          </div>
+          <div>
+            <h3 class="font-display text-sm font-semibold tracking-wide text-ink uppercase">
+              Modelo
+            </h3>
+            <p class="mt-3 text-base leading-relaxed text-ink-soft">
+              {frameworkStance.modelo}
+            </p>
+          </div>
+          <div>
+            <h3 class="font-display text-sm font-semibold tracking-wide text-ink uppercase">
+              Relación
+            </h3>
+            <p class="mt-3 text-base leading-relaxed text-ink-soft">
+              {frameworkStance.relacion}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pregunta" class="border-b border-line bg-paper-deep/50">
+      <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+        <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread uppercase">
+          02 · Ancla
+        </p>
+        <h2 class="mt-4 max-w-2xl font-display text-3xl font-semibold text-ink sm:text-4xl">
+          Pregunta de investigación
+        </h2>
+        <p class="mt-8 max-w-3xl text-base leading-relaxed text-ink italic sm:text-lg">
+          {frameworkQuestion}
+        </p>
+        <p class="mt-6 max-w-2xl text-sm text-ink-soft">
+          Detalle del problema y las hipótesis de partida en{" "}
+          <a href="/problema" class="text-thread underline decoration-thread/40 underline-offset-4 hover:text-thread-dim">Problema</a>.
+          Lecturas que alimentan las reglas en{" "}
+          <a href="/lecturas" class="text-thread underline decoration-thread/40 underline-offset-4 hover:text-thread-dim">Lecturas</a>.
+        </p>
+      </div>
+    </section>
+
+    <section id="alcance" class="border-b border-line">
+      <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+        <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread uppercase">
+          03 · Alcance
+        </p>
+        <h2 class="mt-4 max-w-2xl font-display text-3xl font-semibold text-ink sm:text-4xl">
+          Qué entra y qué no
+        </h2>
+        <div class="mt-12 grid gap-12 lg:grid-cols-2">
+          <div>
+            <h3 class="font-display text-sm font-semibold tracking-wide text-thread uppercase">
+              Incluye
+            </h3>
+            <ul class="mt-5 space-y-3 text-base leading-relaxed text-ink-soft">
+              {frameworkScope.includes.map((item) => (
+                <li class="border-l-2 border-thread/40 pl-4">{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-display text-sm font-semibold tracking-wide text-ink uppercase">
+              No incluye (ahora)
+            </h3>
+            <ul class="mt-5 space-y-3 text-base leading-relaxed text-ink-soft">
+              {frameworkScope.excludes.map((item) => (
+                <li class="border-l-2 border-line pl-4">{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reglas" class="border-b border-line bg-paper-deep/50">
+      <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+        <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread uppercase">
+          04 · Reglas
+        </p>
+        <h2 class="mt-4 max-w-3xl font-display text-3xl font-semibold text-ink sm:text-4xl">
+          Reglas del marco y cómo del modelo
+        </h2>
+        <p class="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
+          Cada bloque: la regla (qué debe valer) y el modelo borrador (cómo se concreta).
+          Fuentes = lecturas e hipótesis que lo sostienen hoy.
+        </p>
+
+        <ol class="mt-16 space-y-14">
+          {
+            frameworkRules.map((r, i) => (
+              <li id={r.id} class="max-w-3xl border-t border-line pt-10 first:border-t-0 first:pt-0">
+                <p class="font-display text-xs font-semibold tracking-wide text-signal uppercase">
+                  {String(i + 1).padStart(2, "0")} · {r.id}
+                </p>
+                <h3 class="mt-2 font-display text-xl font-semibold text-ink sm:text-2xl">
+                  {r.title}
+                </h3>
+                <p class="mt-4 text-base leading-relaxed text-ink">
+                  <span class="font-display text-xs font-semibold tracking-wide text-thread uppercase">
+                    Marco ·{" "}
+                  </span>
+                  {r.rule}
+                </p>
+                <div class="mt-6">
+                  <p class="font-display text-xs font-semibold tracking-wide text-ink-soft uppercase">
+                    Modelo · cómo
+                  </p>
+                  <p class="mt-2 text-base leading-relaxed text-ink-soft">
+                    {r.model.summary}
+                  </p>
+                  <ul class="mt-4 space-y-2 text-sm leading-relaxed text-ink-soft">
+                    {r.model.pieces.map((p) => (
+                      <li class="flex gap-2">
+                        <span class="text-thread" aria-hidden="true">—</span>
+                        <span>{p}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <p class="mt-5 text-xs text-ink-soft/80">
+                  Fuentes:{" "}
+                  {r.sources.map((s) => sourceLabels[s]).join(" · ")}
+                </p>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </section>
+
+    <section id="versiones" class="bg-ink text-paper">
+      <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+        <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread-bright uppercase">
+          Control de versiones
+        </p>
+        <h2 class="mt-4 max-w-2xl font-display text-2xl font-semibold sm:text-3xl">
+          Snapshots
+        </h2>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-mist">
+          Cada versión estable se congela en markdown bajo <code class="text-bloom">docs/marco/</code>.
+          El sitio muestra la versión viva en <code class="text-bloom">src/data/framework.ts</code>.
+        </p>
+        <ul class="mt-10 space-y-6 max-w-2xl">
+          {
+            frameworkVersions.map((v) => (
+              <li class="border-l-2 border-thread-bright/40 pl-5">
+                <p class="font-display text-sm font-semibold text-paper">
+                  v{v.version} · {v.date}
+                </p>
+                <p class="mt-2 text-sm leading-relaxed text-mist">{v.summary}</p>
+                <p class="mt-2 text-xs text-mist/70">{v.snapshot}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+  </main>
+</Layout>
