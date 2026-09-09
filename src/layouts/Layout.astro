@@ -4,7 +4,7 @@ import "../styles/global.css";
 interface Props {
   title?: string;
   description?: string;
-  active?: "inicio" | "cronograma" | "problema" | "lecturas" | "grafo" | "marco" | "mapa";
+  active?: "inicio" | "cronograma" | "problema" | "lecturas" | "vocabulario" | "marco" | "mapa";
 }
 
 const {
@@ -86,13 +86,13 @@ const {
             Lecturas
           </a>
           <a
-            href="/grafo"
+            href="/vocabulario"
             class:list={[
               "transition-colors hover:text-thread",
-              active === "grafo" && "text-ink font-medium",
+              active === "vocabulario" && "text-ink font-medium",
             ]}
           >
-            Grafo
+            Vocabulario
           </a>
         </nav>
       </div>

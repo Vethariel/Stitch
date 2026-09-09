@@ -8,7 +8,6 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://stitch.vethariel.com',
   integrations: [react()],
-
   vite: {
     plugins: [tailwindcss()]
   }

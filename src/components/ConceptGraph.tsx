@@ -81,6 +81,7 @@ export default function ConceptGraph() {
     if (!el) return;
     const apply = () => {
       const w = el.clientWidth;
+      if (w < 120) return;
       const h = Math.max(560, Math.min(820, Math.round(w * 0.78)));
       setSize((prev) => (prev.w === w && prev.h === h ? prev : { w, h }));
     };
@@ -344,13 +345,14 @@ export default function ConceptGraph() {
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(16rem,0.8fr)]">
         <div
           ref={wrapRef}
-          className="overflow-hidden border border-line bg-paper-deep/40"
+          className="min-h-[560px] w-full min-w-0 overflow-hidden border border-line bg-paper-deep/40"
         >
           <svg
             width={size.w}
             height={size.h}
             viewBox={`0 0 ${size.w} ${size.h}`}
-            className="block w-full touch-none"
+            className="block h-auto w-full touch-none"
+            style={{ minHeight: 560 }}
             role="img"
             data-tick={tick}
             aria-label="Grafo de conceptos. Selecciona un nodo para ver sus vínculos."
