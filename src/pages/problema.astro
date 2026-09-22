@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { phases } from "../data/schedule";
 
 const pregunta =
-  "¿Cómo diseñar un agente de acompañamiento que sostenga la constancia y la interiorización del aprendizaje autónomo ante motivaciones diversas, sin depender de notas ni de credenciales vacías?";
+  "¿Cómo diseñar un agente de acompañamiento que sostenga la constancia y la interiorización del aprendizaje autónomo, de modo que queden conocimiento y habilidades aplicables y el aprendizaje tenga sentido: se usa, se interioriza, y el progreso se siente vivido —no simulado?";
 
 const fallas = [
   {
@@ -19,8 +19,8 @@ const fallas = [
     text: "Certificados y rutina laboral premian haber pasado, no poder hacer. Lo aprendido queda enunciable y no se usa: conocimiento inerte con otro nombre.",
   },
   {
-    title: "Cómo se manifiesta",
-    text: "El aprendizaje se siente trámite —interfaces que no se habitan— y el progreso es opaco: no se ve qué ya se sabe, qué falta ni dónde atajar sin empezar de cero.",
+    title: "Progreso que no se siente",
+    text: "El aprendizaje se siente trámite —interfaces que no se habitan— y el avance es opaco o simulado: no se ve qué ya se sabe, qué falta, ni un progreso que deje huella. Se pierde el tiempo fingiendo avance.",
   },
 ];
 
@@ -35,64 +35,64 @@ const roots = [
   },
   {
     from: "Animación, personalización, asociación",
-    to: "Entorno habitable; vínculos que hacen “clic”",
+    to: "Entorno habitable; vínculos que hacen «clic»",
   },
   {
     from: "Certificados vacíos + trabajo sin crecimiento",
-    to: "Interiorización, criterio de dominio, capacidad de hacer",
+    to: "Interiorización, uso real, progreso vivido —no simulado",
   },
 ];
 
 const hypotheses = [
   {
     title: "Árbol y grafo como espejos",
-    body: "Las temáticas se alinean entre grafo (verdad) y árbol (progreso). Los nodos de personalización solo vinculan —no cambian el currículum—. Los atajos se ganan con pruebas de desempeño: avance en el grafo, no nota.",
+    body: "Las temáticas se alinean entre grafo (verdad del dominio) y árbol (progreso). Los nodos de personalización solo vinculan —no cambian el currículum—. Los atajos se ganan con pruebas de desempeño: avance por evidencia, no nota.",
   },
   {
     title: "Compañía sin historial completo",
-    body: "Memoria de intereses, plantillas de personalidad y privacidad. Pregunta abierta: ¿qué mínimo de memoria basta para sentir presencia?",
+    body: "Memoria de intereses, tono y lo mínimo para sentir continuidad. Pregunta abierta: ¿qué basta para presencia sin comprometer privacidad? (Hilo en Stitch Code ya experimenta contexto de plan; el marco pide selectividad).",
   },
   {
     title: "Adaptación del lenguaje",
-    body: "Personalidad, preferencias y asociaciones adaptan la forma de explicar sin tocar el núcleo. Varios mecanismos posibles; no un solo parámetro.",
+    body: "Nivel de lenguaje y asociaciones adaptan la forma de explicar sin tocar el núcleo del dominio. Cercano, no invasivo — aspecto central del camino del compañero.",
   },
   {
-    title: "Interiorización y buen uso",
-    body: "Propósito de la semilla: interiorizar la técnica. El estándar de buen uso se limita a ese dominio —qué se necesita y en qué casos—. La transformación vital es horizonte, no feature de ahora.",
+    title: "Interiorización, uso y sentido",
+    body: "Que queden conocimiento y habilidades aplicables; que el aprendizaje tenga sentido porque se usa y se interioriza. La transformación vital es horizonte, no feature de ahora.",
   },
   {
-    title: "Espacio seguro y logro",
-    body: "Prueba de desempeño acordada con el usuario. Lo conversacional construye un espacio sin prisa donde errar está permitido: confianza que desincentiva la trampa, no vigilancia.",
+    title: "Progreso vivido y espacio seguro",
+    body: "Prueba de desempeño sin nota como motor; clima donde errar está permitido. El progreso se diseña para sentirse vivido —no simulado—: narrativa y criterio honesto, no puntos vacíos.",
   },
 ];
 
 const recorteSi = [
-  "Aprendizaje autónomo en dominios técnicos; primer laboratorio: programación (Stitch Code).",
+  "Aprendizaje autónomo en dominios técnicos; laboratorio concreto: Stitch Code (Woven + Hilo).",
   "Quien quiere dominar la técnica y quien está obligado a aprenderla.",
-  "Acompañamiento que sostiene constancia e interiorización —no sustituye al docente.",
-  "Criterio sin nota ni credencial vacía.",
+  "Diseño del compañero (Stitch) y su marco: constancia, interiorización, progreso vivido —no sustituye al docente.",
+  "Criterio de avance por evidencia de poder hacer, no por credencial vacía.",
 ];
 
 const recorteNo = [
   "Plataforma de certificados / LMS completo.",
   "Evaluación masiva.",
-  "Agente asistente general de vida.",
-  "Macro de carrera / narrativa multi-curso como producto (queda como horizonte).",
-  "Producto comercial de Stitch Code sin marco de investigación.",
+  "Agente asistente general de vida / rol terapéutico.",
+  "Macro de carrera / narrativa multi-curso como producto ahora (horizonte).",
+  "Lanzar Stitch Code como producto comercial sin el marco de investigación.",
 ];
 
-const semestreSi = [
-  "Fundamentar el problema con lectura (abandono, constancia, tutoría, motivación diversa).",
-  "Explorar grafo y árbol; pruebas de desempeño → avance, no nota.",
-  "Memoria selectiva y personalidades, con privacidad primero.",
-  "Arquitectura conceptual y prototipo pequeño (Stitch Code como vehículo).",
-  "Sitio vivo que documenta la evolución.",
+const ahoraSi = [
+  "Problema, pregunta y norte alineados en este sitio.",
+  "Marco del compañero (/marco) y camino (/camino): origen Stitch Code → aspectos a pulir → norte.",
+  "Literatura y vocabulario vivos (/lecturas, /vocabulario).",
+  "Progreso como hechos reales (/progreso), no plan de intenciones.",
+  "Seguir afilando el acompañamiento sobre el laboratorio Stitch Code — sin pretender entregar el sistema entero este semestre.",
 ];
 ---
 
 <Layout
   title="El problema — Proyecto Stitch"
-  description="Abandono, constancia e interiorización: el problema que investiga el Proyecto Stitch y su pregunta de investigación."
+  description="Constancia, interiorización y progreso vivido: el problema que investiga el Proyecto Stitch."
   active="problema"
 >
   <main class="bg-paper">
@@ -105,9 +105,11 @@ const semestreSi = [
           Querer aprender no alcanza
         </h1>
         <p class="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
-          Las personas abandonan el aprendizaje técnico —vengan con motivación fuerte o por obligación—
-          porque enfrentan demasiada información y demasiado poco acompañamiento para sostener la constancia,
-          bajo sistemas que premian certificados en lugar de interiorización real.
+          Las personas abandonan el aprendizaje técnico —vengan con motivación fuerte
+          o por obligación— porque enfrentan demasiada información y demasiado poco
+          acompañamiento para sostener la constancia, bajo sistemas que premian
+          certificados en lugar de interiorización real y un progreso que se sienta
+          vivido.
         </p>
         <div class="mt-10 max-w-2xl">
           <h2 class="font-display text-sm font-semibold tracking-wide text-ink uppercase">
@@ -116,8 +118,29 @@ const semestreSi = [
           <p class="mt-3 text-base leading-relaxed text-ink italic sm:text-lg">
             {pregunta}
           </p>
+          <p class="mt-4 text-sm leading-relaxed text-ink-soft">
+            Sin nota como motor, lo que importa es qué queda: saber y poder hacer,
+            y un camino que no finja avance. Detalle del norte en la{" "}
+            <a
+              href="/#norte"
+              class="text-thread underline decoration-thread/40 underline-offset-4 hover:text-thread-dim"
+            >
+              home
+            </a>
+            {" "}y del viaje en{" "}
+            <a
+              href="/camino"
+              class="text-thread underline decoration-thread/40 underline-offset-4 hover:text-thread-dim"
+            >
+              Camino
+            </a>
+            .
+          </p>
         </div>
-        <nav class="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-soft" aria-label="En esta página">
+        <nav
+          class="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-soft"
+          aria-label="En esta página"
+        >
           <a href="#motivacion" class="hover:text-thread">Motivación</a>
           <a href="#problema" class="hover:text-thread">Qué falla</a>
           <a href="#vision" class="hover:text-thread">Visión</a>
@@ -138,28 +161,43 @@ const semestreSi = [
 
         <div class="mt-12 max-w-2xl space-y-6 text-base leading-relaxed text-ink-soft sm:text-lg">
           <p>
-            Parte de mi historia es la curiosidad: me tomo el tiempo de investigar lo que me interesa.
-            El choque llegó al pasar al lado técnico —demasiadas fuentes, muy poco acompañamiento, y al final desistir—.
-            Ahí entendí que{" "}
+            Como estudiante, a menudo aprendía más por mi cuenta que con la mediación
+            que tenía a mano. No era un rechazo a los docentes: a veces encontraba
+            buenos; a menudo, cuando la constancia fallaba o el tema no «hacía clic»,
+            el entorno no sostenía el proceso. Quedaba el trámite —y la sensación de
+            haber pasado sin haber podido{" "}
+            <em>hacer</em>.
+          </p>
+          <p>
+            Parte de mi historia es la curiosidad: me tomo el tiempo de investigar lo
+            que me interesa. El choque llegó al pasar al lado técnico —demasiadas
+            fuentes, muy poco acompañamiento, y al final desistir—. Ahí entendí que{" "}
             <strong class="font-semibold text-ink">querer aprender no alcanza</strong>
             {" "}si no hay forma de sostener el proceso.
           </p>
           <p class="border-l-2 border-signal pl-5 text-ink">
-            Cuando quise aprender a programar, empecé un curso de Java y no terminé asociando los conceptos.
-            No fue hasta una app de Python ligada a un juego que verdaderamente pude avanzar.
-            Misma intención; distinta forma de vincular el conocimiento con algo mío.
+            Cuando quise aprender a programar, empecé un curso de Java y no terminé
+            asociando los conceptos. No fue hasta una app de Python ligada a un juego
+            que verdaderamente pude avanzar. Misma intención; distinta forma de vincular
+            el conocimiento con algo mío.
           </p>
           <p>
-            También cargo la idea de un agente tipo mascota —alguien con quien hablar, no un menú frío—
-            y la búsqueda de un espacio habitable: animación, interactividad, personalización.
+            También cargo la idea de un agente tipo mascota —alguien con quien hablar,
+            no un menú frío— y la búsqueda de un espacio habitable: animación,
+            interactividad, personalización. Eso se cruza con lo que veo en plataformas
+            que prometen dominio: mucho contenido, poco acompañamiento, cierre en
+            credencial que ya no garantiza nada.
           </p>
           <p>
-            Eso me pasó a mí. El problema que investigo no es la anécdota: es lo que enseña cuando le ocurre a
-            cualquiera —quien quiere dominar la técnica y quien está obligado a aprenderla—.
+            Eso me pasó a mí. El problema que investigo no es la anécdota: es lo que
+            enseña cuando le ocurre a cualquiera —quien quiere dominar la técnica y
+            quien está obligado a aprenderla—.
           </p>
         </div>
 
-        <h3 class="mt-16 font-display text-xl font-semibold text-ink">De dónde sale Stitch</h3>
+        <h3 class="mt-16 font-display text-xl font-semibold text-ink">
+          De dónde sale Stitch
+        </h3>
         <ul class="mt-8 divide-y divide-line border-y border-line">
           {
             roots.map((row) => (
@@ -170,14 +208,50 @@ const semestreSi = [
             ))
           }
         </ul>
-        <p class="mt-8 max-w-2xl text-base leading-relaxed text-ink-soft">
-          <strong class="font-semibold text-ink">Stitch Code</strong> es el primer laboratorio (programación).{" "}
-          <strong class="font-semibold text-ink">Stitch</strong> es el marco: cómo diseñar ese acompañamiento más allá de un dominio.
-          El vocabulario de trabajo está en el{" "}
-          <a href="/vocabulario" class="text-ink underline decoration-thread/50 underline-offset-4 hover:text-thread">vocabulario</a>;
-          las lecturas que lo van anclando, en{" "}
-          <a href="/lecturas" class="text-ink underline decoration-thread/50 underline-offset-4 hover:text-thread">lecturas</a>.
-        </p>
+        <div class="mt-8 max-w-2xl space-y-4 text-base leading-relaxed text-ink-soft">
+          <p>
+            <strong class="font-semibold text-ink">Stitch Code</strong> es el laboratorio
+            concreto que ya existe: entorno para primer contacto con programación,
+            lenguaje{" "}
+            <strong class="font-semibold text-ink">Woven</strong>, tutor{" "}
+            <strong class="font-semibold text-ink">Hilo</strong> (repo hermano). Es el
+            origen del{" "}
+            <a
+              href="/camino"
+              class="text-ink underline decoration-thread/50 underline-offset-4 hover:text-thread"
+            >
+              camino
+            </a>
+            .
+          </p>
+          <p>
+            <strong class="font-semibold text-ink">Stitch</strong> es el{" "}
+            <strong class="font-semibold text-ink">compañero</strong> — el agente de
+            acompañamiento — y el diseño de cómo debe acompañar vive en el{" "}
+            <a
+              href="/marco"
+              class="text-ink underline decoration-thread/50 underline-offset-4 hover:text-thread"
+            >
+              marco
+            </a>
+            {" "}(marco del compañero, no de todo un sistema cerrado). Vocabulario y
+            lecturas:{" "}
+            <a
+              href="/vocabulario"
+              class="text-ink underline decoration-thread/50 underline-offset-4 hover:text-thread"
+            >
+              vocabulario
+            </a>
+            {" · "}
+            <a
+              href="/lecturas"
+              class="text-ink underline decoration-thread/50 underline-offset-4 hover:text-thread"
+            >
+              lecturas
+            </a>
+            .
+          </p>
+        </div>
       </div>
     </section>
 
@@ -190,9 +264,10 @@ const semestreSi = [
           No es falta de contenido
         </h2>
         <p class="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
-          El curso masivo entrega material. El LMS registra actividad. El chatbot responde.
-          El certificado acredita el paso. Casi ninguno sostiene el proceso cuando la motivación baja,
-          ni comprueba que lo aprendido se pueda usar.
+          El curso masivo entrega material. El LMS registra actividad. El chatbot
+          responde. El certificado acredita el paso. Casi ninguno sostiene el proceso
+          cuando la motivación baja, ni comprueba que lo aprendido se pueda usar, ni
+          ofrece un progreso que se sienta real.
         </p>
 
         <ol class="mt-14 grid gap-10 sm:grid-cols-2">
@@ -202,7 +277,9 @@ const semestreSi = [
                 <span class="font-display text-sm font-semibold text-signal">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 class="mt-2 font-display text-xl font-semibold text-ink">{item.title}</h3>
+                <h3 class="mt-2 font-display text-xl font-semibold text-ink">
+                  {item.title}
+                </h3>
                 <p class="mt-2 text-base leading-relaxed text-ink-soft">{item.text}</p>
               </li>
             ))
@@ -217,27 +294,39 @@ const semestreSi = [
           03 · Visión
         </p>
         <h2 class="mt-4 max-w-2xl font-display text-3xl font-semibold text-ink sm:text-4xl">
-          Horizonte y semilla
+          Norte, semilla y horizonte
         </h2>
 
-        <div class="mt-12 grid gap-12 lg:grid-cols-2">
+        <div class="mt-12 grid gap-12 lg:grid-cols-3">
+          <div>
+            <h3 class="font-display text-sm font-semibold tracking-wide text-thread uppercase">
+              Norte (destino fijo)
+            </h3>
+            <p class="mt-3 text-base leading-relaxed text-ink-soft sm:text-lg">
+              Que lo aprendido{" "}
+              <strong class="font-semibold text-ink">quede y sirva</strong>: conocimiento
+              y habilidades aplicables, habilidades de aprendiz, progreso vivido —no
+              simulado—, sentido sin trámite. El viaje puede variar; el destino no.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-display text-sm font-semibold tracking-wide text-thread uppercase">
+              Semilla (ahora)
+            </h3>
+            <p class="mt-3 text-base leading-relaxed text-ink-soft sm:text-lg">
+              Diseñar el compañero sobre el laboratorio Stitch Code: constancia e
+              interiorización ante motivaciones distintas; marco y aspectos del camino
+              a pulir.
+            </p>
+          </div>
           <div>
             <h3 class="font-display text-sm font-semibold tracking-wide text-signal uppercase">
               Horizonte
             </h3>
             <p class="mt-3 text-base leading-relaxed text-ink-soft sm:text-lg">
-              Transformación personal; más adelante, narrativa entre cursos y un macro del proceso
-              que pueda orientar una carrera. Orienta el porqué;{" "}
+              Transformación personal más amplia; narrativa entre cursos; otras
+              entidades del sistema (visor, evaluador, proyecto…). Orienta el porqué;{" "}
               <strong class="font-semibold text-ink">no es el entregable ahora</strong>.
-            </p>
-          </div>
-          <div>
-            <h3 class="font-display text-sm font-semibold tracking-wide text-thread uppercase">
-              Semilla
-            </h3>
-            <p class="mt-3 text-base leading-relaxed text-ink-soft sm:text-lg">
-              Interiorizar conocimiento con acompañamiento; sostener constancia ante motivaciones distintas.
-              El progreso visible y el criterio de buen uso del dominio son vías, no un segundo problema.
             </p>
           </div>
         </div>
@@ -247,11 +336,16 @@ const semestreSi = [
             Hipótesis central
           </h3>
           <p class="mt-4 text-base leading-relaxed text-ink-soft sm:text-lg">
-            Si el aprendizaje se sostiene con un agente de acompañamiento —cercano, capaz de trabajar la constancia
-            ante motivaciones diversas—, <strong class="font-semibold text-ink">mediante</strong> un mapa del progreso
-            ligado a conocimiento veraz y una personalización del lenguaje que no toca el núcleo, la persona puede
-            pasar de empezar a interiorizar y sostener el dominio que estudia, sin depender de certificados vacíos.
-            El crecimiento inmediato se mide en constancia e interiorización; la transformación vital queda como horizonte.
+            Si el aprendizaje se sostiene con un agente de acompañamiento —cercano,
+            capaz de trabajar la constancia ante motivaciones diversas—,{" "}
+            <strong class="font-semibold text-ink">mediante</strong> un mapa de progreso
+            ligado a conocimiento veraz, personalización del lenguaje que no toca el
+            núcleo, y un diseño de avance que se sienta vivido (no simulado), la persona
+            puede pasar de empezar a interiorizar y{" "}
+            <strong class="font-semibold text-ink">usar</strong> el dominio que estudia,
+            sin depender de certificados vacíos. El crecimiento inmediato se mide en
+            constancia, interiorización y capacidad de hacer; la transformación vital
+            queda como horizonte.
           </p>
         </div>
       </div>
@@ -266,9 +360,10 @@ const semestreSi = [
           Qué investigamos este semestre
         </h2>
         <p class="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
-          La pregunta general ya está arriba. Estas cuatro la descomponen. Contaría como respuesta,
-          este semestre, un prototipo pequeño en Stitch Code y evidencia acotada de que el acompañamiento
-          ayuda a seguir y a usar lo aprendido —no a acumular notas.
+          La pregunta general ya está arriba. Estas cuatro la descomponen a lo largo
+          del semestre. Contaría como respuesta un marco y un camino afilados, y
+          evidencia acotada —sobre Stitch Code como vehículo— de que el acompañamiento
+          ayuda a seguir y a usar lo aprendido, no a acumular notas.
         </p>
 
         <ol class="mt-14 grid gap-10 sm:grid-cols-2">
@@ -281,7 +376,9 @@ const semestreSi = [
                 <p class="mt-2 font-display text-lg font-semibold leading-snug text-ink">
                   {phase.question}
                 </p>
-                <span class="mt-2 block font-display text-sm text-mist">{String(i + 1).padStart(2, "0")}</span>
+                <span class="mt-2 block font-display text-sm text-mist">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
               </li>
             ))
           }
@@ -292,9 +389,24 @@ const semestreSi = [
             Hipótesis de diseño (preliminares)
           </h3>
           <p class="mt-3 max-w-2xl text-base leading-relaxed text-ink-soft">
-            El «mediante» de la hipótesis central. No están validadas: son semilla, no conclusión.
+            El «mediante» de la hipótesis central. No están validadas: son semilla, no
+            conclusión. Se afilan en el{" "}
+            <a
+              href="/marco"
+              class="text-thread underline decoration-thread/40 underline-offset-4"
+            >
+              marco
+            </a>
+            {" "}y en los aspectos del{" "}
+            <a
+              href="/camino"
+              class="text-thread underline decoration-thread/40 underline-offset-4"
+            >
+              camino
+            </a>
+            .
           </p>
-          <ul class="mt-10 space-y-8 max-w-3xl">
+          <ul class="mt-10 max-w-3xl space-y-8">
             {
               hypotheses.map((h, i) => (
                 <li class="border-l-2 border-line pl-5">
@@ -307,8 +419,9 @@ const semestreSi = [
             }
           </ul>
           <p class="mt-10 text-sm text-ink-soft">
-            Prioridad orientativa: (1) pruebas de desempeño → avance en el grafo ·
-            (2) compañía con memoria mínima · (3) el resto como satélites.
+            Prioridad orientativa: (1) evidencia de desempeño → avance honesto · (2)
+            compañía con memoria mínima · (3) lenguaje y sentido / progreso vivido como
+            satélites del norte.
           </p>
         </div>
       </div>
@@ -320,7 +433,7 @@ const semestreSi = [
           05 · Alcance
         </p>
         <h2 class="mt-4 font-display text-3xl font-semibold text-ink sm:text-4xl">
-          Qué cubre la pregunta — y qué se hace ahora
+          Qué cubre la pregunta — y dónde estamos
         </h2>
 
         <div class="mt-12 grid gap-12 lg:grid-cols-2">
@@ -329,22 +442,44 @@ const semestreSi = [
               Recorte de la pregunta
             </h3>
             <ul class="mt-5 space-y-3 text-base leading-relaxed text-ink-soft">
-              {recorteSi.map((item) => <li>{item}</li>)}
+              {
+                recorteSi.map((item) => (
+                  <li class="border-l-2 border-thread/40 pl-4">{item}</li>
+                ))
+              }
             </ul>
             <h4 class="mt-10 font-display text-sm font-semibold tracking-wide text-ink-soft uppercase">
               No cubre
             </h4>
             <ul class="mt-5 space-y-3 text-base leading-relaxed text-ink-soft">
-              {recorteNo.map((item) => <li>{item}</li>)}
+              {
+                recorteNo.map((item) => (
+                  <li class="border-l-2 border-line pl-4">{item}</li>
+                ))
+              }
             </ul>
           </div>
           <div>
             <h3 class="font-display text-sm font-semibold tracking-wide text-ink uppercase">
-              Este semestre
+              Hechos de este semestre (hasta ahora)
             </h3>
             <ul class="mt-5 space-y-3 text-base leading-relaxed text-ink-soft">
-              {semestreSi.map((item) => <li>{item}</li>)}
+              {
+                ahoraSi.map((item) => (
+                  <li class="border-l-2 border-thread/40 pl-4">{item}</li>
+                ))
+              }
             </ul>
+            <p class="mt-8 text-sm text-ink-soft">
+              El detalle cronológico está en{" "}
+              <a
+                href="/progreso"
+                class="text-thread underline decoration-thread/40 underline-offset-4"
+              >
+                Progreso
+              </a>
+              .
+            </p>
           </div>
         </div>
       </div>
@@ -353,17 +488,47 @@ const semestreSi = [
     <section class="bg-ink text-paper">
       <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread-bright uppercase">
-          Delimitación · Agosto 2026
+          Delimitación · actualizado Sep 2026
         </p>
         <p class="mt-6 max-w-2xl text-base leading-relaxed text-mist">
-          Esta página es el problema vigente, no el diario de una semana.
-          Lo que sigue es dejar que la lectura roce estas hipótesis y endurecer el{" "}
-          <a href="/marco" class="text-bloom underline decoration-bloom/40 underline-offset-4 hover:text-paper">marco</a>.
+          Esta página es el problema vigente. Lo que sigue es dejar que la lectura roce
+          estas hipótesis, endurecer el{" "}
+          <a
+            href="/marco"
+            class="text-bloom underline decoration-bloom/40 underline-offset-4 hover:text-paper"
+          >
+            marco del compañero
+          </a>
+          {" "}y caminar desde Stitch Code hacia el norte.
         </p>
         <p class="mt-8 text-sm text-mist/80">
-          <a href="/lecturas" class="text-bloom underline decoration-bloom/40 underline-offset-4 hover:text-paper">Lecturas</a>
+          <a
+            href="/camino"
+            class="text-bloom underline decoration-bloom/40 underline-offset-4 hover:text-paper"
+          >
+            Camino
+          </a>
           <span class="mx-2 text-mist/50">·</span>
-          <a href="/vocabulario" class="text-bloom underline decoration-bloom/40 underline-offset-4 hover:text-paper">Vocabulario</a>
+          <a
+            href="/progreso"
+            class="text-bloom underline decoration-bloom/40 underline-offset-4 hover:text-paper"
+          >
+            Progreso
+          </a>
+          <span class="mx-2 text-mist/50">·</span>
+          <a
+            href="/lecturas"
+            class="text-bloom underline decoration-bloom/40 underline-offset-4 hover:text-paper"
+          >
+            Lecturas
+          </a>
+          <span class="mx-2 text-mist/50">·</span>
+          <a
+            href="/vocabulario"
+            class="text-bloom underline decoration-bloom/40 underline-offset-4 hover:text-paper"
+          >
+            Vocabulario
+          </a>
         </p>
       </div>
     </section>

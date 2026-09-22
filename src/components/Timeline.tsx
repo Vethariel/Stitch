@@ -35,7 +35,7 @@ export default function Timeline() {
       <div
         className="flex flex-wrap gap-2"
         role="tablist"
-        aria-label="Filtrar cronograma por mes"
+        aria-label="Filtrar progreso por mes"
       >
         {months.map((month) => {
           const active = filter === month.id;
@@ -82,7 +82,7 @@ export default function Timeline() {
       )}
 
       <ol className="relative space-y-0 border-l border-line ml-3 sm:ml-4">
-        {visible.map((milestone, index) => {
+        {visible.map((milestone) => {
           const status = statusOf(milestone, currentId);
           const phase = phases.find((p) => p.id === milestone.phase);
 
@@ -90,9 +90,6 @@ export default function Timeline() {
             <li
               key={milestone.id}
               className="relative pb-10 pl-8 last:pb-0 sm:pl-10"
-              style={{
-                animation: `fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.03}s both`,
-              }}
             >
               <span
                 className={[

@@ -1,13 +1,13 @@
 /**
- * Temas del compañero (Stitch) — fuente viva para /mapa.
- * Documento: docs/mapa-del-sistema.md
+ * Temas del compañero (Stitch) — aspectos del camino a pulir.
+ * Usados en /camino; documento extendido en docs/mapa-del-sistema.md
  */
 
 export const companionMeta = {
   version: "2026-09-09",
   label: "Compañero",
   question:
-    "¿Cómo diseñar un agente de acompañamiento que sostenga la constancia y la interiorización del aprendizaje autónomo ante motivaciones diversas, sin depender de notas ni de credenciales vacías?",
+    "¿Cómo diseñar un agente de acompañamiento que sostenga la constancia y la interiorización del aprendizaje autónomo, de modo que queden conocimiento y habilidades aplicables y el aprendizaje tenga sentido: se usa, se interioriza, y el progreso se siente vivido —no simulado?",
   thread:
     "Nivel de lenguaje cercano (no invasivo) → vínculo → motivación intrínseca → constancia.",
 };

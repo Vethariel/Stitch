@@ -67,7 +67,7 @@ El curso masivo entrega material. El LMS registra actividad. El chatbot responde
 
 ### El problema de investigación (formulado)
 
-¿Cómo diseñar un agente de acompañamiento que sostenga la **constancia** y la **interiorización** del aprendizaje autónomo ante motivaciones diversas, sin depender de notas ni de credenciales vacías?
+¿Cómo diseñar un agente de acompañamiento que sostenga la **constancia** y la **interiorización** del aprendizaje autónomo, de modo que queden conocimiento y habilidades aplicables y el aprendizaje tenga sentido: se usa, se interioriza, y el progreso se siente vivido —no simulado?
 
 *(En `/problema` esta pregunta va al inicio, una sola vez.)*
 
@@ -213,7 +213,7 @@ Lo vital: lo **conversacional** frente a la trampa — espacio **seguro**, sin v
 - [ ] Ajustar tono donde aún suene demasiado “paper” y poco hablado.
 - [x] Ejemplo concreto de abandono / desbloqueo técnico: curso de Java sin asociación de conceptos → app de Python ligada a un juego, donde sí pude avanzar.
 - [x] Publicar como página `/problema` cuando este borrador esté estable.
-- [x] Enlazar desde inicio y cronograma (nav + CTAs).
+- [x] Enlazar desde inicio y progreso (nav + CTAs).
 - [ ] **Encontrar fuentes** que apoyen (o matizen) afirmaciones y fenómenos que hoy están solo bajo intuición / experiencia personal.  
   → Guía de búsqueda (motores + queries): [`guia-busqueda-fuentes.md`](guia-busqueda-fuentes.md)  
   Lista:

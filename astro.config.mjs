@@ -8,7 +8,15 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://stitch.vethariel.com',
   integrations: [react()],
+  redirects: {
+    '/cronograma': '/progreso',
+    '/mapa': '/camino',
+  },
   vite: {
-    plugins: [tailwindcss()]
-  }
+    plugins: [tailwindcss()],
+    // Evita prebundle de jsx-dev-runtime en modo production (jsxDEV = undefined → crash en islands).
+    optimizeDeps: {
+      include: ['react', 'react-dom', 'react/jsx-runtime', 'react/jsx-dev-runtime'],
+    },
+  },
 });

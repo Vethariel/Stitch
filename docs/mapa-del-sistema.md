@@ -1,6 +1,6 @@
 # Mapa del sistema — Proyecto Stitch
 
-> **Documento de discusión con el docente** · foto finish, no cronograma  
+> **Documento de discusión con el docente** · visión del sistema, no cronograma  
 > **Inicio:** 2026-09-01  
 > **Estado:** idea general + preguntas por entidad (pedagógico primero)
 
@@ -22,7 +22,7 @@ Un entorno donde una persona puede **aprender por su cuenta** con **significado*
 
 La pregunta que atraviesa el mapa:
 
-> ¿Cómo diseñar un agente de acompañamiento que sostenga la constancia y la interiorización del aprendizaje autónomo ante motivaciones diversas, sin depender de notas ni de credenciales vacías?
+> ¿Cómo diseñar un agente de acompañamiento que sostenga la constancia y la interiorización del aprendizaje autónomo, de modo que queden conocimiento y habilidades aplicables y el aprendizaje tenga sentido: se usa, se interioriza, y el progreso se siente vivido —no simulado?
 
 No es un LMS, ni un marketplace de cursos, ni un certificado. El avance es poder hacer, con constancia sostenida.
 

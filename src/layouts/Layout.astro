@@ -4,12 +4,12 @@ import "../styles/global.css";
 interface Props {
   title?: string;
   description?: string;
-  active?: "inicio" | "cronograma" | "problema" | "lecturas" | "vocabulario" | "marco" | "mapa";
+  active?: "inicio" | "progreso" | "problema" | "lecturas" | "vocabulario" | "marco" | "camino";
 }
 
 const {
   title = "Proyecto Stitch",
-  description = "Marco para el diseño de sistemas de aprendizaje autónomo asistidos por inteligencia artificial.",
+  description = "Investigación sobre un compañero de aprendizaje autónomo — research log del Proyecto Stitch.",
   active = "inicio",
 } = Astro.props;
 ---
@@ -59,22 +59,22 @@ const {
             Marco
           </a>
           <a
-            href="/mapa"
+            href="/camino"
             class:list={[
               "transition-colors hover:text-thread",
-              active === "mapa" && "text-ink font-medium",
+              active === "camino" && "text-ink font-medium",
             ]}
           >
-            Mapa
+            Camino
           </a>
           <a
-            href="/cronograma"
+            href="/progreso"
             class:list={[
               "transition-colors hover:text-thread",
-              active === "cronograma" && "text-ink font-medium",
+              active === "progreso" && "text-ink font-medium",
             ]}
           >
-            Cronograma
+            Progreso
           </a>
           <a
             href="/lecturas"
@@ -103,7 +103,7 @@ const {
     <footer class="border-t border-ink/20 bg-ink px-5 py-8 text-sm text-mist sm:px-8">
       <div class="mx-auto flex max-w-6xl flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <p class="font-display font-semibold text-paper">Proyecto Stitch</p>
-        <p>Plan de trabajo · Agosto – diciembre 2026</p>
+        <p>Research log · investigación en curso · Agosto – diciembre 2026</p>
       </div>
     </footer>
   </body>

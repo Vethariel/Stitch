@@ -1,0 +1,136 @@
+---
+import Layout from "../layouts/Layout.astro";
+import {
+  inProgress,
+  nowSummary,
+  progressLog,
+  progressMeta,
+} from "../data/progress";
+---
+
+<Layout
+  title="Progreso — Proyecto Stitch"
+  description="Hechos reales de avance del Proyecto Stitch: lo que ya ocurrió en el laboratorio, no un plan de intenciones."
+  active="progreso"
+>
+  <main class="bg-paper">
+    <section class="border-b border-line">
+      <div class="mx-auto max-w-6xl px-5 pt-28 pb-20 sm:px-8 sm:pt-36 sm:pb-28 md:pt-40">
+        <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread uppercase">
+          Research log · actualizado {progressMeta.updated}
+        </p>
+        <h1 class="mt-5 max-w-3xl font-display text-3xl font-semibold text-ink sm:text-4xl md:text-5xl">
+          Progreso
+        </h1>
+        <p class="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
+          {progressMeta.note} Lo que sigue son avances ya hechos — en el sitio o
+          en git — no semanas «por cumplir».
+        </p>
+      </div>
+    </section>
+
+    <section class="border-b border-line bg-paper-deep/40">
+      <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+        <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread uppercase">
+          Ahora
+        </p>
+        <h2 class="mt-3 max-w-2xl font-display text-2xl font-semibold text-ink sm:text-3xl">
+          {nowSummary.title}
+        </h2>
+        <p class="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
+          {nowSummary.body}
+        </p>
+      </div>
+    </section>
+
+    {
+      inProgress && inProgress.facts.length > 0 && (
+        <section class="border-b border-line">
+          <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+            <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread uppercase">
+              En curso
+            </p>
+            <h2 class="mt-3 max-w-2xl font-display text-2xl font-semibold text-ink sm:text-3xl">
+              {inProgress.title}
+            </h2>
+            <p class="mt-2 text-sm text-ink-soft">Al {inProgress.asOf}</p>
+            <ul class="mt-8 max-w-2xl space-y-4 text-base leading-relaxed text-ink-soft">
+              {inProgress.facts.map((fact) => (
+                <li class="border-l-2 border-thread/50 pl-4">{fact}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )
+    }
+
+    <section>
+      <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+        <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread uppercase">
+          Hechos
+        </p>
+        <h2 class="mt-3 max-w-2xl font-display text-2xl font-semibold text-ink sm:text-3xl">
+          Lo que ya quedó
+        </h2>
+        <p class="mt-4 max-w-2xl text-sm text-ink-soft">
+          Del más reciente al más antiguo. Donde hay commit, es rastro en el
+          repositorio.
+        </p>
+
+        <ol class="mt-14 space-y-0 border-l border-line ml-3 sm:ml-4">
+          {
+            progressLog.map((entry) => (
+              <li class="relative pb-12 pl-8 last:pb-0 sm:pl-10">
+                <span
+                  class="absolute top-1.5 -left-[5px] size-2.5 rounded-full border-2 border-thread bg-paper"
+                  aria-hidden="true"
+                />
+                <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                  <time
+                    datetime={entry.date}
+                    class="font-display text-sm font-semibold tracking-wide text-thread"
+                  >
+                    {entry.dateLabel}
+                  </time>
+                  {entry.commit && (
+                    <span class="font-mono text-xs text-ink-soft">
+                      {entry.commit}
+                    </span>
+                  )}
+                </div>
+                <h3 class="mt-2 font-display text-xl font-semibold text-ink sm:text-2xl">
+                  {entry.title}
+                </h3>
+                <ul class="mt-4 max-w-2xl space-y-2 text-base leading-relaxed text-ink-soft">
+                  {entry.facts.map((fact) => (
+                    <li class="pl-0 before:mr-2 before:text-thread before:content-['·']">
+                      {fact}
+                    </li>
+                  ))}
+                </ul>
+                {entry.links && entry.links.length > 0 && (
+                  <p class="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                    {entry.links.map((link) => (
+                      <a
+                        href={link.href}
+                        class="text-thread underline decoration-thread/40 underline-offset-4 hover:text-thread-dim"
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                  </p>
+                )}
+              </li>
+            ))
+          }
+        </ol>
+
+        <p class="mt-16 max-w-xl text-sm leading-relaxed text-ink-soft">
+          El plan semanal del semestre (etapas e intenciones) sigue en datos de
+          trabajo interno; esta página solo cuenta lo que ya ocurrió. Cuando haya
+          un avance nuevo, se suma aquí como hecho — no como casilla del calendario.
+        </p>
+      </div>
+    </section>
+  </main>
+</Layout>

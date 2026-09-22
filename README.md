@@ -5,7 +5,7 @@ Sitio estático del plan de trabajo de investigación: marco para el diseño de 
 ## Stack
 
 - [Astro](https://astro.build)
-- [React](https://react.dev) (cronograma interactivo)
+- [React](https://react.dev) (progreso semanal interactivo)
 - [Tailwind CSS v4](https://tailwindcss.com)
 
 ## Comandos
@@ -20,4 +20,4 @@ npm run preview
 ## Contenido
 
 - Descripción general del Proyecto Stitch y su relación con Stitch Code
-- Cronograma semanal (agosto – mitad de diciembre 2026)
+- Progreso semanal (agosto – mitad de diciembre 2026)

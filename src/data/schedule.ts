@@ -51,7 +51,7 @@ export const milestones: Milestone[] = [
     month: "agosto",
     phase: 1,
     objective: "Presentar el plan de trabajo.",
-    deliverable: "Sitio con estructura inicial del proyecto y cronograma.",
+    deliverable: "Sitio con estructura inicial del proyecto y progreso semanal.",
   },
   {
     id: "w02",

@@ -10,7 +10,7 @@ export const frameworkMeta = {
   status: "borrador" as const,
   snapshotPath: "docs/marco/v0.1.md",
   note:
-    "El marco dice qué debe valer. El modelo dice cómo se concreta. Ambos son semilla: se corrigen con lectura y prototipo.",
+    "El marco dice qué debe valer el compañero. El modelo dice cómo se concreta. El camino muestra qué aspectos se pulen hacia el norte. Semilla: se corrige con lectura y prototipo.",
 };
 
 export type FrameworkSource =
@@ -42,15 +42,15 @@ export const sourceLabels: Record<FrameworkSource, string> = {
 };
 
 export const frameworkQuestion =
-  "¿Cómo diseñar un agente de acompañamiento que sostenga la constancia y la interiorización del aprendizaje autónomo ante motivaciones diversas, sin depender de notas ni de credenciales vacías?";
+  "¿Cómo diseñar un agente de acompañamiento que sostenga la constancia y la interiorización del aprendizaje autónomo, de modo que queden conocimiento y habilidades aplicables y el aprendizaje tenga sentido: se usa, se interioriza, y el progreso se siente vivido —no simulado?";
 
 export const frameworkStance = {
   marco:
-    "Criterios y límites para diseñar acompañamiento del aprendizaje autónomo asistido por IA: qué cuenta como progreso, qué no se negocia y qué queda fuera de alcance.",
+    "Criterios y límites del compañero (Stitch): qué cuenta como progreso, qué no se negocia y qué queda fuera de alcance. No es el marco de todo el sistema — es el del acompañamiento.",
   modelo:
-    "Mecanismos y piezas que concretan cada regla (grafo, ciclo de feedback, compañero, pruebas, narrativa). Aún borrador: se afinan con lectura y Stitch Code.",
+    "Mecanismos y piezas que concretan cada regla (grafo, ciclo de feedback, compañero, pruebas, narrativa). Se afinan con lectura y con el laboratorio Stitch Code (Woven + Hilo).",
   relacion:
-    "Una regla del marco compone un componente del diseño; un componente exige respaldo del marco. Si el prototipo falla, a veces se ajusta el modelo; a veces se afila la regla.",
+    "Una regla del marco se indaga y se pula en aspectos del camino. Un aspecto del camino exige respaldo del marco. Si el prototipo falla, a veces se ajusta el modelo; a veces se afila la regla.",
 };
 
 /** Alcance que el marco asume en esta versión. */

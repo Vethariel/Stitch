@@ -9,11 +9,12 @@ import {
   frameworkVersions,
   sourceLabels,
 } from "../data/framework";
+import { bridgeNote, themeLinksForRule } from "../data/marcoCaminoBridge";
 ---
 
 <Layout
   title="Marco — Proyecto Stitch"
-  description="Marco de diseño Stitch y modelo asociado: criterios, mecanismos y versiones (borrador)."
+  description="Marco del compañero Stitch y modelo asociado: criterios, mecanismos y cruce con el camino."
   active="marco"
 >
   <main class="bg-paper">
@@ -28,6 +29,15 @@ import {
         <p class="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
           {frameworkMeta.note}
         </p>
+        <p class="mt-4 max-w-2xl text-sm leading-relaxed text-ink-soft">
+          {bridgeNote}{" "}
+          <a
+            href="/camino"
+            class="text-thread underline decoration-thread/40 underline-offset-4 hover:text-thread-dim"
+          >
+            Ver el camino →
+          </a>
+        </p>
         <p class="mt-4 font-display text-sm text-ink-soft">
           Versión {frameworkMeta.version} · {frameworkMeta.date}
           <span class="mx-2 text-line">·</span>
@@ -39,6 +49,7 @@ import {
           <a href="#alcance" class="hover:text-thread">Alcance</a>
           <a href="#reglas" class="hover:text-thread">Reglas y modelo</a>
           <a href="#versiones" class="hover:text-thread">Versiones</a>
+          <a href="/camino" class="hover:text-thread">Camino</a>
         </nav>
       </div>
     </section>
@@ -142,13 +153,22 @@ import {
           Reglas del marco y cómo del modelo
         </h2>
         <p class="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
-          Cada bloque: la regla (qué debe valer) y el modelo borrador (cómo se concreta).
-          Fuentes = lecturas e hipótesis que lo sostienen hoy.
+          Cada bloque: la regla (qué debe valer), el modelo borrador (cómo se concreta)
+          y los aspectos del{" "}
+          <a
+            href="/camino"
+            class="text-thread underline decoration-thread/40 underline-offset-4 hover:text-thread-dim"
+          >
+            camino
+          </a>{" "}
+          donde se indaga. Fuentes = lecturas e hipótesis que lo sostienen hoy.
         </p>
 
         <ol class="mt-16 space-y-14">
           {
-            frameworkRules.map((r, i) => (
+            frameworkRules.map((r, i) => {
+              const caminoLinks = themeLinksForRule(r.id);
+              return (
               <li id={r.id} class="max-w-3xl border-t border-line pt-10 first:border-t-0 first:pt-0">
                 <p class="font-display text-xs font-semibold tracking-wide text-signal uppercase">
                   {String(i + 1).padStart(2, "0")} · {r.id}
@@ -178,12 +198,34 @@ import {
                     ))}
                   </ul>
                 </div>
+                {
+                  caminoLinks.length > 0 && (
+                    <div class="mt-6">
+                      <p class="font-display text-xs font-semibold tracking-wide text-ink-soft uppercase">
+                        Camino · aspectos
+                      </p>
+                      <ul class="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+                        {caminoLinks.map((t) => (
+                          <li>
+                            <a
+                              href={t.href}
+                              class="text-thread underline decoration-thread/40 underline-offset-4 hover:text-thread-dim"
+                            >
+                              {t.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )
+                }
                 <p class="mt-5 text-xs text-ink-soft/80">
                   Fuentes:{" "}
                   {r.sources.map((s) => sourceLabels[s]).join(" · ")}
                 </p>
               </li>
-            ))
+              );
+            })
           }
         </ol>
       </div>

@@ -1,6 +1,7 @@
 /**
- * Mapa del sistema — entidades, relaciones y escala.
- * Fuente viva para /mapa; documento extendido en docs/mapa-del-sistema.md
+ * Mapa del sistema — entidades, relaciones y escala (documento de visión).
+ * La página de navegación es /camino (viaje origen → Stitch → norte).
+ * Documento: docs/mapa-del-sistema.md
  */
 
 export type EntityPhase = "now" | "progressive" | "later" | "agency";
@@ -30,9 +31,9 @@ export type SystemEntity = {
 
 export const systemMapMeta = {
   version: "2026-09-01",
-  label: "Foto finish",
+  label: "Visión del sistema",
   question:
-    "¿Cómo diseñar un agente de acompañamiento que sostenga la constancia y la interiorización del aprendizaje autónomo ante motivaciones diversas, sin depender de notas ni de credenciales vacías?",
+    "¿Cómo diseñar un agente de acompañamiento que sostenga la constancia y la interiorización del aprendizaje autónomo, de modo que queden conocimiento y habilidades aplicables y el aprendizaje tenga sentido: se usa, se interioriza, y el progreso se siente vivido —no simulado?",
 };
 
 export const hierarchy = [
