@@ -2,7 +2,8 @@
 
 > **Documento de discusión con el docente** · visión del sistema, no cronograma  
 > **Inicio:** 2026-09-01  
-> **Estado:** idea general + preguntas por entidad (pedagógico primero)
+> **Estado:** idea general + preguntas por entidad (pedagógico primero)  
+> **En el sitio:** [`/camino`](/camino) (antes `/mapa`); los temas del compañero viven en `src/data/companionThemes.ts`
 
 ---
 

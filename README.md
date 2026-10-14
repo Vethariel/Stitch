@@ -1,11 +1,11 @@
 # Proyecto Stitch
 
-Sitio estático del plan de trabajo de investigación: marco para el diseño de sistemas de aprendizaje autónomo asistidos por inteligencia artificial.
+Research log de la investigación sobre un compañero de aprendizaje autónomo asistido por inteligencia artificial (Stitch), con Stitch Code como laboratorio.
 
 ## Stack
 
 - [Astro](https://astro.build)
-- [React](https://react.dev) (progreso semanal interactivo)
+- [React](https://react.dev) (diagramas interactivos: camino y vocabulario)
 - [Tailwind CSS v4](https://tailwindcss.com)
 
 ## Comandos
@@ -19,5 +19,9 @@ npm run preview
 
 ## Contenido
 
-- Descripción general del Proyecto Stitch y su relación con Stitch Code
-- Progreso semanal (agosto – mitad de diciembre 2026)
+- Inicio: norte del proyecto y relación con Stitch Code
+- Problema y pregunta de investigación
+- Marco del compañero (reglas y modelo) cruzado con el camino
+- Camino: origen Stitch Code → aspectos de Stitch → norte
+- Progreso: hechos ya ocurridos (no plan semanal)
+- Lecturas y vocabulario (grafo de conceptos)
