@@ -1,16 +1,7 @@
 /**
- * Temas del compañero (Stitch) — aspectos del camino a pulir.
- * Usados en /camino; documento extendido en docs/mapa-del-sistema.md
+ * Temas del compañero (Stitch) — aspectos a pulir, parte de la vía del modelo.
+ * Usados en /stitch; documento extendido en docs/mapa-del-sistema.md
  */
-
-export const companionMeta = {
-  version: "2026-09-09",
-  label: "Compañero",
-  question:
-    "¿Cómo diseñar un agente de acompañamiento que sostenga la constancia y la interiorización del aprendizaje autónomo, de modo que queden conocimiento y habilidades aplicables y el aprendizaje tenga sentido: se usa, se interioriza, y el progreso se siente vivido —no simulado?",
-  thread:
-    "Nivel de lenguaje cercano (no invasivo) → vínculo → motivación intrínseca → constancia.",
-};
 
 export type CompanionTheme = {
   id: string;
@@ -19,7 +10,7 @@ export type CompanionTheme = {
   technical: string;
 };
 
-/** Temas conectados a Stitch; al clic se muestra pedagógica + técnica. */
+/** Aspectos del compañero: pregunta pedagógica + hipótesis técnica. Orden del grafo en versiones.json. */
 export const companionThemes: CompanionTheme[] = [
   {
     id: "lenguaje",
@@ -94,7 +85,3 @@ export const companionThemes: CompanionTheme[] = [
       "Filtros / rechazo explícito de acciones fuera de rol: asesor de vida, juez, sustituto del docente, gamificación por puntos/rachas como motor.",
   },
 ];
-
-export function themeById(id: string) {
-  return companionThemes.find((t) => t.id === id);
-}

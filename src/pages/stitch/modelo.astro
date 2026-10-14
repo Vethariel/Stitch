@@ -1,0 +1,29 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ViaHeader from "../../components/ViaHeader.astro";
+import ViaLista from "../../components/ViaLista.astro";
+import { companionThemes } from "../../data/companionThemes";
+import { frameworkStance } from "../../data/framework";
+import { objetosDeVia } from "../../data/versiones";
+
+const items = objetosDeVia("modelo").map((o) => {
+  const t = companionThemes.find((t) => t.id === o.id);
+  return {
+    id: o.id,
+    title: o.label,
+    descripcion: t?.pedagogical ?? "",
+    detalle: t && { label: "Hipótesis", text: t.technical },
+  };
+});
+---
+
+<Layout
+  title="Modelo — Stitch"
+  description="Vía del modelo: cómo se concreta el compañero Stitch. Aspectos del compañero con su pregunta y su hipótesis."
+  active="stitch"
+>
+  <main class="bg-paper">
+    <ViaHeader via="modelo" title="Cómo se concreta" intro={frameworkStance.modelo} />
+    <ViaLista via="modelo" items={items} />
+  </main>
+</Layout>

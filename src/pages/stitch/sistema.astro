@@ -1,0 +1,29 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ViaHeader from "../../components/ViaHeader.astro";
+import ViaLista from "../../components/ViaLista.astro";
+import { sistemaGrupos, stitchComponentes, stitchSistema } from "../../data/stitch";
+import { objetosDeVia } from "../../data/versiones";
+
+const items = objetosDeVia("sistema").map((o) => {
+  const c = stitchComponentes.find((c) => c.id === o.id);
+  return {
+    id: o.id,
+    title: o.label,
+    descripcion: c?.que ?? "",
+    detalle: c && { label: `Hoy en ${stitchSistema.anfitrion}`, text: c.hoy },
+    grupo: c && sistemaGrupos[c.grupo],
+  };
+});
+---
+
+<Layout
+  title="Sistema — Stitch"
+  description="Vía del sistema: el compañero como anexo acoplable. Lo que aporta, lo que necesita del anfitrión y cómo se ve hoy en Stitch Code."
+  active="stitch"
+>
+  <main class="bg-paper">
+    <ViaHeader via="sistema" title={stitchSistema.title} intro={stitchSistema.body} />
+    <ViaLista via="sistema" items={items} />
+  </main>
+</Layout>

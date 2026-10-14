@@ -1,0 +1,23 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ViaHeader from "../../components/ViaHeader.astro";
+import ViaLista from "../../components/ViaLista.astro";
+import { frameworkRules, frameworkStance } from "../../data/framework";
+import { objetosDeVia } from "../../data/versiones";
+
+const items = objetosDeVia("marco").map((o) => {
+  const r = frameworkRules.find((r) => r.id === o.id);
+  return { id: o.id, title: r?.title ?? o.label, descripcion: r?.rule ?? "" };
+});
+---
+
+<Layout
+  title="Marco — Stitch"
+  description="Vía del marco: qué debe valer el compañero Stitch. Reglas vigentes."
+  active="stitch"
+>
+  <main class="bg-paper">
+    <ViaHeader via="marco" title="Qué debe valer el compañero" intro={frameworkStance.marco} />
+    <ViaLista via="marco" items={items} />
+  </main>
+</Layout>

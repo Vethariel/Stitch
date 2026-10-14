@@ -1,17 +1,7 @@
 /**
- * Marco Stitch + modelo asociado (borrador).
- * Versión canónica en código; snapshot markdown en docs/marco/.
+ * Marco Stitch + modelo asociado — contenido vigente.
+ * Versión e historial en versiones.json; snapshots markdown en docs/marco/.
  */
-
-export const frameworkMeta = {
-  version: "0.1.0",
-  date: "2026-08-26",
-  label: "Borrador 0.1",
-  status: "borrador" as const,
-  snapshotPath: "docs/marco/v0.1.md",
-  note:
-    "El marco dice qué debe valer el compañero. El modelo dice cómo se concreta. El camino muestra qué aspectos se pulen hacia el norte. Semilla: se corrige con lectura y prototipo.",
-};
 
 export type FrameworkSource =
   | "problema"
@@ -48,9 +38,9 @@ export const frameworkStance = {
   marco:
     "Criterios y límites del compañero (Stitch): qué cuenta como progreso, qué no se negocia y qué queda fuera de alcance. No es el marco de todo el sistema — es el del acompañamiento.",
   modelo:
-    "Mecanismos y piezas que concretan cada regla (grafo, ciclo de feedback, compañero, pruebas, narrativa). Se afinan con lectura y con el laboratorio Stitch Code (Woven + Hilo).",
+    "Mecanismos y piezas que concretan cada regla (grafo, ciclo de feedback, compañero, pruebas, narrativa). Se afinan con lectura y con su prueba en el sistema.",
   relacion:
-    "Una regla del marco se indaga y se pula en aspectos del camino. Un aspecto del camino exige respaldo del marco. Si el prototipo falla, a veces se ajusta el modelo; a veces se afila la regla.",
+    "Una regla del marco se concreta en el modelo y se indaga en los aspectos del compañero; el modelo se prueba en el sistema. Si el sistema muestra que algo falla, a veces se ajusta el modelo; a veces se afila la regla.",
 };
 
 /** Alcance que el marco asume en esta versión. */
@@ -224,13 +214,3 @@ export const frameworkRules: FrameworkRule[] = [
     },
   },
 ];
-
-export const frameworkVersions = [
-  {
-    version: "0.1.0",
-    date: "2026-08-26",
-    summary:
-      "Primer borrador: reglas desde hipótesis del problema y lecturas fichadas (NRC caps. 1–3, Hattie, Carless, Dunlosky); modelo asociado por regla.",
-    snapshot: "docs/marco/v0.1.md",
-  },
-] as const;

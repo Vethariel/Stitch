@@ -4,7 +4,7 @@
  */
 
 export const progressMeta = {
-  updated: "2026-09-21",
+  updated: "2026-10-14",
   note: "Hechos verificables en el sitio y en git. No es un cronograma de intenciones.",
 };
 
@@ -21,6 +21,37 @@ export type ProgressEntry = {
 /** Avances ya registrados (orden cronológico inverso en la página). */
 export const progressLog: ProgressEntry[] = [
   {
+    id: "2026-10-14-pagina-stitch-versionado",
+    date: "2026-10-14",
+    dateLabel: "14 Oct",
+    title: "Página Stitch y versionado de las tres vías",
+    facts: [
+      "Marco y Camino dejan de ser páginas: el compañero vive en /stitch (problema reducido, norte y tres vías) con subpáginas /stitch/marco, /stitch/modelo y /stitch/sistema.",
+      "Grafo de tres columnas: reglas del marco → aspectos del modelo → piezas del sistema, con las tensiones marcadas; cada nodo lleva a su objeto en la subpágina de su vía.",
+      "Subpáginas simples y con el mismo formato: cada objeto con su descripción, en el orden del grafo.",
+      "El sistema se piensa como anexo: se acopla a cualquier anfitrión que exponga ciertas herramientas y le deje un espacio en la interfaz. Stitch Code es el primer anfitrión.",
+      "Versión marco.modelo.sistema con cascada: si cambia el marco, modelo y sistema quedan pendientes de alinearse. Objetos y relaciones versionados en src/data/versiones.json.",
+      "Línea base 1.1.1: marco 0.1, modelo con los aspectos del compañero y el sistema como anexo, leído sobre Stitch Code.",
+    ],
+    links: [
+      { href: "/stitch#vias", label: "Tres vías" },
+      { href: "/stitch/sistema", label: "Sistema" },
+    ],
+  },
+  {
+    id: "2026-09-28-stitch-code-hallazgos",
+    date: "2026-09-28",
+    dateLabel: "28 Sep",
+    title: "Destripe de Stitch Code",
+    facts: [
+      "Análisis del laboratorio en docs/stitch-code-hallazgos.md: ideas iniciales, evolución del prototipo, piezas, cruce con los aspectos del compañero.",
+      "Tensiones frente al marco: ayuda que sube por insistencia, dominio con un solo ejercicio, sin memoria entre sesiones, sin evaluación con usuarios.",
+      "Limpieza: fuera Timeline, systemMap y redirecciones; README actualizado.",
+    ],
+    links: [{ href: "/stitch/sistema", label: "Sistema" }],
+    commit: "3195a8a",
+  },
+  {
     id: "2026-09-21-norte-camino-progreso",
     date: "2026-09-21",
     dateLabel: "21 Sep",
@@ -35,8 +66,7 @@ export const progressLog: ProgressEntry[] = [
     ],
     links: [
       { href: "/", label: "Inicio" },
-      { href: "/camino", label: "Camino" },
-      { href: "/marco", label: "Marco" },
+      { href: "/stitch", label: "Stitch" },
       { href: "/problema", label: "Problema" },
     ],
   },
@@ -51,7 +81,7 @@ export const progressLog: ProgressEntry[] = [
       "Quedó documentado un hilo del compañero: lenguaje cercano → vínculo → motivación intrínseca → constancia.",
     ],
     links: [
-      { href: "/camino", label: "Camino" },
+      { href: "/stitch/modelo", label: "Aspectos" },
       { href: "/vocabulario", label: "Vocabulario" },
     ],
     commit: "b1e568d",
@@ -65,7 +95,7 @@ export const progressLog: ProgressEntry[] = [
       "Se publicó /mapa y el documento docs/mapa-del-sistema.md (visión del sistema, entidades, alcance).",
       "Más adelante la página de navegación pasa a «Camino»: origen Stitch Code → aspectos de Stitch → norte.",
     ],
-    links: [{ href: "/camino", label: "Camino" }],
+    links: [{ href: "/stitch", label: "Stitch" }],
     commit: "42569a3",
   },
   {
@@ -79,7 +109,7 @@ export const progressLog: ProgressEntry[] = [
       "Lecturas ampliadas (How People Learn) y conceptos de misconceptions, condicionalización y expertise adaptativa en el vocabulario.",
     ],
     links: [
-      { href: "/marco", label: "Marco" },
+      { href: "/stitch/marco", label: "Marco" },
       { href: "/lecturas", label: "Lecturas" },
     ],
     commit: "774980d",
@@ -142,5 +172,5 @@ export const inProgress: {
 
 export const nowSummary = {
   title: "Dónde estamos ahora",
-  body: "Hay problema, marco del compañero, camino (Stitch Code → Stitch → norte) cruzado con el marco, lecturas, vocabulario y esta página de hechos. Stitch Code existe como laboratorio (Woven + Hilo); este sitio afila el acompañamiento hacia el norte. No hay prototipo cerrado del marco Stitch sobre ese laboratorio todavía.",
+  body: "Hay problema, la página del compañero con sus tres vías (marco, modelo y sistema) en la versión 1.1.1, el análisis de Stitch Code, lecturas, vocabulario y esta página de hechos. El sistema se piensa como anexo acoplable; Stitch Code (Woven + Hilo) es su primer anfitrión y el modelo todavía no se prueba sobre él.",
 };

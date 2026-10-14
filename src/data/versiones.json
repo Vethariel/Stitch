@@ -1,0 +1,113 @@
+{
+  "fases": [
+    {
+      "version": "1.1.1",
+      "fecha": "2026-10-14",
+      "titulo": "Línea base",
+      "nota": "Marco 0.1, modelo con los aspectos del compañero y el sistema como anexo acoplable, con Stitch Code como primer anfitrión. El modelo todavía no se prueba en el sistema.",
+      "pendientes": []
+    }
+  ],
+  "vias": [
+    {
+      "via": "marco",
+      "n": 1,
+      "desde": "1.1.1",
+      "fecha": "2026-08-26",
+      "titulo": "Borrador 0.1 del marco",
+      "resumen": "Nueve reglas del compañero desde las hipótesis del problema y las lecturas fichadas (NRC caps. 1–3, Hattie y Timperley, Carless y Boud, Dunlosky).",
+      "referencia": "docs/marco/v0.1.md"
+    },
+    {
+      "via": "modelo",
+      "n": 1,
+      "desde": "1.1.1",
+      "fecha": "2026-09-09",
+      "titulo": "Modelo borrador + aspectos del compañero",
+      "resumen": "Un cómo por cada regla del marco y nueve aspectos del compañero, cada uno con lado pedagógico (indagar) y técnico (hipótesis).",
+      "referencia": "docs/mapa-del-sistema.md"
+    },
+    {
+      "via": "sistema",
+      "n": 1,
+      "desde": "1.1.1",
+      "fecha": "2026-10-14",
+      "titulo": "Anexo acoplable, con Stitch Code como primer anfitrión",
+      "resumen": "El compañero como anexo: seis piezas propias y lo que necesita del anfitrión (cuatro herramientas y un espacio en la interfaz). Cada pieza se lee hoy en Stitch Code (StitchCode@666df9d), sin evaluación con usuarios.",
+      "referencia": "docs/stitch-code-hallazgos.md"
+    }
+  ],
+  "objetos": [
+    { "via": "marco", "id": "progreso-sin-nota", "label": "Progreso sin nota vacía", "desde": "1.1.1" },
+    { "via": "marco", "id": "aplicabilidad", "label": "Aplicabilidad", "desde": "1.1.1" },
+    { "via": "marco", "id": "previo-y-errores", "label": "Previo e ideas erróneas", "desde": "1.1.1" },
+    { "via": "marco", "id": "organizacion-patrones", "label": "Organización y patrones", "desde": "1.1.1" },
+    { "via": "marco", "id": "ciclo-feedback", "label": "Ciclo de feedback", "desde": "1.1.1" },
+    { "via": "marco", "id": "metacognicion-agencia", "label": "Metacognición y agencia", "desde": "1.1.1" },
+    { "via": "marco", "id": "compania-memoria", "label": "Compañía con memoria mínima", "desde": "1.1.1" },
+    { "via": "marco", "id": "espacio-seguro", "label": "Espacio seguro", "desde": "1.1.1" },
+    { "via": "marco", "id": "alcance-practico", "label": "Alcance práctico", "desde": "1.1.1" },
+
+    { "via": "modelo", "id": "narrativa", "label": "Narrativa", "desde": "1.1.1" },
+    { "via": "modelo", "id": "entendimiento-retroalimentacion", "label": "Entendimiento y feedback", "desde": "1.1.1" },
+    { "via": "modelo", "id": "agencia", "label": "Agencia", "desde": "1.1.1" },
+    { "via": "modelo", "id": "metacognicion", "label": "Metacognición", "desde": "1.1.1" },
+    { "via": "modelo", "id": "lenguaje", "label": "Lenguaje", "desde": "1.1.1" },
+    { "via": "modelo", "id": "memoria", "label": "Memoria", "desde": "1.1.1" },
+    { "via": "modelo", "id": "emocion-motivacion", "label": "Emoción y motivación", "desde": "1.1.1" },
+    { "via": "modelo", "id": "motivaciones-diversas", "label": "Motivaciones diversas", "desde": "1.1.1" },
+    { "via": "modelo", "id": "rol", "label": "Rol", "desde": "1.1.1" },
+
+    { "via": "sistema", "id": "planes", "label": "Planes de actividad", "desde": "1.1.1" },
+    { "via": "sistema", "id": "ayuda-graduada", "label": "Ayuda graduada", "desde": "1.1.1" },
+    { "via": "sistema", "id": "logros", "label": "Logros por competencia", "desde": "1.1.1" },
+    { "via": "sistema", "id": "perfil", "label": "Perfil del estudiante", "desde": "1.1.1" },
+    { "via": "sistema", "id": "memoria", "label": "Memoria entre sesiones", "desde": "1.1.1" },
+    { "via": "sistema", "id": "presencia", "label": "Presencia y emociones", "desde": "1.1.1" },
+    { "via": "sistema", "id": "actividades", "label": "Actividades verificables", "desde": "1.1.1" },
+    { "via": "sistema", "id": "errores-legibles", "label": "Errores legibles", "desde": "1.1.1" },
+    { "via": "sistema", "id": "ejecucion-observable", "label": "Ejecución observable", "desde": "1.1.1" },
+    { "via": "sistema", "id": "vistas", "label": "Varias vistas", "desde": "1.1.1" },
+    { "via": "sistema", "id": "espacio-companero", "label": "Espacio del compañero", "desde": "1.1.1" }
+  ],
+  "relaciones": [
+    { "de": "marco:progreso-sin-nota", "a": "modelo:narrativa", "tipo": "concreta", "desde": "1.1.1", "nota": "El avance se ve como recorrido propio, no como una nota." },
+    { "de": "marco:progreso-sin-nota", "a": "modelo:entendimiento-retroalimentacion", "tipo": "concreta", "desde": "1.1.1", "nota": "Avanzar exige evidencia de entendimiento, no un acierto suelto." },
+    { "de": "marco:progreso-sin-nota", "a": "modelo:rol", "tipo": "concreta", "desde": "1.1.1", "nota": "El compañero no premia con puntos ni rachas." },
+    { "de": "marco:aplicabilidad", "a": "modelo:agencia", "tipo": "concreta", "desde": "1.1.1", "nota": "El estudiante aplica por su cuenta; el compañero no resuelve por él." },
+    { "de": "marco:aplicabilidad", "a": "modelo:metacognicion", "tipo": "concreta", "desde": "1.1.1", "nota": "Reconocer cuándo aplica lo aprendido y cuándo no." },
+    { "de": "marco:aplicabilidad", "a": "modelo:entendimiento-retroalimentacion", "tipo": "concreta", "desde": "1.1.1", "nota": "Se comprueba usando en situaciones nuevas, no enunciando." },
+    { "de": "marco:previo-y-errores", "a": "modelo:entendimiento-retroalimentacion", "tipo": "concreta", "desde": "1.1.1", "nota": "Leer lagunas e ideas erróneas antes de explicar." },
+    { "de": "marco:previo-y-errores", "a": "modelo:lenguaje", "tipo": "concreta", "desde": "1.1.1", "nota": "Las asociaciones del estudiante sirven de anclaje, sin tergiversar el dominio." },
+    { "de": "marco:organizacion-patrones", "a": "modelo:narrativa", "tipo": "concreta", "desde": "1.1.1", "nota": "El temario como grafo de ideas ligadas, no como lista de temas." },
+    { "de": "marco:organizacion-patrones", "a": "modelo:entendimiento-retroalimentacion", "tipo": "concreta", "desde": "1.1.1", "nota": "La explicación apunta al principio detrás del ejercicio." },
+    { "de": "marco:ciclo-feedback", "a": "modelo:entendimiento-retroalimentacion", "tipo": "concreta", "desde": "1.1.1", "nota": "Responder dónde voy, cómo voy y qué sigue." },
+    { "de": "marco:ciclo-feedback", "a": "modelo:agencia", "tipo": "concreta", "desde": "1.1.1", "nota": "El estudiante toma el feedback y decide el siguiente paso." },
+    { "de": "marco:metacognicion-agencia", "a": "modelo:metacognicion", "tipo": "concreta", "desde": "1.1.1", "nota": "Aprender a monitorear el propio aprendizaje." },
+    { "de": "marco:metacognicion-agencia", "a": "modelo:agencia", "tipo": "concreta", "desde": "1.1.1", "nota": "El estudiante guía el recorrido; el compañero lo estructura." },
+    { "de": "marco:compania-memoria", "a": "modelo:memoria", "tipo": "concreta", "desde": "1.1.1", "nota": "Recordar solo lo mínimo para sentir continuidad." },
+    { "de": "marco:compania-memoria", "a": "modelo:lenguaje", "tipo": "concreta", "desde": "1.1.1", "nota": "Un tono cercano, no invasivo, que se mantiene entre encuentros." },
+    { "de": "marco:compania-memoria", "a": "modelo:emocion-motivacion", "tipo": "concreta", "desde": "1.1.1", "nota": "La presencia sostiene el ritmo y el retorno." },
+    { "de": "marco:espacio-seguro", "a": "modelo:emocion-motivacion", "tipo": "concreta", "desde": "1.1.1", "nota": "Errar está permitido; la motivación no depende de premios." },
+    { "de": "marco:espacio-seguro", "a": "modelo:motivaciones-diversas", "tipo": "concreta", "desde": "1.1.1", "nota": "Quien llega por obligación también encuentra sentido sin recompensa externa." },
+    { "de": "marco:espacio-seguro", "a": "modelo:rol", "tipo": "concreta", "desde": "1.1.1", "nota": "Sin vigilancia ni juicio sobre la persona." },
+    { "de": "marco:alcance-practico", "a": "modelo:rol", "tipo": "concreta", "desde": "1.1.1", "nota": "Acompaña habilidades técnicas; no es asesor de vida ni LMS." },
+    { "de": "marco:alcance-practico", "a": "modelo:agencia", "tipo": "concreta", "desde": "1.1.1", "nota": "La práctica es la vía principal; la teoría sirve al hacer." },
+
+    { "de": "modelo:narrativa", "a": "sistema:planes", "tipo": "tension", "desde": "1.1.1", "nota": "En Stitch Code el plan es lineal y cerrado: no contempla desvíos ni volver al temario desde la experiencia del estudiante." },
+    { "de": "modelo:entendimiento-retroalimentacion", "a": "sistema:ayuda-graduada", "tipo": "tension", "desde": "1.1.1", "nota": "En Stitch Code la ayuda sube por número de mensajes, no por evidencia de entendimiento." },
+    { "de": "modelo:entendimiento-retroalimentacion", "a": "sistema:actividades", "tipo": "tension", "desde": "1.1.1", "nota": "En Stitch Code el ejercicio libre lo da por completo el modelo de lenguaje, sin verificación." },
+    { "de": "modelo:entendimiento-retroalimentacion", "a": "sistema:errores-legibles", "tipo": "cubre", "desde": "1.1.1", "nota": "Un error principal a la vez, con ejemplo mínimo." },
+    { "de": "modelo:entendimiento-retroalimentacion", "a": "sistema:ejecucion-observable", "tipo": "cubre", "desde": "1.1.1", "nota": "La traza deja ver qué hace el programa línea a línea." },
+    { "de": "modelo:agencia", "a": "sistema:planes", "tipo": "tension", "desde": "1.1.1", "nota": "En Stitch Code el estudiante pide los poderes, pero dentro del plan la secuencia la dicta Hilo." },
+    { "de": "modelo:agencia", "a": "sistema:espacio-companero", "tipo": "cubre", "desde": "1.1.1", "nota": "El estudiante llama al compañero desde el chat cuando lo necesita." },
+    { "de": "modelo:metacognicion", "a": "sistema:planes", "tipo": "tension", "desde": "1.1.1", "nota": "En Stitch Code la reflexión de cierre es un mensaje más, sin mecanismo propio." },
+    { "de": "modelo:metacognicion", "a": "sistema:logros", "tipo": "tension", "desde": "1.1.1", "nota": "En Stitch Code un solo ejercicio basta para declarar dominio de un tema." },
+    { "de": "modelo:lenguaje", "a": "sistema:vistas", "tipo": "cubre", "desde": "1.1.1", "nota": "El mismo programa en texto, bloques y lenguaje natural." },
+    { "de": "modelo:lenguaje", "a": "sistema:perfil", "tipo": "tension", "desde": "1.1.1", "nota": "En Stitch Code el tono y el estilo se declaran al entrar; no se infieren ni se ajustan con el uso." },
+    { "de": "modelo:memoria", "a": "sistema:memoria", "tipo": "tension", "desde": "1.1.1", "nota": "En Stitch Code solo perfil y logros persisten; chat, plan e intentos se pierden entre sesiones." },
+    { "de": "modelo:emocion-motivacion", "a": "sistema:presencia", "tipo": "tension", "desde": "1.1.1", "nota": "En Stitch Code las emociones del avatar las elige el modelo de lenguaje sin una política." },
+    { "de": "modelo:motivaciones-diversas", "a": "sistema:perfil", "tipo": "tension", "desde": "1.1.1", "nota": "En Stitch Code los objetivos se pasan al prompt, pero nada los usa para elegir temas o ritmo." },
+    { "de": "modelo:rol", "a": "sistema:ayuda-graduada", "tipo": "cubre", "desde": "1.1.1", "nota": "No da la solución antes del último nivel; poderes acotados." }
+  ]
+}

@@ -1,0 +1,63 @@
+---
+import { repoDocUrl } from "../data/stitch";
+import { vias, viaVigente, type Via } from "../data/versiones";
+
+interface Props {
+  via: Via;
+  title: string;
+  intro: string;
+}
+
+const { via, title, intro } = Astro.props;
+const index = vias.findIndex((v) => v.id === via);
+const meta = vias[index];
+const vigente = viaVigente(via);
+---
+
+<section class="border-b border-line">
+  <div class="mx-auto max-w-6xl px-5 pt-28 pb-16 sm:px-8 sm:pt-36 sm:pb-20 md:pt-40">
+    <nav class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-soft" aria-label="Vías">
+      <a href="/stitch#vias" class="hover:text-thread">Stitch</a>
+      <span aria-hidden="true">/</span>
+      {
+        vias.map((v, i) => (
+          <>
+            {i > 0 && <span class="text-line" aria-hidden="true">·</span>}
+            <a
+              href={`/stitch/${v.id}`}
+              class:list={["hover:text-thread", v.id === via && "font-medium text-ink"]}
+              aria-current={v.id === via ? "page" : undefined}
+            >
+              {v.label}
+            </a>
+          </>
+        ))
+      }
+    </nav>
+    <p class="mt-8 font-display text-xs font-semibold tracking-[0.2em] text-thread uppercase">
+      Vía {index + 1} · {meta.label} · v{vigente?.n} · {meta.pregunta}
+    </p>
+    <h1 class="mt-5 max-w-3xl font-display text-3xl font-semibold text-ink sm:text-4xl md:text-5xl">
+      {title}
+    </h1>
+    <p class="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">{intro}</p>
+    {
+      vigente && (
+        <p class="mt-4 max-w-2xl text-sm text-ink-soft">
+          Versión vigente: <span class="font-medium text-ink">{vigente.titulo}</span>
+          {vigente.referencia && (
+            <>
+              {" · "}
+              <a
+                href={repoDocUrl(vigente.referencia)}
+                class="text-thread underline decoration-thread/40 underline-offset-4 hover:text-thread-dim"
+              >
+                {vigente.referencia}
+              </a>
+            </>
+          )}
+        </p>
+      )
+    }
+  </div>
+</section>

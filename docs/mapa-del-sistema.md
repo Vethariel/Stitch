@@ -3,7 +3,7 @@
 > **Documento de discusión con el docente** · visión del sistema, no cronograma  
 > **Inicio:** 2026-09-01  
 > **Estado:** idea general + preguntas por entidad (pedagógico primero)  
-> **En el sitio:** [`/camino`](/camino) (antes `/mapa`); los temas del compañero viven en `src/data/companionThemes.ts`
+> **En el sitio:** [`/stitch`](/stitch), vía del modelo (antes `/mapa` y `/camino`); los temas del compañero viven en `src/data/companionThemes.ts`
 
 ---
 
@@ -19,7 +19,7 @@ El mapa tiene que ser un **grafo**, sin texto descriptivo. De cada entidad salen
 
 Un entorno donde una persona puede **aprender por su cuenta** con **significado** (vinculado a su propósito e intereses), **interacción** (presencia que sostiene el ritmo, no un menú frío) y **criterio honesto de avance** (poder hacer, no acumular credenciales vacías).
 
-**Stitch** es el compañero — el agente de acompañamiento — no el sistema completo. El sistema es el entorno donde ese compañero vive. **Stitch Code** es el primer laboratorio (ingeniería de software).
+**Stitch** es el compañero — el agente de acompañamiento — no el sistema completo. Se piensa como un **anexo**: se acopla a cualquier sistema anfitrión que exponga ciertas herramientas (actividades verificables, errores legibles, ejecución observable, varias vistas) y le deje un espacio en la interfaz. **Stitch Code** es el primer anfitrión (ingeniería de software).
 
 La pregunta que atraviesa el mapa:
 
