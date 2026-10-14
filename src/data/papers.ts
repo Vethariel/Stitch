@@ -1,5 +1,7 @@
 export type Paper = {
   id: string;
+  /** Nombre corto con que se cita en las vías. */
+  short: string;
   authors: string;
   year: number;
   title: string;
@@ -14,6 +16,7 @@ export type Paper = {
 export const papers: Paper[] = [
   {
     id: "nrc-how-people-learn-2000",
+    short: "NRC, How People Learn (2000)",
     authors: "John D. Bransford; Ann L. Brown; Rodney R. Cocking (Eds.) / National Research Council",
     year: 2000,
     title: "How People Learn: Brain, Mind, Experience, and School (ed. ampliada)",
@@ -67,6 +70,7 @@ export const papers: Paper[] = [
   },
   {
     id: "hattie-timperley-2007",
+    short: "Hattie y Timperley (2007)",
     authors: "John Hattie; Helen Timperley",
     year: 2007,
     title: "The Power of Feedback",
@@ -95,6 +99,7 @@ export const papers: Paper[] = [
   },
   {
     id: "carless-boud-2018",
+    short: "Carless y Boud (2018)",
     authors: "David Carless; David Boud",
     year: 2018,
     title: "The development of student feedback literacy: enabling uptake of feedback",
@@ -121,6 +126,7 @@ export const papers: Paper[] = [
   },
   {
     id: "dunlosky-et-al-2013",
+    short: "Dunlosky et al. (2013)",
     authors: "John Dunlosky; Katherine A. Rawson; Elizabeth J. Marsh; Mitchell J. Nathan; Daniel T. Willingham",
     year: 2013,
     title: "Improving students’ learning with effective learning techniques: Promising directions from cognitive and educational psychology",
@@ -142,3 +148,10 @@ export const papers: Paper[] = [
     ],
   },
 ];
+
+/** Lecturas citadas por id, con enlace a su ficha en /lecturas. */
+export function fuentesLectura(ids: string[]) {
+  return papers
+    .filter((p) => ids.includes(p.id))
+    .map((p) => ({ label: p.short, href: `/lecturas#${p.id}` }));
+}

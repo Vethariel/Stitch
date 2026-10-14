@@ -38,7 +38,7 @@ export const stitchNorte = {
   principles: [
     {
       title: "Interiorizar y aplicar",
-      text: "Que queden conocimiento y habilidades listos para problemas que importan — no solo terminar el módulo.",
+      text: "Que queden conocimiento y habilidades listos para problemas que importan: poder hacer, no terminar el módulo ni juntar una nota o credencial que finge dominio.",
     },
     {
       title: "Habilidades de aprendiz",
@@ -49,8 +49,8 @@ export const stitchNorte = {
       text: "Narrativa del aprendizaje con huella emocional — decisión de diseño rigurosa, no gamificación barata. Se siente vivido, no simulado.",
     },
     {
-      title: "Sentido, no trámite",
-      text: "Aprendizaje que puede ser gratificante porque se usa y se interioriza — sin nota vacía ni credencial que finge dominio.",
+      title: "Sentido propio",
+      text: "Lo aprendido se conecta con lo que la persona quiere o necesita; incluso quien llega por obligación encuentra por qué le importa, y por eso aprender deja de ser trámite.",
     },
   ],
 };

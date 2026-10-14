@@ -3,11 +3,17 @@ import Layout from "../../layouts/Layout.astro";
 import ViaHeader from "../../components/ViaHeader.astro";
 import ViaLista from "../../components/ViaLista.astro";
 import { frameworkRules, frameworkStance } from "../../data/framework";
+import { fuentesLectura } from "../../data/papers";
 import { objetosDeVia } from "../../data/versiones";
 
 const items = objetosDeVia("marco").map((o) => {
   const r = frameworkRules.find((r) => r.id === o.id);
-  return { id: o.id, title: r?.title ?? o.label, descripcion: r?.rule ?? "" };
+  return {
+    id: o.id,
+    title: r?.title ?? o.label,
+    descripcion: r?.rule ?? "",
+    fuentes: { label: "Literatura", items: fuentesLectura(r?.sources ?? []) },
+  };
 });
 ---
 

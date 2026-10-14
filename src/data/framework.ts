@@ -3,9 +3,10 @@
  * Versión e historial en versiones.json; snapshots markdown en docs/marco/.
  */
 
+/** «problema» = hipótesis propias; el resto son ids de papers.ts (literatura en /lecturas). */
 export type FrameworkSource =
   | "problema"
-  | "nrc-2000"
+  | "nrc-how-people-learn-2000"
   | "hattie-timperley-2007"
   | "carless-boud-2018"
   | "dunlosky-et-al-2013";
@@ -21,14 +22,6 @@ export type FrameworkRule = {
     summary: string;
     pieces: string[];
   };
-};
-
-export const sourceLabels: Record<FrameworkSource, string> = {
-  problema: "Problema / hipótesis",
-  "nrc-2000": "NRC How people learn (2000)",
-  "hattie-timperley-2007": "Hattie y Timperley (2007)",
-  "carless-boud-2018": "Carless y Boud (2018)",
-  "dunlosky-et-al-2013": "Dunlosky et al. (2013)",
 };
 
 export const frameworkQuestion =
@@ -67,7 +60,7 @@ export const frameworkRules: FrameworkRule[] = [
     title: "Progreso sin nota vacía",
     rule:
       "El avance se gana con evidencia de poder hacer frente a un criterio acordado, no con calificación ni credencial vacía.",
-    sources: ["problema", "hattie-timperley-2007", "nrc-2000"],
+    sources: ["problema", "hattie-timperley-2007", "nrc-how-people-learn-2000"],
     model: {
       summary:
         "Grafo (mapa de conocimiento) y árbol (progreso) alineados; atajos solo tras prueba de desempeño.",
@@ -83,7 +76,7 @@ export const frameworkRules: FrameworkRule[] = [
     title: "Aplicabilidad antes que memorización",
     rule:
       "El criterio de buen uso es poder aplicar en situaciones nuevas (transferencia), no enunciar el concepto. La profundidad puede variar según la meta, pero no se cierra un tramo por fluidez superficial.",
-    sources: ["problema", "nrc-2000", "dunlosky-et-al-2013"],
+    sources: ["problema", "nrc-how-people-learn-2000", "dunlosky-et-al-2013"],
     model: {
       summary:
         "Problemas de reuso, condicionalización y multi-contexto; recuperación al servicio de usar, no de repasar fichas.",
@@ -100,7 +93,7 @@ export const frameworkRules: FrameworkRule[] = [
     title: "Conocimiento previo e ideas erróneas",
     rule:
       "Nadie llega en blanco. Hay que mapear lo que ya se sabe y detectar ideas erróneas a lo largo de la formación, no solo al inicio.",
-    sources: ["nrc-2000", "problema"],
+    sources: ["nrc-how-people-learn-2000", "problema"],
     model: {
       summary:
         "Diagnóstico conversacional continuo + modelo de dificultades típicas del dominio técnico.",
@@ -117,7 +110,7 @@ export const frameworkRules: FrameworkRule[] = [
     title: "Organización mental y patrones",
     rule:
       "El aprendizaje debe dejar relaciones y patrones recuperables (principios, no trucos sueltos), sin pretender coronar expertise.",
-    sources: ["nrc-2000"],
+    sources: ["nrc-how-people-learn-2000"],
     model: {
       summary:
         "Grafo como espejo del modelo mental; explicación orientada a la idea grande; selectividad de qué se trae a cada problema.",
@@ -134,7 +127,7 @@ export const frameworkRules: FrameworkRule[] = [
     title: "Ciclo de feedback con uptake",
     rule:
       "La retroalimentación debe ayudar a responder dónde voy, cómo voy y qué sigue, y el aprendiz debe poder tomarla y actuar. Sin base, se enseña; con malentendido, se retroalimenta.",
-    sources: ["hattie-timperley-2007", "carless-boud-2018", "nrc-2000"],
+    sources: ["hattie-timperley-2007", "carless-boud-2018", "nrc-how-people-learn-2000"],
     model: {
       summary:
         "Ciclo intento → información → interpretación → siguiente acción; formación progresiva de juicio y uso del feedback.",
@@ -152,7 +145,7 @@ export const frameworkRules: FrameworkRule[] = [
     title: "Metacognición y agencia",
     rule:
       "El usuario guía la narrativa; el marco estructura. Hay que estimar y pulir la capacidad de monitorear el propio aprendizaje. Stitch es guía, no garantía de éxito.",
-    sources: ["nrc-2000", "carless-boud-2018", "problema"],
+    sources: ["nrc-how-people-learn-2000", "carless-boud-2018", "problema"],
     model: {
       summary:
         "Diagnóstico metacognitivo inicial; estrategias según dominio; postura de novato logrado.",
@@ -185,7 +178,7 @@ export const frameworkRules: FrameworkRule[] = [
     title: "Espacio seguro y motivación",
     rule:
       "Errar está permitido. No se sostiene el aprendizaje con recompensa extrínseca que sustituye información de tarea, ni con vigilancia que amenaza la identidad.",
-    sources: ["problema", "hattie-timperley-2007", "nrc-2000", "carless-boud-2018"],
+    sources: ["problema", "hattie-timperley-2007", "nrc-how-people-learn-2000", "carless-boud-2018"],
     model: {
       summary:
         "Conversación sin prisa; pruebas acordadas; sin gamificación de puntos/rachas como motor.",
@@ -202,7 +195,7 @@ export const frameworkRules: FrameworkRule[] = [
     title: "Alcance práctico del laboratorio",
     rule:
       "No hay método mágico de enseñanza. Stitch se acota a habilidades técnicas con énfasis práctico; la comunidad de aprendizaje queda como horizonte.",
-    sources: ["nrc-2000", "problema"],
+    sources: ["nrc-how-people-learn-2000", "problema"],
     model: {
       summary:
         "Stitch Code como vehículo: práctica + diálogo; sin pretender LMS ni transformación vital como feature.",

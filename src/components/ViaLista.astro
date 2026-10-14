@@ -6,6 +6,8 @@ export type ViaItem = {
   title: string;
   descripcion: string;
   detalle?: { label: string; text: string };
+  /** Sin items se muestra como pendiente. */
+  fuentes?: { label: string; items: { label: string; href: string }[] };
   grupo?: string;
 };
 
@@ -48,6 +50,23 @@ items.forEach((item, i) => {
                 {item.detalle && (
                   <p class="mt-3 text-sm leading-relaxed text-ink-soft">
                     <span class="font-medium text-ink">{item.detalle.label}:</span> {item.detalle.text}
+                  </p>
+                )}
+                {item.fuentes && (
+                  <p class="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-sm leading-relaxed text-ink-soft">
+                    <span class="font-medium text-ink">{item.fuentes.label}:</span>
+                    {item.fuentes.items.length > 0 ? (
+                      item.fuentes.items.map((f) => (
+                        <a
+                          href={f.href}
+                          class="text-thread underline decoration-thread/40 underline-offset-4 hover:text-thread-dim"
+                        >
+                          {f.label}
+                        </a>
+                      ))
+                    ) : (
+                      <span class="italic text-ink-soft/80">pendiente</span>
+                    )}
                   </p>
                 )}
                 {item.conexiones.length > 0 && (

@@ -4,6 +4,7 @@ import ViaHeader from "../../components/ViaHeader.astro";
 import ViaLista from "../../components/ViaLista.astro";
 import { companionThemes } from "../../data/companionThemes";
 import { frameworkStance } from "../../data/framework";
+import { fuentesLectura } from "../../data/papers";
 import { objetosDeVia } from "../../data/versiones";
 
 const items = objetosDeVia("modelo").map((o) => {
@@ -13,6 +14,7 @@ const items = objetosDeVia("modelo").map((o) => {
     title: o.label,
     descripcion: t?.pedagogical ?? "",
     detalle: t && { label: "Hipótesis", text: t.technical },
+    fuentes: { label: "Fuentes técnicas", items: fuentesLectura(t?.fuentesTecnicas ?? []) },
   };
 });
 ---
