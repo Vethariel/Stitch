@@ -32,10 +32,12 @@ export const progressLog: ProgressEntry[] = [
       "Evidencia por vía: el marco pide literatura (enlaza a /lecturas), el modelo pide fuentes técnicas de implementación y el sistema se respalda en el código. Lo que falta queda marcado como pendiente.",
       "El sistema se piensa como anexo: se acopla a cualquier anfitrión que exponga ciertas herramientas y le deje un espacio en la interfaz. Stitch Code es el primer anfitrión.",
       "Norte afinado: «Interiorizar y aplicar» absorbe el rechazo a la nota y la credencial vacías, y el cuarto principio pasa a «Sentido propio» (por qué le importa a cada persona).",
+      "Home reorientado a quien llega de fuera: el hero dice qué es Stitch y qué hace, y la sección larga del norte se reemplaza por «En pocas palabras» (qué ataca, qué hace, hacia dónde va y qué no es); el norte completo queda en /stitch.",
       "Versión marco.modelo.sistema con cascada: si cambia el marco, modelo y sistema quedan pendientes de alinearse. Objetos y relaciones versionados en src/data/versiones.json.",
       "Línea base 1.1.1: marco 0.1, modelo con los aspectos del compañero y el sistema como anexo, leído sobre Stitch Code.",
     ],
     links: [
+      { href: "/#que-es", label: "Home" },
       { href: "/stitch#norte", label: "Norte" },
       { href: "/stitch#vias", label: "Tres vías" },
       { href: "/stitch/marco", label: "Marco" },
