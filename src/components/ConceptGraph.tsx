@@ -91,9 +91,13 @@ export default function ConceptGraph() {
     return () => ro.disconnect();
   }, []);
 
+  /** Reanuda la simulación si ya se había detenido. */
+  const wakeRef = useRef<() => void>(() => {});
+
   useEffect(() => {
     nodesRef.current = seedLayout(size.w, size.h, activeIds);
     setTick((n) => n + 1);
+    wakeRef.current();
   }, [size, activeIds]);
 
   useEffect(() => {
@@ -103,15 +107,17 @@ export default function ConceptGraph() {
   useEffect(() => {
     let frame = 0;
     let alive = true;
+    let running = false;
     const step = () => {
       if (!alive) return;
       const nodes = nodesRef.current;
       const { w, h } = size;
       const n = nodes.length;
       if (!n) {
-        frame = requestAnimationFrame(step);
+        running = false;
         return;
       }
+      const byId = new Map(nodes.map((node) => [node.id, node]));
 
       const cx = w / 2;
       const cy = h / 2;
@@ -151,8 +157,8 @@ export default function ConceptGraph() {
       }
 
       for (const edge of conceptEdges) {
-        const a = nodes.find((node) => node.id === edge.from);
-        const b = nodes.find((node) => node.id === edge.to);
+        const a = byId.get(edge.from);
+        const b = byId.get(edge.to);
         if (!a || !b) continue;
         const dx = b.x - a.x;
         const dy = b.y - a.y;
@@ -214,17 +220,27 @@ export default function ConceptGraph() {
         energy += node.vx * node.vx + node.vy * node.vy;
       }
 
-      if (energy > 0.05 || dragId.current) setTick((t) => t + 1);
+      setTick((t) => t + 1);
+      // Quieto y sin arrastre: se detiene hasta el próximo wake.
+      if (energy > 0.05 || dragId.current) frame = requestAnimationFrame(step);
+      else running = false;
+    };
+    const wake = () => {
+      if (!alive || running) return;
+      running = true;
       frame = requestAnimationFrame(step);
     };
-    frame = requestAnimationFrame(step);
+    wakeRef.current = wake;
+    wake();
     return () => {
       alive = false;
       cancelAnimationFrame(frame);
+      wakeRef.current = () => {};
     };
   }, [size]);
 
   const nodes = nodesRef.current;
+  const nodeById = new Map(nodes.map((n) => [n.id, n]));
   const nodeIdSet = useMemo(
     () => new Set(nodes.map((n) => n.id)),
     // tick updates when layout/filter changes positions or membership
@@ -265,6 +281,7 @@ export default function ConceptGraph() {
       dragId.current = id;
       setSelected(id);
       (event.currentTarget as SVGGElement).setPointerCapture(event.pointerId);
+      wakeRef.current();
     },
     [],
   );
@@ -278,6 +295,7 @@ export default function ConceptGraph() {
       node.x = event.clientX - rect.left;
       node.y = event.clientY - rect.top;
       setTick((t) => t + 1);
+      wakeRef.current();
     },
     [],
   );
@@ -364,8 +382,8 @@ export default function ConceptGraph() {
             }}
           >
             {visibleEdges.map((edge) => {
-              const a = nodes.find((n) => n.id === edge.from);
-              const b = nodes.find((n) => n.id === edge.to);
+              const a = nodeById.get(edge.from);
+              const b = nodeById.get(edge.to);
               if (!a || !b) return null;
               const hot =
                 !relatedIds || (relatedIds.has(a.id) && relatedIds.has(b.id));

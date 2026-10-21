@@ -42,7 +42,7 @@ items.forEach((item, i) => {
                 id={anclaObjeto({ via, id: item.id })}
                 class="scroll-mt-24 py-7 target:border-l-4 target:border-l-signal target:pl-5"
               >
-                <p class="font-display text-xs font-semibold text-signal">
+                <p class="font-display text-xs font-semibold text-signal-ink">
                   {String(item.n).padStart(2, "0")}
                 </p>
                 <h3 class="mt-1 font-display text-xl font-semibold text-ink">{item.title}</h3>
@@ -74,7 +74,7 @@ items.forEach((item, i) => {
                     {item.conexiones.map((c) => (
                       <li class="text-ink-soft">
                         <span class="font-display font-semibold text-ink">{viaLabel[c.via]}:</span>{" "}
-                        <span class:list={[c.tipo === "tension" ? "text-signal" : "text-ink-soft/80"]}>
+                        <span class:list={[c.tipo === "tension" ? "text-signal-ink" : "text-ink-soft/80"]}>
                           {c.frase}
                         </span>{" "}
                         <a

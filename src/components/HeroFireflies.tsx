@@ -39,10 +39,10 @@ function createFireflies(): Firefly[] {
 
 export default function HeroFireflies() {
   const [flies, setFlies] = useState<Firefly[]>(createFireflies);
-  const reduceMotion = useMemo(() => {
-    if (typeof window === "undefined") return false;
-    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  }, []);
+  const reduceMotion = useMemo(
+    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+    [],
+  );
 
   const relocate = useCallback((id: number) => {
     if (reduceMotion) return;

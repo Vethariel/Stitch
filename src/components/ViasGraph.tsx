@@ -93,7 +93,7 @@ export default function ViasGraph() {
             aria-pressed={f.version === version}
             className={[
               "font-display text-lg font-semibold transition-colors",
-              f.version === version ? "text-signal" : "text-ink-soft hover:text-thread",
+              f.version === version ? "text-signal-ink" : "text-ink-soft hover:text-thread",
             ].join(" ")}
           >
             {f.version}

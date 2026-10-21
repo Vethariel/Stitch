@@ -3,21 +3,27 @@
  * Full-bleed hero: threads → weave → graph.
  * Fireflies pulse and relocate at fade-out to suggest new connections.
  */
+import { Picture } from "astro:assets";
+import hero from "../assets/hero.png";
 import HeroFireflies from "./HeroFireflies";
 ---
 
 <div class="absolute inset-0" aria-hidden="true">
-  <img
-    src="/images/hero.png"
+  <Picture
+    src={hero}
     alt=""
+    formats={["avif", "webp"]}
+    fallbackFormat="jpg"
+    widths={[640, 1024, 1672]}
+    sizes="100vw"
     class="h-full w-full object-cover object-center"
-    width="1672"
-    height="941"
     decoding="async"
+    loading="eager"
     fetchpriority="high"
   />
 
-  <HeroFireflies client:load />
+  <!-- Solo cliente: las posiciones son aleatorias y no coincidirían con el HTML del servidor. -->
+  <HeroFireflies client:only="react" />
 
   <div class="absolute inset-0 bg-linear-to-r from-paper/75 via-paper/35 to-transparent">
   </div>

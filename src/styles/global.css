@@ -16,6 +16,7 @@
   --color-thread-bright: var(--stitch-thread-bright);
   --color-thread-dim: var(--stitch-thread-dim);
   --color-signal: var(--stitch-signal);
+  --color-signal-ink: var(--stitch-signal-ink);
   --color-bloom: var(--stitch-bloom);
   --color-line: var(--stitch-line);
   --color-hero-a: var(--stitch-hero-a);
@@ -33,6 +34,7 @@
   --stitch-thread-bright: #9a48a8;
   --stitch-thread-dim: #552060;
   --stitch-signal: #ff5c00;
+  --stitch-signal-ink: #a83a00; /* signal para texto: contraste AA sobre paper y paper-deep */
   --stitch-bloom: #ff8f40;
   --stitch-line: #e4c4b4;
   --stitch-hero-a: #e8b0d0;

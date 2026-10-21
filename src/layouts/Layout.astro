@@ -1,4 +1,6 @@
 ---
+import { getImage } from "astro:assets";
+import hero from "../assets/hero.png";
 import "../styles/global.css";
 
 interface Props {
@@ -12,6 +14,10 @@ const {
   description = "Investigación sobre un compañero de aprendizaje autónomo — research log del Proyecto Stitch.",
   active = "inicio",
 } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = await getImage({ src: hero, format: "jpeg", width: 1200 });
+const ogImageUrl = new URL(ogImage.src, Astro.site);
 ---
 
 <!doctype html>
@@ -22,6 +28,16 @@ const {
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es" />
+    <meta property="og:site_name" content="Proyecto Stitch" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
     <title>{title}</title>
   </head>
   <body class="min-h-screen antialiased">
