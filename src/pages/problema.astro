@@ -1,9 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { frameworkQuestion as pregunta } from "../data/framework";
 import { phases } from "../data/schedule";
-
-const pregunta =
-  "¿Cómo diseñar un agente de acompañamiento que sostenga la constancia y la interiorización del aprendizaje autónomo, de modo que queden conocimiento y habilidades aplicables y el aprendizaje tenga sentido: se usa, se interioriza, y el progreso se siente vivido —no simulado?";
 
 const fallas = [
   {
@@ -54,7 +52,7 @@ const hypotheses = [
   },
   {
     title: "Adaptación del lenguaje",
-    body: "Nivel de lenguaje y asociaciones adaptan la forma de explicar sin tocar el núcleo del dominio. Cercano, no invasivo — aspecto central del camino del compañero.",
+    body: "Nivel de lenguaje y asociaciones adaptan la forma de explicar sin tocar el núcleo del dominio. Cercano, no invasivo — aspecto central del modelo del compañero.",
   },
   {
     title: "Interiorización, uso y sentido",
@@ -79,14 +77,6 @@ const recorteNo = [
   "Agente asistente general de vida / rol terapéutico.",
   "Macro de carrera / narrativa multi-curso como producto ahora (horizonte).",
   "Lanzar Stitch Code como producto comercial sin el marco de investigación.",
-];
-
-const ahoraSi = [
-  "Problema, pregunta y norte alineados en este sitio.",
-  "Página del compañero (/stitch): problema reducido, norte y tres vías versionadas (marco, modelo y sistema), cada una con su subpágina.",
-  "Literatura y vocabulario vivos (/lecturas, /vocabulario).",
-  "Progreso como hechos reales (/progreso), no plan de intenciones.",
-  "Seguir afilando el acompañamiento sobre el laboratorio Stitch Code — sin pretender entregar el sistema entero este semestre.",
 ];
 ---
 
@@ -120,21 +110,21 @@ const ahoraSi = [
           </p>
           <p class="mt-4 text-sm leading-relaxed text-ink-soft">
             Sin nota como motor, lo que importa es qué queda: saber y poder hacer,
-            y un camino que no finja avance. Detalle del norte en la{" "}
+            y un recorrido que no finja avance. El{" "}
             <a
               href="/stitch#norte"
               class="text-thread underline decoration-thread/40 underline-offset-4 hover:text-thread-dim"
             >
-              Stitch
+              norte
             </a>
-            {" "}y de las tres vías en{" "}
+            {" "}y las{" "}
             <a
               href="/stitch#vias"
               class="text-thread underline decoration-thread/40 underline-offset-4 hover:text-thread-dim"
             >
-              Stitch
+              tres vías
             </a>
-            .
+            {" "}del compañero están en Stitch.
           </p>
         </div>
         <nav
@@ -214,15 +204,15 @@ const ahoraSi = [
             concreto que ya existe: entorno para primer contacto con programación,
             lenguaje{" "}
             <strong class="font-semibold text-ink">Woven</strong>, tutor{" "}
-            <strong class="font-semibold text-ink">Hilo</strong> (repo hermano). Es la
-            vía del{" "}
+            <strong class="font-semibold text-ink">Hilo</strong> (repo hermano). Es el
+            primer anfitrión del compañero: donde se prueba la vía del{" "}
             <a
               href="/stitch/sistema"
               class="text-ink underline decoration-thread/50 underline-offset-4 hover:text-thread"
             >
               sistema
             </a>
-            : donde el compañero se prueba.
+            .
           </p>
           <p>
             <strong class="font-semibold text-ink">Stitch</strong> es el{" "}
@@ -315,7 +305,7 @@ const ahoraSi = [
             </h3>
             <p class="mt-3 text-base leading-relaxed text-ink-soft sm:text-lg">
               Diseñar el compañero sobre el laboratorio Stitch Code: constancia e
-              interiorización ante motivaciones distintas; marco y aspectos del camino
+              interiorización ante motivaciones distintas; marco y aspectos del modelo
               a pulir.
             </p>
           </div>
@@ -361,7 +351,7 @@ const ahoraSi = [
         </h2>
         <p class="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
           La pregunta general ya está arriba. Estas cuatro la descomponen a lo largo
-          del semestre. Contaría como respuesta un marco y un camino afilados, y
+          del semestre. Contaría como respuesta un marco y un modelo afilados, y
           evidencia acotada —sobre Stitch Code como vehículo— de que el acompañamiento
           ayuda a seguir y a usar lo aprendido, no a acumular notas.
         </p>
@@ -433,7 +423,7 @@ const ahoraSi = [
           05 · Alcance
         </p>
         <h2 class="mt-4 font-display text-3xl font-semibold text-ink sm:text-4xl">
-          Qué cubre la pregunta — y dónde estamos
+          Qué cubre la pregunta
         </h2>
 
         <div class="mt-12 grid gap-12 lg:grid-cols-2">
@@ -448,9 +438,11 @@ const ahoraSi = [
                 ))
               }
             </ul>
-            <h4 class="mt-10 font-display text-sm font-semibold tracking-wide text-ink-soft uppercase">
+          </div>
+          <div>
+            <h3 class="font-display text-sm font-semibold tracking-wide text-ink-soft uppercase">
               No cubre
-            </h4>
+            </h3>
             <ul class="mt-5 space-y-3 text-base leading-relaxed text-ink-soft">
               {
                 recorteNo.map((item) => (
@@ -459,36 +451,24 @@ const ahoraSi = [
               }
             </ul>
           </div>
-          <div>
-            <h3 class="font-display text-sm font-semibold tracking-wide text-ink uppercase">
-              Hechos de este semestre (hasta ahora)
-            </h3>
-            <ul class="mt-5 space-y-3 text-base leading-relaxed text-ink-soft">
-              {
-                ahoraSi.map((item) => (
-                  <li class="border-l-2 border-thread/40 pl-4">{item}</li>
-                ))
-              }
-            </ul>
-            <p class="mt-8 text-sm text-ink-soft">
-              El detalle cronológico está en{" "}
-              <a
-                href="/progreso"
-                class="text-thread underline decoration-thread/40 underline-offset-4"
-              >
-                Progreso
-              </a>
-              .
-            </p>
-          </div>
         </div>
+        <p class="mt-12 text-sm text-ink-soft">
+          Lo hecho hasta ahora, como hechos fechados, está en{" "}
+          <a
+            href="/progreso"
+            class="text-thread underline decoration-thread/40 underline-offset-4"
+          >
+            Progreso
+          </a>
+          .
+        </p>
       </div>
     </section>
 
     <section class="bg-ink text-paper">
       <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <p class="font-display text-xs font-semibold tracking-[0.2em] text-thread-bright uppercase">
-          Delimitación · actualizado Sep 2026
+          Delimitación · actualizado Oct 2026
         </p>
         <p class="mt-6 max-w-2xl text-base leading-relaxed text-mist">
           Esta página es el problema vigente. Lo que sigue es dejar que la lectura roce

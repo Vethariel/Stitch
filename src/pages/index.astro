@@ -1,9 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HeroVisual from "../components/HeroVisual.astro";
-
-const pregunta =
-  "¿Cómo diseñar un agente de acompañamiento que sostenga la constancia y la interiorización del aprendizaje autónomo, de modo que queden conocimiento y habilidades aplicables y el aprendizaje tenga sentido: se usa, se interioriza, y el progreso se siente vivido —no simulado?";
+import { frameworkQuestion as pregunta } from "../data/framework";
 
 const resumen = [
   {
@@ -38,7 +36,7 @@ const naming = [
   },
   {
     name: "Stitch Code",
-    meaning: "Primer anfitrión del compañero: ingeniería de software.",
+    meaning: "Primer anfitrión del compañero: un entorno para aprender a programar (lenguaje Woven, tutor Hilo).",
   },
   {
     name: "Proyecto Stitch",
@@ -181,14 +179,8 @@ const later = [
         <div class="mt-8 max-w-2xl space-y-6 text-base leading-relaxed text-ink-soft sm:text-lg">
           <p>
             Como estudiante, a menudo aprendía más por mi cuenta que con la
-            mediación que tenía a mano. No era un rechazo a los docentes: a veces
-            encontraba buenos; a menudo, cuando la constancia fallaba o el tema no
-            «hacía clic», el entorno institucional no sostenía el proceso. Quedaba
-            el trámite —clases, entregas, la nota— y, al final, la sensación de
-            haber pasado sin haber podido <em>hacer</em>.
-          </p>
-          <p>
-            Esa experiencia se cruzó con lo que veo en cursos en línea y en
+            mediación que tenía a mano, y al final quedaba la sensación de haber
+            pasado sin haber podido <em>hacer</em>. Esa experiencia se cruzó con lo que veo en cursos en línea y en
             plataformas que prometen dominio: mucho contenido, poco acompañamiento,
             y un cierre en credencial que ya no garantiza nada. La pregunta que
             quedó no fue «cómo enseñar más rápido», sino cómo diseñar presencia
@@ -204,6 +196,16 @@ const later = [
             piezas de esa búsqueda —aún en curso, sin prototipo que vender.
           </p>
         </div>
+        <p class="mt-8 text-sm text-ink-soft">
+          La historia completa, en{" "}
+          <a
+            href="/problema#motivacion"
+            class="text-thread underline decoration-thread/40 underline-offset-4 hover:text-thread-dim"
+          >
+            Problema
+          </a>
+          .
+        </p>
       </div>
     </section>
 
@@ -305,10 +307,6 @@ const later = [
         </h2>
         <p class="mt-8 max-w-3xl font-display text-xl leading-snug text-ink italic sm:text-2xl">
           {pregunta}
-        </p>
-        <p class="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft">
-          Que quede lo aplicable, y que el camino tenga sentido: se usa, se
-          interioriza, y el progreso se siente vivido —no simulado.
         </p>
         <p class="mt-8 text-sm text-ink-soft">
           Detalle en{" "}

@@ -1,7 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import ViasGraph from "../../components/ViasGraph";
-import { frameworkQuestion } from "../../data/framework";
 import { stitchMeta, stitchNorte, stitchProblema } from "../../data/stitch";
 import { faseActual, versionadoReglas, viaVigente, vias } from "../../data/versiones";
 
@@ -57,11 +56,8 @@ const cuadros = vias.map((v) => ({ ...v, vigente: viaVigente(v.id) }));
             ))
           }
         </ol>
-        <p class="mt-14 max-w-3xl border-l-2 border-thread pl-5 text-base leading-relaxed text-ink italic sm:text-lg">
-          {frameworkQuestion}
-        </p>
-        <p class="mt-6 text-sm text-ink-soft">
-          Motivación, fallas, hipótesis y alcance completos en{" "}
+        <p class="mt-14 text-sm text-ink-soft">
+          Pregunta de investigación, motivación, fallas, hipótesis y alcance en{" "}
           <a
             href="/problema"
             class="text-thread underline decoration-thread/40 underline-offset-4 hover:text-thread-dim"

@@ -21,14 +21,13 @@ export type ProgressEntry = {
 /** Avances ya registrados (orden cronológico inverso en la página). */
 export const progressLog: ProgressEntry[] = [
   {
-    id: "2026-10-21-auditoria-sitio",
+    id: "2026-10-21-trabajo-en-el-sitio",
     date: "2026-10-21",
     dateLabel: "21 Oct",
-    title: "Auditoría del sitio y todo el trabajo en el sitio",
+    title: "Todo el trabajo en el sitio",
     facts: [
       "Se retira la carpeta docs/: el trabajo vive en el sitio. Las vías ya no enlazan a documentos del repositorio y el marco vigente se nombra v1, como en el versionado.",
-      "Dependencias al día y sin vulnerabilidades conocidas; el deploy comprueba tipos antes de construir.",
-      "Contraste accesible para el texto naranja (tensiones y numeración), imagen de portada optimizada, sitemap, metadatos para compartir y página 404.",
+      "Textos alineados con la estructura actual: «camino» pasa a «modelo», Stitch Code se presenta como primer anfitrión y se quitan repeticiones entre Inicio, Problema y Stitch.",
     ],
     links: [{ href: "/stitch#vias", label: "Tres vías" }],
   },
@@ -190,5 +189,5 @@ export const inProgress: {
 
 export const nowSummary = {
   title: "Dónde estamos ahora",
-  body: "Hay problema, la página del compañero con sus tres vías (marco, modelo y sistema) en la versión 1.1.1, el análisis de Stitch Code, lecturas, vocabulario y esta página de hechos. El sistema se piensa como anexo acoplable; Stitch Code (Woven + Hilo) es su primer anfitrión y el modelo todavía no se prueba sobre él.",
+  body: "Hay problema, la página del compañero con sus tres vías (marco, modelo y sistema) en la versión 1.1.1, la lectura de Stitch Code en la vía del sistema, lecturas, vocabulario y esta página de hechos. El sistema se piensa como anexo acoplable; Stitch Code (Woven + Hilo) es su primer anfitrión y el modelo todavía no se prueba sobre él.",
 };

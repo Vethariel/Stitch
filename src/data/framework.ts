@@ -66,7 +66,7 @@ export const frameworkRules: FrameworkRule[] = [
         "Grafo (mapa de conocimiento) y árbol (progreso) alineados; atajos solo tras prueba de desempeño.",
       pieces: [
         "Nodos del grafo = verdad del dominio; árbol = recorrido visible.",
-        "Prueba de desempeño acordada con el usuario antes de abrir avance.",
+        "Prueba de desempeño acordada con el estudiante antes de abrir avance.",
         "Feedback de tarea/proceso/autorregulación; evitar nota sola o correcto/incorrecto sin siguiente paso.",
       ],
     },
@@ -144,7 +144,7 @@ export const frameworkRules: FrameworkRule[] = [
     id: "metacognicion-agencia",
     title: "Metacognición y agencia",
     rule:
-      "El usuario guía la narrativa; el marco estructura. Hay que estimar y pulir la capacidad de monitorear el propio aprendizaje. Stitch es guía, no garantía de éxito.",
+      "El estudiante guía la narrativa; el marco estructura. Hay que estimar y pulir la capacidad de monitorear el propio aprendizaje. Stitch es guía, no garantía de éxito.",
     sources: ["nrc-how-people-learn-2000", "carless-boud-2018", "problema"],
     model: {
       summary:
