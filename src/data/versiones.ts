@@ -23,7 +23,6 @@ export type ViaVersion = {
   fecha: string;
   titulo: string;
   resumen: string;
-  referencia?: string;
 };
 
 export type Objeto = {

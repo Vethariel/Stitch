@@ -4,7 +4,7 @@
  */
 
 export const progressMeta = {
-  updated: "2026-10-14",
+  updated: "2026-10-21",
   note: "Hechos verificables en el sitio y en git. No es un cronograma de intenciones.",
 };
 
@@ -21,6 +21,18 @@ export type ProgressEntry = {
 /** Avances ya registrados (orden cronológico inverso en la página). */
 export const progressLog: ProgressEntry[] = [
   {
+    id: "2026-10-21-auditoria-sitio",
+    date: "2026-10-21",
+    dateLabel: "21 Oct",
+    title: "Auditoría del sitio y todo el trabajo en el sitio",
+    facts: [
+      "Se retira la carpeta docs/: el trabajo vive en el sitio. Las vías ya no enlazan a documentos del repositorio y el marco vigente se nombra v1, como en el versionado.",
+      "Dependencias al día y sin vulnerabilidades conocidas; el deploy comprueba tipos antes de construir.",
+      "Contraste accesible para el texto naranja (tensiones y numeración), imagen de portada optimizada, sitemap, metadatos para compartir y página 404.",
+    ],
+    links: [{ href: "/stitch#vias", label: "Tres vías" }],
+  },
+  {
     id: "2026-10-14-pagina-stitch-versionado",
     date: "2026-10-14",
     dateLabel: "14 Oct",
@@ -34,7 +46,7 @@ export const progressLog: ProgressEntry[] = [
       "Norte afinado: «Interiorizar y aplicar» absorbe el rechazo a la nota y la credencial vacías, y el cuarto principio pasa a «Sentido propio» (por qué le importa a cada persona).",
       "Home reorientado a quien llega de fuera: el hero dice qué es Stitch y qué hace, y la sección larga del norte se reemplaza por «En pocas palabras» (qué ataca, qué hace, hacia dónde va y qué no es); el norte completo queda en /stitch.",
       "Versión marco.modelo.sistema con cascada: si cambia el marco, modelo y sistema quedan pendientes de alinearse. Objetos y relaciones versionados en src/data/versiones.json.",
-      "Línea base 1.1.1: marco 0.1, modelo con los aspectos del compañero y el sistema como anexo, leído sobre Stitch Code.",
+      "Línea base 1.1.1: marco v1, modelo con los aspectos del compañero y el sistema como anexo, leído sobre Stitch Code.",
     ],
     links: [
       { href: "/#que-es", label: "Home" },

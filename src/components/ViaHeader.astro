@@ -1,5 +1,4 @@
 ---
-import { repoDocUrl } from "../data/stitch";
 import { vias, viaVigente, type Via } from "../data/versiones";
 
 interface Props {
@@ -45,17 +44,6 @@ const vigente = viaVigente(via);
       vigente && (
         <p class="mt-4 max-w-2xl text-sm text-ink-soft">
           Versión vigente: <span class="font-medium text-ink">{vigente.titulo}</span>
-          {vigente.referencia && (
-            <>
-              {" · "}
-              <a
-                href={repoDocUrl(vigente.referencia)}
-                class="text-thread underline decoration-thread/40 underline-offset-4 hover:text-thread-dim"
-              >
-                {vigente.referencia}
-              </a>
-            </>
-          )}
         </p>
       )
     }

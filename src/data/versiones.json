@@ -4,7 +4,7 @@
       "version": "1.1.1",
       "fecha": "2026-10-14",
       "titulo": "Línea base",
-      "nota": "Marco 0.1, modelo con los aspectos del compañero y el sistema como anexo acoplable, con Stitch Code como primer anfitrión. El modelo todavía no se prueba en el sistema.",
+      "nota": "Marco v1, modelo con los aspectos del compañero y el sistema como anexo acoplable, con Stitch Code como primer anfitrión. El modelo todavía no se prueba en el sistema.",
       "pendientes": []
     }
   ],
@@ -14,9 +14,8 @@
       "n": 1,
       "desde": "1.1.1",
       "fecha": "2026-08-26",
-      "titulo": "Borrador 0.1 del marco",
-      "resumen": "Nueve reglas del compañero desde las hipótesis del problema y las lecturas fichadas (NRC caps. 1–3, Hattie y Timperley, Carless y Boud, Dunlosky).",
-      "referencia": "docs/marco/v0.1.md"
+      "titulo": "Borrador del marco",
+      "resumen": "Nueve reglas del compañero desde las hipótesis del problema y las lecturas fichadas (NRC caps. 1–3, Hattie y Timperley, Carless y Boud, Dunlosky)."
     },
     {
       "via": "modelo",
@@ -24,8 +23,7 @@
       "desde": "1.1.1",
       "fecha": "2026-09-09",
       "titulo": "Modelo borrador + aspectos del compañero",
-      "resumen": "Un cómo por cada regla del marco y nueve aspectos del compañero, cada uno con lado pedagógico (indagar) y técnico (hipótesis).",
-      "referencia": "docs/mapa-del-sistema.md"
+      "resumen": "Un cómo por cada regla del marco y nueve aspectos del compañero, cada uno con lado pedagógico (indagar) y técnico (hipótesis)."
     },
     {
       "via": "sistema",
@@ -33,8 +31,7 @@
       "desde": "1.1.1",
       "fecha": "2026-10-14",
       "titulo": "Anexo acoplable, con Stitch Code como primer anfitrión",
-      "resumen": "El compañero como anexo: seis piezas propias y lo que necesita del anfitrión (cuatro herramientas y un espacio en la interfaz). Cada pieza se lee hoy en Stitch Code (StitchCode@666df9d), sin evaluación con usuarios.",
-      "referencia": "docs/stitch-code-hallazgos.md"
+      "resumen": "El compañero como anexo: seis piezas propias y lo que necesita del anfitrión (cuatro herramientas y un espacio en la interfaz). Cada pieza se lee hoy en Stitch Code (StitchCode@666df9d), sin evaluación con usuarios."
     }
   ],
   "objetos": [

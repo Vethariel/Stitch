@@ -1,6 +1,6 @@
 /**
  * Marco Stitch + modelo asociado — contenido vigente.
- * Versión e historial en versiones.json; snapshots markdown en docs/marco/.
+ * Versión e historial en versiones.json.
  */
 
 /** «problema» = hipótesis propias; el resto son ids de papers.ts (literatura en /lecturas). */

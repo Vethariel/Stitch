@@ -59,7 +59,6 @@ export const stitchSistema = {
   title: "El compañero como anexo",
   body: "Stitch no es una plataforma propia: es un anexo que se acopla a un sistema anfitrión. Basta con que el anfitrión exponga ciertas herramientas y le deje un espacio en su interfaz para que el compañero pueda usarlas. Stitch Code (Woven + Hilo) es el primer anfitrión y el punto de partida.",
   anfitrion: "Stitch Code",
-  hallazgos: "docs/stitch-code-hallazgos.md",
 };
 
 export type SistemaGrupo = "anexo" | "herramienta" | "interfaz";
@@ -147,6 +146,3 @@ export const stitchComponentes: SistemaComponente[] = [
     hoy: "El chat de Hilo con su sprite, y el resaltado de líneas en el editor.",
   },
 ];
-
-export const repoDocUrl = (path: string) =>
-  `https://github.com/Vethariel/Stitch/blob/main/${path}`;

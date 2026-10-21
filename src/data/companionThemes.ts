@@ -1,6 +1,6 @@
 /**
  * Temas del compañero (Stitch) — aspectos a pulir, parte de la vía del modelo.
- * Usados en /stitch; documento extendido en docs/mapa-del-sistema.md
+ * Usados en /stitch/modelo.
  */
 
 export type CompanionTheme = {
